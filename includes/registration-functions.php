@@ -154,6 +154,9 @@ function rcp_process_registration() {
 		update_user_meta( $user_data['id'], 'rcp_pending_subscription_level', $subscription_id );
 		update_user_meta( $user_data['id'], 'rcp_pending_subscription_key', $subscription_key );
 
+		// Flag the member as having just upgraded
+		update_user_meta( $user_data['id'], '_rcp_just_upgraded', current_time( 'timestamp' ) );
+
 	}
 
 	// Calculate the expiration date for the member
@@ -204,26 +207,28 @@ function rcp_process_registration() {
 			'price'             => rcp_get_registration()->get_total( true, false ), // get total without the fee
 			'discount'          => rcp_get_registration()->get_total_discounts(),
 			'discount_code'     => $discount,
-			'fee' 			    => rcp_get_registration()->get_total_fees(),
-			'length' 			=> $expiration->duration,
-			'length_unit' 		=> strtolower( $expiration->duration_unit ),
+			'fee'               => rcp_get_registration()->get_total_fees(),
+			'length'            => $expiration->duration,
+			'length_unit'       => strtolower( $expiration->duration_unit ),
 			'subscription_id'   => $subscription->id,
 			'subscription_name' => $subscription->name,
-			'key' 				=> $subscription_key,
-			'user_id' 			=> $user_data['id'],
-			'user_name' 		=> $user_data['login'],
-			'user_email' 		=> $user_data['email'],
-			'currency' 			=> $rcp_options['currency'],
-			'auto_renew' 		=> $auto_renew,
-			'return_url' 		=> $redirect,
-			'new_user' 			=> $user_data['need_new'],
-			'post_data' 		=> $_POST
+			'key'               => $subscription_key,
+			'user_id'           => $user_data['id'],
+			'user_name'         => $user_data['login'],
+			'user_email'        => $user_data['email'],
+			'currency'          => $rcp_options['currency'],
+			'auto_renew'        => $auto_renew,
+			'return_url'        => $redirect,
+			'new_user'          => $user_data['need_new'],
+			'post_data'         => $_POST
 		);
 
 		// if giving the user a credit, make sure the credit does not exceed the first payment
 		if ( $subscription_data['fee'] < 0 && abs( $subscription_data['fee'] ) > $subscription_data['price'] ) {
 			$subscription_data['fee'] = -1 * $subscription_data['price'];
 		}
+
+		update_user_meta( $user_data['id'], 'rcp_pending_subscription_amount', $subscription_data['price'] + $subscription_data['fee'] );
 
 		// send all of the subscription data off for processing by the gateway
 		rcp_send_to_gateway( $gateway, apply_filters( 'rcp_subscription_data', $subscription_data ) );
@@ -507,7 +512,6 @@ function rcp_set_pending_subscription_on_upgrade( $status, $user_id, $old_status
 		delete_user_meta( $user_id, 'rcp_pending_subscription_level' );
 		delete_user_meta( $user_id, 'rcp_pending_subscription_key' );
 
-		
 	}
 }
 add_action( 'rcp_set_status', 'rcp_set_pending_subscription_on_upgrade', 10, 4 );
@@ -529,7 +533,7 @@ function rcp_increment_subscription_member_count_on_status_change( $status, $use
 
 	rcp_decrement_subscription_member_count( $sub_id, $old_status );
 	rcp_increment_subscription_member_count( $sub_id, $status );
-	
+
 }
 add_action( 'rcp_set_status', 'rcp_increment_subscription_member_count_on_status_change', 999, 4 );
 
@@ -602,6 +606,7 @@ function rcp_registration_total( $echo = true ) {
 	}
 
 	if ( 0 < $total ) {
+		$total = number_format( $total, rcp_currency_decimal_filter() );
 		$total = rcp_currency_filter( $total );
 	} else {
 		$total = __( 'free', 'rcp' );
@@ -649,13 +654,14 @@ function rcp_registration_recurring_total( $echo = true ) {
 	}
 
 	if ( 0 < $total ) {
+		$total = number_format( $total, rcp_currency_decimal_filter() );
 		$total = rcp_currency_filter( $total );
 		$subscription = rcp_get_subscription_details( rcp_get_registration()->get_subscription() );
 
 		if ( $subscription->duration == 1 ) {
-			$total .= '/' . $subscription->duration_unit;
+			$total .= '/' . rcp_filter_duration_unit( $subscription->duration_unit, 1 );
 		} else {
-			$total .= sprintf( ' every %s %ss', $subscription->duration, $subscription->duration_unit );
+			$total .= sprintf( __( ' every %s %s', 'rcp' ), $subscription->duration, rcp_filter_duration_unit( $subscription->duration_unit, $subscription->duration ) );
 		}
 	} else {
 		$total = __( 'free', 'rcp' );;

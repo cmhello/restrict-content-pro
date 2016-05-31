@@ -2,7 +2,7 @@
 
 // function to create the DB / Options / Defaults
 function rcp_options_install() {
-   	global $wpdb,$rcp_db_name, $rcp_db_version, $rcp_discounts_db_name, $rcp_discounts_db_version, 
+   	global $wpdb,$rcp_db_name, $rcp_db_version, $rcp_discounts_db_name, $rcp_discounts_db_version,
    	$rcp_payments_db_name, $rcp_payments_db_version;
 
    	$rcp_options = get_option( 'rcp_settings', array() );
@@ -189,7 +189,7 @@ function rcp_options_install() {
 		}
 
 		// Store our page IDs
-		$rcp_options['update_card'] = $profile;
+		$rcp_options['update_card'] = $update_card;
 
 	}
 

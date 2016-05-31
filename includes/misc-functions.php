@@ -2,14 +2,14 @@
 
 
 /**
- * Checks whether the post is Paid Only
+ * Checks whether the post is Paid Only.
  *
- * @access      private
- * @return      bool
+ * @access private
+ * @return bool True if the post is paid only, false if not.
 */
 
 function rcp_is_paid_content( $post_id ) {
-	if ( $post_id == '' || !is_int( $post_id ) )
+	if ( $post_id == '' || ! is_int( $post_id ) )
 		$post_id = get_the_ID();
 
 	$return = false;
@@ -25,20 +25,20 @@ function rcp_is_paid_content( $post_id ) {
 
 
 /**
- * Retrieve a list of all Paid Only posts
+ * Retrieve a list of all Paid Only posts.
  *
- * @access      public
- * @return      array
+ * @access public
+ * @return array Lists all paid only posts.
 */
 
 function rcp_get_paid_posts() {
 	$args = array(
-		'meta_key' => '_is_paid',
-		'meta_value' => 1,
-		'post_status' => 'publish',
+		'meta_key'       => '_is_paid',
+		'meta_value'     => 1,
+		'post_status'    => 'publish',
 		'posts_per_page' => -1,
-		'post_type' => 'any',
-		'fields' => 'ids'
+		'post_type'      => 'any',
+		'fields'         => 'ids'
 	);
 	$paid_ids = get_posts( $args );
 	if ( $paid_ids ) {
@@ -50,10 +50,10 @@ function rcp_get_paid_posts() {
 
 
 /**
- * Apply the currency sign to a price
+ * Apply the currency sign to a price.
  *
- * @access      public
- * @return      string
+ * @access public
+ * @return string List of currency signs.
 */
 
 function rcp_currency_filter( $price ) {
@@ -63,79 +63,108 @@ function rcp_currency_filter( $price ) {
 	$position = isset( $rcp_options['currency_position'] ) ? $rcp_options['currency_position'] : 'before';
 	if ( $position == 'before' ) :
 		switch ( $currency ) :
-		case "GBP" : return '&pound;' . $price; break;
-		case "USD" :
-		case "AUD" :
-		case "BRL" :
-		case "CAD" :
-		case "HKD" :
-		case "MXN" :
-		case "SGD" :
-			return '&#36;' . $price;
-			break;
-		case "JPY" : return '&yen;' . $price; break;
-		default :
-			$formatted = $currency . ' ' . $price;
-			return apply_filters( 'rcp_' . strtolower( $currency ) . '_currency_filter_before', $formatted, $currency, $price );
-			break;
-			endswitch;
-			else :
-				switch ( $currency ) :
-				case "GBP" : return $price . '&pound;'; break;
-		case "USD" :
-		case "AUD" :
-		case "BRL" :
-		case "CAD" :
-		case "HKD" :
-		case "MXN" :
-		case "SGD" :
-			return $price . '&#36;';
-			break;
-		case "JPY" : return $price . '&yen;'; break;
-		default :
-	$formatted = $price . ' ' . $currency;
-	return apply_filters( 'rcp_' . strtolower( $currency ) . '_currency_filter_after', $formatted, $currency, $price );
-	break;
-	endswitch;
+			case "USD" : return '&#36;' . $price; break;
+			case "EUR" : return '&#8364;' . $price; break;
+			case "GBP" : return '&#163;' . $price; break;
+			case "AUD" : return '&#36;' . $price; break;
+			case "BRL" : return '&#82;&#36;' . $price; break;
+			case "CAD" : return '&#36;' . $price; break;
+			case "CHF" : return '&#67;&#72;&#70;' . $price; break;
+			case "CZK" : return '&#75;&#269;' . $price; break;
+			case "DKK" : return '&#107;&#114;' . $price; break;
+			case "HKD" : return '&#36;' . $price; break;
+			case "HUF" : return '&#70;&#116;' . $price; break;
+			case "ILS" : return '&#8362;' . $price; break;
+			case "IRR" : return '&#65020;' . $price; break;
+			case "JPY" : return '&#165;' . $price; break;
+			case "MXN" : return '&#36;' . $price; break;
+			case "MYR" : return '&#82;&#77;' . $price; break;
+			case "NOK" : return '&#107;&#114;' . $price; break;
+			case "NZD" : return '&#36;' . $price; break;
+			case "PHP" : return '&#8369;' . $price; break;
+			case "PLN" : return '&#122;&#322;' . $price; break;
+			case "RUB" : return '&#1088;&#1091;&#1073;' . $price; break;
+			case "SEK" : return '&#107;&#114;' . $price; break;
+			case "SGD" : return '&#36;' . $price; break;
+			case "THB" : return '&#3647;' . $price; break;
+			case "TRY" : return '&#8356;' . $price; break;
+			case "TWD" : return '&#78;&#84;&#36;' . $price; break;
+			default :
+				$formatted = $currency . ' ' . $price;
+				break;
+		endswitch;
+		return apply_filters( 'rcp_' . strtolower( $currency ) . '_currency_filter_before', $formatted, $currency, $price );
+	else :
+		switch ( $currency ) :
+			case "USD" : return $price . '&#36;'; break;
+			case "EUR" : return $price . '&#8364;'; break;
+			case "GBP" : return $price . '&#163;'; break;
+			case "AUD" : return $price . '&#36;'; break;
+			case "BRL" : return $price . '&#82;&#36;'; break;
+			case "CAD" : return $price . '&#36;'; break;
+			case "CHF" : return $price . '&#67;&#72;&#70;'; break;
+			case "CZK" : return $price . '&#75;&#269;'; break;
+			case "DKK" : return $price . '&#107;&#114;'; break;
+			case "HKD" : return $price . '&#36;'; break;
+			case "HUF" : return $price . '&#70;&#116;'; break;
+			case "ILS" : return $price . '&#8362;'; break;
+			case "IRR" : return $price . '&#65020;'; break;
+			case "JPY" : return $price . '&#165;'; break;
+			case "MXN" : return $price . '&#36;'; break;
+			case "MYR" : return $price . '&#82;&#77;'; break;
+			case "NOK" : return $price . '&#107;&#114;'; break;
+			case "NZD" : return $price . '&#36;'; break;
+			case "PHP" : return $price . '&#8369;'; break;
+			case "PLN" : return $price . '&#122;&#322;'; break;
+			case "RUB" : return $price . '&#1088;&#1091;&#1073;'; break;
+			case "SEK" : return $price . '&#107;&#114;'; break;
+			case "SGD" : return $price . '&#36;'; break;
+			case "THB" : return $price . '&#3647;'; break;
+			case "TRY" : return $price . '&#8356;'; break;
+			case "TWD" : return $price . '&#78;&#84;&#36;'; break;
+			default :
+				$formatted = $price . ' ' . $currency;
+				break;
+		endswitch;
+		return apply_filters( 'rcp_' . strtolower( $currency ) . '_currency_filter_after', $formatted, $currency, $price );
 	endif;
 }
 
 
 /**
- * Get the currency list
+ * Get the currency list.
  *
- * @access      private
- * @return      array
+ * @access private
+ * @return array List of currencies.
 */
-
 function rcp_get_currencies() {
 	$currencies = array(
 		'USD' => __( 'US Dollars (&#36;)', 'rcp' ),
-		'EUR' => __( 'Euros (&euro;)', 'rcp' ),
-		'GBP' => __( 'Pounds Sterling (&pound;)', 'rcp' ),
+		'EUR' => __( 'Euros (&#8364;)', 'rcp' ),
+		'GBP' => __( 'Pounds Sterling (&#163;)', 'rcp' ),
 		'AUD' => __( 'Australian Dollars (&#36;)', 'rcp' ),
-		'BRL' => __( 'Brazilian Real (&#36;)', 'rcp' ),
+		'BRL' => __( 'Brazilian Real (&#82;&#36;)', 'rcp' ),
 		'CAD' => __( 'Canadian Dollars (&#36;)', 'rcp' ),
-		'CZK' => __( 'Czech Koruna', 'rcp' ),
-		'DKK' => __( 'Danish Krone', 'rcp' ),
+		'CZK' => __( 'Czech Koruna (&#75;&#269;)', 'rcp' ),
+		'DKK' => __( 'Danish Krone (&#107;&#114;)', 'rcp' ),
 		'HKD' => __( 'Hong Kong Dollar (&#36;)', 'rcp' ),
-		'HUF' => __( 'Hungarian Forint', 'rcp' ),
-		'ILS' => __( 'Israeli Shekel', 'rcp' ),
-		'JPY' => __( 'Japanese Yen (&yen;)', 'rcp' ),
-		'MYR' => __( 'Malaysian Ringgits', 'rcp' ),
+		'HUF' => __( 'Hungarian Forint (&#70;&#116;)', 'rcp' ),
+		'IRR' => __( 'Iranian Rial (&#65020;)', 'rcp' ),
+		'ILS' => __( 'Israeli Shekel (&#8362;)', 'rcp' ),
+		'JPY' => __( 'Japanese Yen (&#165;)', 'rcp' ),
+		'MYR' => __( 'Malaysian Ringgits (&#82;&#77;)', 'rcp' ),
 		'MXN' => __( 'Mexican Peso (&#36;)', 'rcp' ),
 		'NZD' => __( 'New Zealand Dollar (&#36;)', 'rcp' ),
-		'NOK' => __( 'Norwegian Krone', 'rcp' ),
-		'PHP' => __( 'Philippine Pesos', 'rcp' ),
-		'PLN' => __( 'Polish Zloty', 'rcp' ),
+		'NOK' => __( 'Norwegian Krone (&#107;&#114;)', 'rcp' ),
+		'PHP' => __( 'Philippine Pesos (&#8369;)', 'rcp' ),
+		'PLN' => __( 'Polish Zloty (&#122;&#322;)', 'rcp' ),
+		'RUB' => __( 'Russian Rubles (&#1088;&#1091;&#1073;)', 'rcp' ),
 		'SGD' => __( 'Singapore Dollar (&#36;)', 'rcp' ),
-		'SEK' => __( 'Swedish Krona', 'rcp' ),
-		'CHF' => __( 'Swiss Franc', 'rcp' ),
-		'TWD' => __( 'Taiwan New Dollars', 'rcp' ),
-		'THB' => __( 'Thai Baht', 'rcp' ),
-		'TRY' => __( 'Turkish Lira', 'rcp' ),
-		'RIAL'=> __( 'Iranian Rial (&#65020;)', 'rcp' ),
-		'RUB' => __( 'Russian Rubles', 'rcp' )
+		'SEK' => __( 'Swedish Krona (&#107;&#114;)', 'rcp' ),
+		'CHF' => __( 'Swiss Franc (&#67;&#72;&#70;)', 'rcp' ),
+		'TWD' => __( 'Taiwan New Dollars (&#78;&#84;&#36;)', 'rcp' ),
+		'THB' => __( 'Thai Baht (&#3647;)', 'rcp' ),
+		'TRY' => __( 'Turkish Lira (&#8356;)', 'rcp' )
 	);
 	return apply_filters( 'rcp_currencies', $currencies );
 }
@@ -144,8 +173,8 @@ function rcp_get_currencies() {
 /**
  * reverse of strstr()
  *
- * @access      private
- * @return      string
+ * @access private
+ * @return string
 */
 
 function rcp_rstrstr( $haystack, $needle ) {
@@ -156,10 +185,10 @@ function rcp_rstrstr( $haystack, $needle ) {
 /**
  * Is odd?
  *
- * Checks if a number is odd
+ * Checks if a number is odd.
  *
- * @access      private
- * @return      bool
+ * @access private
+ * @return bool
 */
 
 function rcp_is_odd( $int ) {
@@ -167,12 +196,13 @@ function rcp_is_odd( $int ) {
 }
 
 
-/*
-* Gets the excerpt of a specific post ID or object
-* @param - $post - object/int - the ID or object of the post to get the excerpt of
-* @param - $length - int - the length of the excerpt in words
-* @param - $tags - string - the allowed HTML tags. These will not be stripped out
-* @param - $extra - string - text to append to the end of the excerpt
+/**
+* Gets the excerpt of a specific post ID or object.
+*
+* @param object/int $post The ID or object of the post to get the excerpt of.
+* @param int $length The length of the excerpt in words.
+* @param string $tags The allowed HTML tags. These will not be stripped out.
+* @param string $extra Text to append to the end of the excerpt.
 */
 
 function rcp_excerpt_by_id( $post, $length = 50, $tags = '<a><em><strong><blockquote><ul><ol><li><p>', $extra = ' . . .' ) {
@@ -211,10 +241,10 @@ function rcp_excerpt_by_id( $post, $length = 50, $tags = '<a><em><strong><blockq
 
 
 /**
- * The default length for excerpts
+ * The default length for excerpts.
  *
- * @access      private
- * @return      string
+ * @access private
+ * @return string
 */
 
 function rcp_excerpt_length( $excerpt_length ) {
@@ -225,12 +255,12 @@ add_filter( 'rcp_filter_excerpt_length', 'rcp_excerpt_length' );
 
 
 /**
- * Get current URL
+ * Get current URL.
  *
- * Returns the URL to the current page, including detection for https
+ * Returns the URL to the current page, including detection for https.
  *
- * @access      private
- * @return      string
+ * @access private
+ * @return string
 */
 
 function rcp_get_current_url() {
@@ -260,13 +290,13 @@ function rcp_get_current_url() {
 
 
 /**
- * Log Types
+ * Log Types.
  *
- * Sets up the valid log types for WP_Logging
+ * Sets up the valid log types for WP_Logging.
  *
- * @access      private
- * @since       1.3.4
- * @return      array
+ * @access private
+ * @since  1.3.4
+ * @return array
 */
 
 function rcp_log_types( $types ) {
@@ -281,11 +311,11 @@ add_filter( 'wp_log_types', 'rcp_log_types' );
 
 
 /**
- * Check if "Prevent Account Sharing" is enabled
+ * Check if "Prevent Account Sharing" is enabled.
  *
- * @access      private
- * @since       1.4
- * @return      bool
+ * @access private
+ * @since  1.4
+ * @return bool
 */
 function rcp_no_account_sharing() {
 	global $rcp_options;
@@ -294,14 +324,14 @@ function rcp_no_account_sharing() {
 
 
 /**
- * Stores cookie value in a transient when a user logs in
+ * Stores cookie value in a transient when a user logs in.
  *
  * Transient IDs are based on the user ID so that we can track the number of
- * users logged into the same account
+ * users logged into the same account.
  *
- * @access      private
- * @since       1.5
- * @return      void
+ * @access private
+ * @since  1.5
+ * @return void
 */
 
 function rcp_set_user_logged_in_status( $logged_in_cookie, $expire, $expiration, $user_id, $status = 'logged_in' ) {
@@ -326,11 +356,11 @@ add_action( 'set_logged_in_cookie', 'rcp_set_user_logged_in_status', 10, 5 );
 
 
 /**
- * Removes the current user's auth cookie from the rcp_user_logged_in_# transient when logging out
+ * Removes the current user's auth cookie from the rcp_user_logged_in_# transient when logging out.
  *
- * @access      private
- * @since       1.5
- * @return      void
+ * @access private
+ * @since  1.5
+ * @return void
 */
 
 function rcp_clear_auth_cookie() {
@@ -360,18 +390,18 @@ add_action( 'clear_auth_cookie', 'rcp_clear_auth_cookie' );
 
 
 /**
- * Checks if a user is allowed to be logged-in
+ * Checks if a user is allowed to be logged-in.
  *
  * The transient related to the user is retrieved and the first cookie in the transient
  * is compared to the LOGGED_IN_COOKIE of the current user.
  *
- * The first cookie in the transient is the oldest, so it is the one that gets logged out
+ * The first cookie in the transient is the oldest, so it is the one that gets logged out.
  *
- * We only log a user out if there are more than 2 users logged into the same account
+ * We only log a user out if there are more than 2 users logged into the same account.
  *
- * @access      private
- * @since       1.5
- * @return      void
+ * @access private
+ * @since  1.5
+ * @return void
 */
 
 function rcp_can_user_be_logged_in() {
@@ -410,12 +440,13 @@ add_action( 'init', 'rcp_can_user_be_logged_in' );
 
 
 /**
- * Retrieve a list of the allowed HTML tags
+ * Retrieve a list of the allowed HTML tags.
  *
- * This is used for filtering HTML in subscription level descriptions and other places
+ * This is used for filtering HTML in subscription level descriptions and other places.
  *
- * @access  public
- * @since   1.5
+ * @access public
+ * @since  1.5
+ * @return array
 */
 function rcp_allowed_html_tags() {
 	$tags = array(
@@ -488,10 +519,10 @@ if( ! function_exists( 'rcp_get_month_name' ) ) {
 }
 
 /**
- * Retrieve timezone
+ * Retrieve timezone.
  *
- * @since 1.8
- * @return string $timezone The timezone ID
+ * @since  1.8
+ * @return string $timezone The timezone ID.
  */
 function rcp_get_timezone_id() {
 
@@ -524,10 +555,10 @@ function rcp_get_timezone_id() {
 }
 
 /**
- * Get the number of days in a particular month
+ * Get the number of days in a particular month.
  *
- * @since 2.0.9
- * @return string $timezone The timezone ID
+ * @since  2.0.9
+ * @return string $timezone The timezone ID.
  */
 if ( ! function_exists( 'cal_days_in_month' ) ) {
 	// Fallback in case the calendar extension is not loaded in PHP
@@ -538,9 +569,9 @@ if ( ! function_exists( 'cal_days_in_month' ) ) {
 }
 
 /**
- * Retrieves the payment status label for a payment
+ * Retrieves the payment status label for a payment.
  *
- * @since 2.1
+ * @since  2.1
  * @return string
  */
 function rcp_get_payment_status_label( $payment ) {
@@ -584,12 +615,12 @@ function rcp_get_payment_status_label( $payment ) {
 }
 
 /**
- * Get User IP
+ * Get User IP.
  *
- * Returns the IP address of the current visitor
+ * Returns the IP address of the current visitor.
  *
- * @since 1.3
- * @return string $ip User's IP address
+ * @since  1.3
+ * @return string $ip User's IP address.
  */
 function rcp_get_ip() {
 
@@ -610,8 +641,8 @@ function rcp_get_ip() {
 /**
  * Checks to see if content is restricted in any way.
  *
- * @since 2.5
- * @param int $post_id The post ID to check for restrictions.
+ * @since  2.5
+ * @param  int $post_id The post ID to check for restrictions.
  * @return bool True if the content is restricted, false if not.
  */
 function rcp_is_restricted_content( $post_id ) {
@@ -650,9 +681,9 @@ function rcp_is_restricted_content( $post_id ) {
 }
 
 /**
- * Get RCP Currency
+ * Get RCP Currency.
  *
- * @since 2.5
+ * @since  2.5
  * @return mixed|void
  */
 function rcp_get_currency() {
@@ -662,13 +693,13 @@ function rcp_get_currency() {
 }
 
 /**
- * Determines if RCP is using a zero-decimal currency
+ * Determines if RCP is using a zero-decimal currency.
  *
- * @param $currency
+ * @param  string $currency
  *
- * @access      public
- * @since       2.5
- * @return      bool
+ * @access public
+ * @since  2.5
+ * @return bool True if currency set to a zero-decimal currency.
  */
 function rcp_is_zero_decimal_currency( $currency = '' ) {
 
@@ -696,4 +727,22 @@ function rcp_is_zero_decimal_currency( $currency = '' ) {
 
 	return apply_filters( 'rcp_is_zero_decimal_currency', in_array( $currency, $zero_dec_currencies ) );
 
+}
+
+/**
+ * Sets the number of decimal places based on the currency.
+ *
+ * @since  2.5.2
+ * @param  int $decimals The number of decimal places. Default is 2.
+ * @return int The number of decimal places.
+ */
+function rcp_currency_decimal_filter( $decimals = 2 ) {
+
+	$currency = rcp_get_currency();
+
+	if ( rcp_is_zero_decimal_currency( $currency ) ) {
+		$decimals = 0;
+	}
+
+	return apply_filters( 'rcp_currency_decimal_filter', $decimals, $currency );
 }

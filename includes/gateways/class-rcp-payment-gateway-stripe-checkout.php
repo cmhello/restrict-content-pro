@@ -20,8 +20,8 @@ class RCP_Payment_Gateway_Stripe_Checkout extends RCP_Payment_Gateway_Stripe {
 
 		if( ! empty( $_POST['rcp_stripe_checkout'] ) ) {
 
-			$this->auto_renew = '2' === rcp_get_auto_renew_behavior() ? false : true;
-	
+			$this->auto_renew = ( '2' === rcp_get_auto_renew_behavior() || '0' === $this->length ) ? false : true;
+
 		}
 
 		parent::process_signup();
@@ -34,6 +34,7 @@ class RCP_Payment_Gateway_Stripe_Checkout extends RCP_Payment_Gateway_Stripe {
 	 * @return string
 	 */
 	public function fields() {
+		global $rcp_options;
 
 		if( is_user_logged_in() ) {
 			$email = wp_get_current_user()->user_email;
@@ -46,6 +47,8 @@ class RCP_Payment_Gateway_Stripe_Checkout extends RCP_Payment_Gateway_Stripe {
 			'local'             => 'auto',
 			'allow-remember-me' => true,
 			'email'             => $email,
+			'currency'          => rcp_get_currency(),
+			'alipay'            => isset( $rcp_options['stripe_alipay'] ) && '1' === $rcp_options['stripe_alipay'] && 'USD' === rcp_get_currency() ? true : false
 		) );
 
 
@@ -75,8 +78,14 @@ class RCP_Payment_Gateway_Stripe_Checkout extends RCP_Payment_Gateway_Stripe {
 			if( ! checkoutArgs.email ) {
 				checkoutArgs.email = jQuery('#rcp_registration_form #rcp_user_email' ).val();
 			}
-			
+
 			jQuery('#rcp_registration_form #rcp_submit').val( rcp_script_options.pay_now );
+
+			jQuery('body').on('rcp_level_change', function(event, target) {
+				jQuery('#rcp_registration_form #rcp_submit').val(
+					jQuery(target).attr('rel') > 0 ? rcp_script_options.pay_now : rcp_script_options.register
+				);
+			});
 
 			jQuery('body').on('rcp_stripe_checkout_submit', function(e, token){
 				jQuery('#rcp_registration_form').append('<input type="hidden" name="stripeToken" value="' + token.id + '" />').submit();
@@ -92,15 +101,19 @@ class RCP_Payment_Gateway_Stripe_Checkout extends RCP_Payment_Gateway_Stripe {
 					$level = $form.find('input[name=rcp_level]');
 				}
 
+				var $price = $level.parent().find('.rcp_price').attr('rel') * <?php echo rcp_stripe_get_currency_multiplier(); ?>;
+
 				if( jQuery('.rcp_gateway_fields').hasClass('rcp_discounted_100') ) {
 					return false;
 				}
 
 				// Open Checkout with further options
-				rcpStripeCheckout.open(rcpSubscriptions[$level.val()]);
-				e.preventDefault();
+				if ( $price > 0 ) {
+					rcpStripeCheckout.open(rcpSubscriptions[$level.val()]);
+					e.preventDefault();
 
-				return false;
+					return false;
+				}
 			});
 
 			// Close Checkout on page navigation

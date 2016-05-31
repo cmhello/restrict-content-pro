@@ -119,7 +119,7 @@ class RCP_Registration {
 	public function add_fee( $amount, $description = null, $recurring = false, $proration = false ) {
 
 		$fee = array(
-			'amount'     => number_format( (float) $amount, 2 ),
+			'amount'     => floatval( $amount ),
 			'description'=> sanitize_text_field( $description ),
 			'recurring'  => (bool) $recurring,
 			'proration'  => (bool) $proration,
@@ -319,13 +319,13 @@ class RCP_Registration {
 
 		if ( $fees ) {
 			$total += $this->get_signup_fees( $total );
-		}		
+		}
 
 		if ( 0 > $total ) {
 			$total = 0;
 		}
 
-		return apply_filters( 'rcp_registration_get_total', number_format( (float) $total, 2 ), $this );
+		return apply_filters( 'rcp_registration_get_total', floatval($total), $this );
 
 	}
 
@@ -354,7 +354,7 @@ class RCP_Registration {
 			$total = 0;
 		}
 
-		return apply_filters( 'rcp_registration_get_recurring_total', number_format( (float) $total, 2 ), $this );
+		return apply_filters( 'rcp_registration_get_recurring_total', floatval( $total ), $this );
 
 	}
 

@@ -27,6 +27,7 @@ class RCP_WP_Approve_User {
 
 		add_filter( 'option_users_can_register', array( $this, 'users_can_register' ) );
 		add_filter( 'rcp_member_can_access', array( $this, 'can_access' ), 10, 4 );
+		add_filter( 'rcp_restrict_shortcode_has_access', array( $this, 'can_access_shortcode_content' ), 10, 3 );
 		add_filter( 'rcp_restricted_message', array( $this, 'pending_message' ), 9999 );
 
 		add_action( 'signup_header', array( $this, 'redirect_wp_signup' ) );
@@ -86,6 +87,21 @@ class RCP_WP_Approve_User {
 		}
 
 		if ( $this->is_pending( $member_id ) ) {
+			$can_access = false;
+		}
+
+		return $can_access;
+	}
+
+	/**
+	 * Block pending members from seeing content protected with [restrict]
+	 *
+	 * @access  public
+	 * @since   2.5.4
+	 */
+	public function can_access_shortcode_content( $can_access, $member_id, $atts ) {
+
+		if ( $can_access && $this->is_pending( $member_id ) ) {
 			$can_access = false;
 		}
 

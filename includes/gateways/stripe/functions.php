@@ -271,7 +271,7 @@ function rcp_stripe_create_discount() {
 		return; // Old Stripe gateway is active
 	}
 
-	if( ! rcp_is_gateway_enabled( 'stripe' ) ) {
+	if( ! rcp_is_gateway_enabled( 'stripe' ) && ! rcp_is_gateway_enabled( 'stripe_checkout' ) ) {
 		return;
 	}
 
@@ -436,7 +436,7 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 		return; // Old Stripe gateway is active
 	}
 
-	if( ! rcp_is_gateway_enabled( 'stripe' ) ) {
+	if( ! rcp_is_gateway_enabled( 'stripe' ) && ! rcp_is_gateway_enabled( 'stripe_checkout' ) ) {
 		return;
 	}
 
@@ -458,7 +458,10 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 
 	\Stripe\Stripe::setApiKey( $secret_key );
 
-	if ( ! rcp_stripe_does_coupon_exists( $discount_id ) ) {
+	$discount_details = rcp_get_discount_details( $discount_id );
+	$discount_name    = $discount_details->code;
+
+	if ( ! rcp_stripe_does_coupon_exists( $discount_name ) ) {
 
 		try {
 
@@ -466,7 +469,7 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 				\Stripe\Coupon::create( array(
 						"percent_off" => sanitize_text_field( $args['amount'] ),
 						"duration"    => "forever",
-						"id"          => sanitize_text_field( $discount_id ),
+						"id"          => sanitize_text_field( $discount_name ),
 						"currency"    => strtolower( $rcp_options['currency'] )
 					)
 				);
@@ -474,24 +477,24 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 				\Stripe\Coupon::create( array(
 						"amount_off" => sanitize_text_field( $args['amount'] ) * rcp_stripe_get_currency_multiplier(),
 						"duration"   => "forever",
-						"id"         => sanitize_text_field( $discount_id ),
+						"id"         => sanitize_text_field( $discount_name ),
 						"currency"   => strtolower( $rcp_options['currency'] )
 					)
 				);
 			}
 
 		} catch ( Exception $e ) {
-			wp_die( '<pre>' . $e . '</pre>', __( 'Error', 'rcp_stripe' ) );
+			wp_die( '<pre>' . $e . '</pre>', __( 'Error', 'rcp' ) );
 		}
 
 	} else {
 
 		// first delete the discount in Stripe
 		try {
-			$cpn = \Stripe\Coupon::retrieve( $discount_id );
+			$cpn = \Stripe\Coupon::retrieve( $discount_name );
 			$cpn->delete();
 		} catch ( Exception $e ) {
-			wp_die( '<pre>' . $e . '</pre>', __( 'Error', 'rcp_stripe' ) );
+			wp_die( '<pre>' . $e . '</pre>', __( 'Error', 'rcp' ) );
 		}
 
 		// now add a new one. This is a fake "update"
@@ -501,7 +504,7 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 				\Stripe\Coupon::create( array(
 						"percent_off" => sanitize_text_field( $args['amount'] ),
 						"duration"    => "forever",
-						"id"          => sanitize_text_field( $discount_id ),
+						"id"          => sanitize_text_field( $discount_name ),
 						"currency"    => strtolower( $rcp_options['currency'] )
 					)
 				);
@@ -509,7 +512,7 @@ function rcp_stripe_update_discount( $discount_id, $args ) {
 				\Stripe\Coupon::create( array(
 						"amount_off" => sanitize_text_field( $args['amount'] ) * rcp_stripe_get_currency_multiplier(),
 						"duration"   => "forever",
-						"id"         => sanitize_text_field( $discount_id ),
+						"id"         => sanitize_text_field( $discount_name ),
 						"currency"   => strtolower( $rcp_options['currency'] )
 					)
 				);

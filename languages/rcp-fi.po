@@ -1,0 +1,3909 @@
+# Copyright (C) 2015 Pippin Williamson
+# This file is distributed under the same license as the Restrict Content Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Restrict Content Pro 2.4.3\n"
+"Report-Msgid-Bugs-To: http://restrictcontentpro.com/support/\n"
+"POT-Creation-Date: 2016-04-23 18:12+0300\n"
+"PO-Revision-Date: 2016-04-26 16:58+0300\n"
+"Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
+"Language-Team: Restrict Content Pro <support@restrictcontentpro.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: RCP_Plugin_Updater.php:186
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+"Lisäosasta %1$s on uusi versio saatavilla. %2$sKatso version %3$s tiedot%4$s."
+
+#: RCP_Plugin_Updater.php:194
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+"Lisäosasta %1$s on uusi versio saatavilla. %2$sKatso version %3$s tiedot%4$s "
+"tai %5$späivitä nyt%6$s."
+
+#: RCP_Plugin_Updater.php:337 includes/admin/class-rcp-add-on-updater.php:276
+msgid "You do not have permission to install plugin updates"
+msgstr "Sinulla ei ole oikeutta päivittää lisäosia"
+
+#: RCP_Plugin_Updater.php:337 includes/class-rcp-export.php:167
+#: includes/member-functions.php:953 includes/member-functions.php:970
+#: includes/member-functions.php:986 includes/member-functions.php:1002
+#: includes/member-functions.php:1011 includes/member-functions.php:1085
+#: includes/admin/class-rcp-add-on-updater.php:276
+#: includes/admin/settings/settings.php:1147
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:153
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:115
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:127
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:139
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:203
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:215
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:239
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:271
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:283
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:312
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:108
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:122
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:150
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:64
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:212
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:286
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:312
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:340
+#: includes/gateways/gateway-functions.php:231
+#: includes/gateways/stripe/functions.php:135
+#: includes/gateways/stripe/functions.php:174
+#: includes/gateways/stripe/functions.php:191
+#: includes/gateways/stripe/functions.php:208
+#: includes/gateways/stripe/functions.php:224
+#: includes/gateways/stripe/functions.php:240
+#: includes/gateways/stripe/functions.php:249
+#: includes/gateways/stripe/functions.php:324
+#: includes/gateways/stripe/functions.php:341
+#: includes/gateways/stripe/functions.php:358
+#: includes/gateways/stripe/functions.php:374
+#: includes/gateways/stripe/functions.php:390
+#: includes/gateways/stripe/functions.php:399
+#: includes/gateways/stripe/functions.php:484
+#: includes/gateways/stripe/functions.php:494
+#: includes/gateways/stripe/functions.php:531
+#: includes/gateways/stripe/functions.php:548
+#: includes/gateways/stripe/functions.php:564
+#: includes/gateways/stripe/functions.php:580
+#: includes/gateways/stripe/functions.php:589
+#: includes/integrations/class-rcp-wp-approve-user.php:161
+#: includes/integrations/class-rcp-wp-approve-user.php:191
+msgid "Error"
+msgstr "Virhe"
+
+#: restrict-content-pro.php:141
+msgid ""
+"Your version of PHP is below the minimum version of PHP required by Restrict "
+"Content Pro. Please contact your host and request that your version be "
+"upgraded to 5.3 or later."
+msgstr ""
+
+#: includes/ajax-actions.php:63
+msgid "An error occurred, please refresh the page and try again."
+msgstr ""
+
+#: includes/captcha-functions.php:25 includes/captcha-functions.php:43
+msgid "Please verify that you are not a robot"
+msgstr ""
+
+#: includes/class-rcp-discounts.php:561
+msgid "Please enter a discount amount containing numbers only."
+msgstr ""
+
+#: includes/class-rcp-discounts.php:569
+msgid "Percentage discounts must be whole numbers between 1 and 100."
+msgstr ""
+
+#: includes/class-rcp-export-members.php:37
+#: includes/class-rcp-export-payments.php:40
+msgid "User ID"
+msgstr "Käyttäjän ID"
+
+#: includes/class-rcp-export-members.php:38
+#: includes/class-rcp-export-payments.php:41
+msgid "User Login"
+msgstr "Käyttäjätunnus"
+
+#: includes/class-rcp-export-members.php:39
+msgid "User Email"
+msgstr "Käyttäjän sähköposti"
+
+#: includes/class-rcp-export-members.php:40 templates/profile-editor.php:25
+#: templates/register-single.php:37 templates/register.php:36
+msgid "First Name"
+msgstr "Etunimi"
+
+#: includes/class-rcp-export-members.php:41 templates/profile-editor.php:29
+#: templates/register-single.php:41 templates/register.php:40
+msgid "Last Name"
+msgstr "Sukunimi"
+
+#: includes/class-rcp-export-members.php:42
+#: includes/class-rcp-export-payments.php:38 includes/invoice-functions.php:166
+#: includes/member-functions.php:519 includes/member-functions.php:559
+#: includes/user-page-columns.php:4
+#: includes/admin/discounts/discount-codes.php:21
+#: includes/admin/discounts/discount-codes.php:38
+#: includes/admin/discounts/discount-codes.php:162
+#: includes/admin/discounts/edit-discount.php:63
+#: includes/admin/members/members-page.php:130
+#: includes/admin/members/members-page.php:145
+#: includes/admin/payments/payments-page.php:67
+#: includes/admin/payments/payments-page.php:83
+#: templates/paypal-express-confirm.php:11
+#: templates/register-total-details.php:14 templates/subscription.php:16
+#: templates/subscription.php:57
+msgid "Subscription"
+msgstr "Jäsentaso"
+
+#: includes/class-rcp-export-members.php:43
+#: includes/class-rcp-export-payments.php:43 includes/invoice-functions.php:134
+#: includes/member-functions.php:521 includes/member-functions.php:561
+#: includes/admin/members/edit-member.php:56
+msgid "Subscription Key"
+msgstr "Jäsenavain"
+
+#: includes/class-rcp-export-members.php:44
+#: includes/admin/discounts/discount-codes.php:27
+#: includes/admin/discounts/discount-codes.php:44
+#: includes/admin/members/members-page.php:133
+#: includes/admin/members/members-page.php:148 templates/subscription.php:20
+msgid "Expiration"
+msgstr "Päättymisaika"
+
+#: includes/class-rcp-export-members.php:45 includes/user-page-columns.php:5
+#: includes/admin/discounts/discount-codes.php:24
+#: includes/admin/discounts/discount-codes.php:41
+#: includes/admin/members/edit-member.php:24
+#: includes/admin/members/members-page.php:131
+#: includes/admin/members/members-page.php:146
+#: includes/admin/payments/edit-payment.php:56
+#: includes/admin/payments/new-payment.php:50
+#: includes/admin/payments/payments-page.php:72
+#: includes/admin/payments/payments-page.php:88
+#: includes/admin/subscriptions/edit-subscription.php:81
+#: includes/admin/subscriptions/subscription-levels.php:184
+#: templates/subscription.php:15
+msgid "Status"
+msgstr "Tila"
+
+#: includes/class-rcp-export-members.php:46 includes/admin/admin-pages.php:15
+#: includes/admin/discounts/discount-codes.php:12
+msgid "Discount Codes"
+msgstr "Alennuskoodit"
+
+#: includes/class-rcp-export-members.php:47
+#: includes/admin/members/edit-member.php:78
+msgid "Payment Profile ID"
+msgstr "Maksun ID"
+
+#: includes/class-rcp-export-payments.php:37 includes/class-rcp-export.php:67
+#: includes/admin/discounts/discount-codes.php:17
+#: includes/admin/discounts/discount-codes.php:34
+#: includes/admin/members/members-page.php:128
+#: includes/admin/members/members-page.php:143
+#: includes/admin/payments/payments-page.php:65
+#: includes/admin/payments/payments-page.php:81
+#: includes/admin/subscriptions/subscription-levels.php:18
+#: includes/admin/subscriptions/subscription-levels.php:34
+msgid "ID"
+msgstr "ID"
+
+#: includes/class-rcp-export-payments.php:39 includes/invoice-functions.php:167
+#: includes/member-functions.php:524 includes/member-functions.php:526
+#: includes/member-functions.php:563
+#: includes/admin/discounts/discount-codes.php:22
+#: includes/admin/discounts/discount-codes.php:39
+#: includes/admin/discounts/discount-codes.php:153
+#: includes/admin/payments/edit-payment.php:29
+#: includes/admin/payments/new-payment.php:23
+#: includes/admin/payments/payments-page.php:69
+#: includes/admin/payments/payments-page.php:85
+#: templates/register-total-details.php:15 templates/subscription.php:58
+msgid "Amount"
+msgstr "Määrä"
+
+#: includes/class-rcp-export-payments.php:42 includes/member-functions.php:520
+#: includes/member-functions.php:560
+msgid "Payment Type"
+msgstr "Maksun tyyppi"
+
+#: includes/class-rcp-export-payments.php:44 includes/class-rcp-export.php:68
+#: includes/member-functions.php:518 includes/member-functions.php:558
+#: includes/admin/logs-list-table.php:93
+#: includes/admin/payments/payments-page.php:68
+#: includes/admin/payments/payments-page.php:84 templates/subscription.php:59
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: includes/class-rcp-export.php:167
+msgid "You do not have permission to export data."
+msgstr "Sinulla ei ole oikeuksia tietojen viemiseen."
+
+#: includes/class-rcp-member.php:63
+#, php-format
+msgid "Member's status changed from %s to %s"
+msgstr "Jäsentieto vaihdettu tilasta %s tilaan %s"
+
+#: includes/class-rcp-member.php:139
+#, php-format
+msgid "Member's expiration changed from %s to %s"
+msgstr "Jäsenyyden päättymispäivä vaihdettu päivästä %s päivään %s"
+
+#: includes/class-rcp-registration.php:60
+#: includes/admin/subscriptions/edit-subscription.php:72
+#: includes/admin/subscriptions/subscription-levels.php:175
+#: templates/paypal-express-confirm.php:16
+msgid "Signup Fee"
+msgstr "Rekisteröitymismaksu"
+
+#: includes/class-rcp-registration.php:60
+msgid "Signup Credit"
+msgstr "Rekisteröitymisen luotto"
+
+#: includes/content-filters.php:23 templates/woocommerce-single-no-access.php:6
+msgid "This content is restricted to subscribers"
+msgstr "Tämä sisältö on vain jäsenille"
+
+#: includes/content-filters.php:68
+msgid "You need to have an active subscription to view this content."
+msgstr ""
+
+#: includes/discount-functions.php:265
+#: includes/admin/members/edit-member.php:143
+msgid "None"
+msgstr "Ei mitään"
+
+#: includes/email-functions.php:49 includes/email-functions.php:69
+#: includes/email-functions.php:94 includes/email-functions.php:119
+#: includes/email-functions.php:142
+msgid "Hello"
+msgstr "Hei"
+
+#: includes/email-functions.php:49 includes/email-functions.php:119
+#: includes/email-functions.php:142
+msgid "is now subscribed to"
+msgstr "on nyt jäsenenä"
+
+#: includes/email-functions.php:49 includes/email-functions.php:119
+#: includes/email-functions.php:142
+msgid "Subscription level"
+msgstr "Jäsentaso"
+
+#: includes/email-functions.php:51 includes/email-functions.php:71
+#: includes/email-functions.php:96 includes/email-functions.php:121
+#: includes/email-functions.php:144
+msgid "Thank you"
+msgstr "Kiitos"
+
+#: includes/email-functions.php:52
+msgid "New subscription on "
+msgstr "Uusi jäsenyys"
+
+#: includes/email-functions.php:69
+msgid "has cancelled their subscription to"
+msgstr "on peruuttanut jäsenyyden"
+
+#: includes/email-functions.php:69
+msgid "Their subscription level was"
+msgstr "Heidän jäsentaso oli"
+
+#: includes/email-functions.php:72
+msgid "Cancelled subscription on "
+msgstr "Perui jäsenyyden"
+
+#: includes/email-functions.php:94
+msgid "subscription has expired"
+msgstr "Jäsenyys on vanhentunut"
+
+#: includes/email-functions.php:97
+msgid "Expired subscription on "
+msgstr "Vanhentunut jäsenyys: "
+
+#: includes/email-functions.php:122
+msgid "New free subscription on "
+msgstr "Uusi ilmainen jäsenyys: "
+
+#: includes/email-functions.php:145
+msgid "New trial subscription on "
+msgstr "Uusi koejäsenyys: "
+
+#: includes/install.php:87 includes/scripts.php:128
+#: includes/gateways/class-rcp-payment-gateway-stripe-checkout.php:59
+#: templates/register-single.php:112 templates/register.php:124
+msgid "Register"
+msgstr "Rekisteröidy"
+
+#: includes/install.php:99
+msgid "Welcome"
+msgstr "Tervetuloa"
+
+#: includes/install.php:100
+msgid ""
+"Welcome! This is your success page where members are redirected after "
+"completing their registration."
+msgstr ""
+
+#: includes/install.php:125
+msgid "Your Membership"
+msgstr "Jäsentiedot"
+
+#: includes/install.php:152
+msgid "Edit Your Profile"
+msgstr "Muokkaa profiilisiasi"
+
+#: includes/install.php:179
+msgid "Update Billing Card"
+msgstr ""
+
+#: includes/invoice-functions.php:43
+msgid "This payment record does not exist"
+msgstr "Tätä maksua ei löytynyt."
+
+#: includes/invoice-functions.php:47
+msgid "You do not have permission to download this invoice"
+msgstr "Sinulla ei ole oikeuksia ladata tätä kuittia"
+
+#: includes/invoice-functions.php:58
+#, php-format
+msgid "Invoice #%d"
+msgstr "Kuitti #%d"
+
+#: includes/invoice-functions.php:59 includes/admin/settings/settings.php:32
+msgid "Restrict Content Pro"
+msgstr "Restrict Content Pro"
+
+#: includes/invoice-functions.php:81
+msgid "Invoice"
+msgstr "Kuitti"
+
+#: includes/invoice-functions.php:85
+#: includes/admin/reports/reports-page.php:770
+msgid "From"
+msgstr "Lähettäjä"
+
+#: includes/invoice-functions.php:111
+#: includes/admin/reports/reports-page.php:781
+msgid "To"
+msgstr ""
+
+#: includes/invoice-functions.php:122
+msgid "Invoice Date"
+msgstr "Kuitin päivämäärä"
+
+#: includes/invoice-functions.php:128
+msgid "Invoice ID"
+msgstr "Laskun ID"
+
+#: includes/invoice-functions.php:141
+msgid "Payment Method"
+msgstr "Maksutapa"
+
+#: includes/invoice-functions.php:147 includes/member-functions.php:522
+#: includes/member-functions.php:562
+#: includes/admin/payments/edit-payment.php:47
+#: includes/admin/payments/new-payment.php:41
+#: includes/admin/payments/payments-page.php:71
+#: includes/admin/payments/payments-page.php:87
+msgid "Transaction ID"
+msgstr "Tapahtuman ID"
+
+#: includes/invoice-functions.php:157
+msgid "Invoice Items"
+msgstr "Kuitit"
+
+#: includes/invoice-functions.php:194
+msgid "Invoice Totals"
+msgstr "Yhteensä"
+
+#: includes/invoice-functions.php:203
+msgid "Total"
+msgstr "Yhteensä"
+
+#: includes/invoice-functions.php:212
+msgid "Additional Notes"
+msgstr "Muistiinpanot"
+
+#: includes/login-functions.php:88
+msgid "Invalid username or email"
+msgstr "Virheellinen käyttäjätunnus tai sähköposti"
+
+#: includes/login-functions.php:93 includes/registration-functions.php:369
+msgid "Please enter a password"
+msgstr "Kirjoita salasana"
+
+#: includes/login-functions.php:100
+msgid "Incorrect password"
+msgstr "Virheellinen salasana"
+
+#: includes/login-functions.php:173
+msgid "Your password reset link has expired."
+msgstr "Salasanan palautuslinkki on vanhentunut."
+
+#: includes/login-functions.php:175
+msgid "Your password reset link appears to be invalid."
+msgstr ""
+
+#: includes/login-functions.php:219
+msgid "Enter a username or e-mail address."
+msgstr ""
+
+#: includes/login-functions.php:223
+msgid "There is no user registered with that email address."
+msgstr "Tällä sähköpostilla ei ole rekisteröitynyttä käyttäjää."
+
+#: includes/login-functions.php:235
+msgid "Invalid username or e-mail."
+msgstr "Virheellinen käyttäjätunnus tai sähköposti."
+
+#: includes/login-functions.php:246
+msgid "Password reset is not allowed for this user"
+msgstr ""
+
+#: includes/login-functions.php:269
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: includes/login-functions.php:271
+#, php-format
+msgid "Username: %s"
+msgstr "Käyttäjätunnus: %s"
+
+#: includes/login-functions.php:272
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: includes/login-functions.php:273
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: includes/login-functions.php:288
+#, php-format
+msgid "[%s] Password Reset"
+msgstr "[%s] Salasanan palautus"
+
+#: includes/login-functions.php:293
+msgid "The e-mail could not be sent."
+msgstr ""
+
+#: includes/login-functions.php:293
+msgid "Possible reason: your host may have disabled the mail() function."
+msgstr ""
+
+#: includes/member-forms.php:128 includes/admin/settings/settings.php:197
+msgid "Auto Renew"
+msgstr "Uusi automaattisesti?"
+
+#: includes/member-functions.php:417 includes/admin/export.php:29
+#: includes/admin/members/members-page.php:51
+#: includes/admin/subscriptions/edit-subscription.php:85
+#: includes/admin/subscriptions/subscription-levels.php:188
+msgid "Active"
+msgstr "Aktiivinen"
+
+#: includes/member-functions.php:420 includes/admin/export.php:31
+#: includes/admin/members/members-page.php:61
+msgid "Expired"
+msgstr "Vanhentunut"
+
+#: includes/member-functions.php:423 includes/misc-functions.php:595
+#: includes/admin/export.php:30 includes/admin/members/members-page.php:56
+msgid "Pending"
+msgstr "Vireillä"
+
+#: includes/member-functions.php:426 includes/admin/export.php:32
+#: includes/admin/members/members-page.php:66
+msgid "Cancelled"
+msgstr "Peruutettu"
+
+#: includes/member-functions.php:429 includes/admin/export.php:33
+#: includes/admin/members/members-page.php:71
+#: includes/admin/subscriptions/subscription-levels.php:72
+#: includes/admin/subscriptions/subscription-levels.php:168
+msgid "Free"
+msgstr "Ilmainen"
+
+#: includes/member-functions.php:531
+msgid "No payments recorded"
+msgstr "Maksuja ei tallennettu"
+
+#: includes/member-functions.php:753
+msgid "Please enter a valid email address"
+msgstr "Kirjoita kelvollinen sähköpostiosoite"
+
+#: includes/member-functions.php:758
+msgid "The email you entered belongs to another user. Please use another."
+msgstr ""
+"Kirjoittamasi sähköposti on jo käytössä. Kokeile jotain muuta "
+"sähköpostiosoitetta."
+
+#: includes/member-functions.php:764
+msgid "The passwords you entered do not match. Please try again."
+msgstr "Kirjoittamasi salasanat eivät ole samat. Kokeile uudelleen."
+
+#: includes/member-functions.php:786
+msgid "There was an error updating your profile. Please try again."
+msgstr "Profiilin päivitys epäonnistui, kokeile uudelleen."
+
+#: includes/member-functions.php:819
+msgid "Please enter a password, and confirm it"
+msgstr "Kirjoita salasana ja vahvista se"
+
+#: includes/member-functions.php:823 includes/registration-functions.php:373
+msgid "Passwords do not match"
+msgstr "Salasanat eivät täsmää"
+
+#: includes/member-functions.php:946 includes/member-functions.php:963
+#: includes/member-functions.php:979 includes/member-functions.php:995
+#: includes/member-functions.php:1008
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:333
+#: includes/gateways/stripe/functions.php:167
+#: includes/gateways/stripe/functions.php:184
+#: includes/gateways/stripe/functions.php:201
+#: includes/gateways/stripe/functions.php:217
+#: includes/gateways/stripe/functions.php:233
+#: includes/gateways/stripe/functions.php:317
+#: includes/gateways/stripe/functions.php:334
+#: includes/gateways/stripe/functions.php:351
+#: includes/gateways/stripe/functions.php:367
+#: includes/gateways/stripe/functions.php:383
+#: includes/gateways/stripe/functions.php:524
+#: includes/gateways/stripe/functions.php:541
+#: includes/gateways/stripe/functions.php:557
+#: includes/gateways/stripe/functions.php:573
+msgid "An error occurred"
+msgstr "Tapahtui jokin virhe"
+
+#: includes/member-functions.php:948 includes/member-functions.php:965
+#: includes/member-functions.php:981 includes/member-functions.php:997
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:125
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:213
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:281
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:120
+msgid "Error code:"
+msgstr "Virhekoodi:"
+
+#: includes/member-functions.php:1074
+#, php-format
+msgid ""
+"There was a problem cancelling the subscription, please contact customer "
+"support. Error: %s"
+msgstr ""
+
+#: includes/misc-functions.php:142
+msgid "US Dollars (&#36;)"
+msgstr "Yhdysvaltain dollari (&#36;)"
+
+#: includes/misc-functions.php:143
+msgid "Euros (&#8364;)"
+msgstr "Euro (&#8364;)"
+
+#: includes/misc-functions.php:144
+msgid "Pounds Sterling (&#163;)"
+msgstr "Punta Sterling (&#163;)"
+
+#: includes/misc-functions.php:145
+msgid "Australian Dollars (&#36;)"
+msgstr "Australian dollari (&#36;)"
+
+#: includes/misc-functions.php:146
+msgid "Brazilian Real (&#82;&#36;)"
+msgstr "Brasilian real (&#82;&#36;)"
+
+#: includes/misc-functions.php:147
+msgid "Canadian Dollars (&#36;)"
+msgstr "Kanadan dollari (&#36;)"
+
+#: includes/misc-functions.php:148
+msgid "Czech Koruna (&#75;&#269;)"
+msgstr "Tsekin koruna (&#75;&#269;)"
+
+#: includes/misc-functions.php:149
+msgid "Danish Krone (&#107;&#114;)"
+msgstr "Tanskan kruunu (&#107;&#114;)"
+
+#: includes/misc-functions.php:150
+msgid "Hong Kong Dollar (&#36;)"
+msgstr "Hong Kongin Dollari (&#36;)"
+
+#: includes/misc-functions.php:151
+msgid "Hungarian Forint (&#70;&#116;)"
+msgstr "Unkarin forintti (&#70;&#116;)"
+
+#: includes/misc-functions.php:152
+msgid "Iranian Rial (&#65020;)"
+msgstr "Iranin rial (&#65020;)"
+
+#: includes/misc-functions.php:153
+msgid "Israeli Shekel (&#8362;)"
+msgstr "Israelin sekeli (&#8362;)"
+
+#: includes/misc-functions.php:154
+msgid "Japanese Yen (&#165;)"
+msgstr "Japanin jeni (&#165;)"
+
+#: includes/misc-functions.php:155
+msgid "Malaysian Ringgits (&#82;&#77;)"
+msgstr "Malesian Ringgits (&#82;&#77;)"
+
+#: includes/misc-functions.php:156
+msgid "Mexican Peso (&#36;)"
+msgstr "Meksikon peso (&#36;)"
+
+#: includes/misc-functions.php:157
+msgid "New Zealand Dollar (&#36;)"
+msgstr "Uuden-Seelannin dollari (&#36;)"
+
+#: includes/misc-functions.php:158
+msgid "Norwegian Krone (&#107;&#114;)"
+msgstr "Norjan kruunu (&#107;&#114;)"
+
+#: includes/misc-functions.php:159
+msgid "Philippine Pesos (&#8369;)"
+msgstr "Filippiinien peso (&#8369;)"
+
+#: includes/misc-functions.php:160
+msgid "Polish Zloty (&#122;&#322;)"
+msgstr "Puolan zloty (&#122;&#322;)"
+
+#: includes/misc-functions.php:161
+msgid "Russian Rubles (&#1088;&#1091;&#1073;)"
+msgstr "Venäjän rupla (&#1088;&#1091;&#1073;)"
+
+#: includes/misc-functions.php:162
+msgid "Singapore Dollar (&#36;)"
+msgstr "Singaporen dollari (&#36;)"
+
+#: includes/misc-functions.php:163
+msgid "Swedish Krona (&#107;&#114;)"
+msgstr "Ruotsin kruunu (&#107;&#114;)"
+
+#: includes/misc-functions.php:164
+msgid "Swiss Franc (&#67;&#72;&#70;)"
+msgstr "Sveitsi frangi (&#67;&#72;&#70;)"
+
+#: includes/misc-functions.php:165
+msgid "Taiwan New Dollars (&#78;&#84;&#36;)"
+msgstr "Taiwanin uusi dollari (&#78;&#84;&#36;)"
+
+#: includes/misc-functions.php:166
+msgid "Thai Baht (&#3647;)"
+msgstr "Thaimaan baht (&#3647;)"
+
+#: includes/misc-functions.php:167
+msgid "Turkish Lira (&#8356;)"
+msgstr "Turkin liira (&#8378;)"
+
+#: includes/misc-functions.php:601 includes/admin/payments/edit-payment.php:61
+#: includes/admin/payments/new-payment.php:55
+msgid "Refunded"
+msgstr "Palautettu"
+
+#: includes/misc-functions.php:608 includes/admin/payments/edit-payment.php:60
+#: includes/admin/payments/new-payment.php:54
+msgid "Complete"
+msgstr "Valmis"
+
+#: includes/process-data.php:23 includes/process-data.php:51
+#: includes/process-data.php:76 includes/process-data.php:151
+#: includes/process-data.php:209 includes/process-data.php:291
+#: includes/process-data.php:332 includes/process-data.php:373
+#: includes/process-data.php:417
+#, fuzzy
+msgid "Nonce verification failed."
+msgstr "Palautteen vahvistus epäonnistui"
+
+#: includes/process-data.php:27 includes/process-data.php:55
+#: includes/process-data.php:80 includes/process-data.php:155
+#: includes/process-data.php:213 includes/process-data.php:295
+#: includes/process-data.php:336 includes/process-data.php:377
+#: includes/process-data.php:421 includes/process-data.php:468
+#: includes/process-data.php:476 includes/process-data.php:484
+#: includes/process-data.php:495 includes/process-data.php:513
+#: includes/process-data.php:523 includes/process-data.php:535
+#: includes/process-data.php:544 includes/process-data.php:553
+#: includes/process-data.php:562
+#, fuzzy
+msgid "You do not have permission to perform this action."
+msgstr "Sinulla ei ole oikeuksia lisätä sähköpostimuistutuksia"
+
+#: includes/process-data.php:84
+msgid "Please fill out all fields."
+msgstr ""
+
+#: includes/process-data.php:99
+msgid "You entered a username that does not exist."
+msgstr ""
+
+#: includes/process-data.php:109
+#, fuzzy
+msgid "Please supply a valid subscription level."
+msgstr "Valitse jäsentaso"
+
+#: includes/process-data.php:159
+msgid "Please select at least one member to edit."
+msgstr ""
+
+#: includes/registration-functions.php:64
+msgid "Please choose a subscription level"
+msgstr ""
+
+#: includes/registration-functions.php:69
+msgid "You may only sign up for a free trial once"
+msgstr ""
+
+#: includes/registration-functions.php:79
+msgid "You can only use the discount code once"
+msgstr ""
+
+#: includes/registration-functions.php:84
+#, fuzzy
+msgid "The discount you entered is invalid"
+msgstr "Alennuskoodi on virheellinen"
+
+#: includes/registration-functions.php:349
+#, fuzzy
+msgid "Username already taken"
+msgstr "Käyttäjätunnus on jo käytössä"
+
+#: includes/registration-functions.php:353
+#, fuzzy
+msgid "Invalid username"
+msgstr "Virheellinen käyttäjätunnus"
+
+#: includes/registration-functions.php:357
+#, fuzzy
+msgid "Please enter a username"
+msgstr "Kirjoita ensin käyttäjänimi ja sitten alennuskoodi"
+
+#: includes/registration-functions.php:361
+#, fuzzy
+msgid "Invalid email"
+msgstr "Virheellinen email"
+
+#: includes/registration-functions.php:365
+#, fuzzy
+msgid "Email already registered"
+msgstr " Sähköpostiosoite on jo käytössä"
+
+#: includes/registration-functions.php:583
+#: includes/registration-functions.php:638
+#: templates/register-total-details.php:20 templates/register.php:69
+msgid "free"
+msgstr "ilmainen"
+
+#: includes/registration-functions.php:635
+#, fuzzy, php-format
+msgid " every %s %ss"
+msgstr "%s <span>(Sivu %d)</span>"
+
+#: includes/registration-functions.php:761
+msgid "Proration Credit"
+msgstr ""
+
+#: includes/registration-functions.php:775
+#, php-format
+msgid ""
+"If you upgrade or downgrade your account, the new subscription will be "
+"prorated up to %s for the first payment. Prorated prices are shown below."
+msgstr ""
+
+#: includes/scripts.php:27
+msgid ""
+"Are you sure you wish to revoke this member's access? This will not cancel "
+"their payment plan."
+msgstr ""
+
+#: includes/scripts.php:28
+msgid "Are you sure you wish to cancel this member's subscription?"
+msgstr ""
+
+#: includes/scripts.php:29
+msgid ""
+"If you delete this subscription, all members registered with this level will "
+"be canceled. Proceed?"
+msgstr ""
+
+#: includes/scripts.php:30
+msgid ""
+"Are you sure you want to delete this payment? This action is irreversible. "
+"Proceed?"
+msgstr ""
+
+#: includes/scripts.php:31
+#, fuzzy
+msgid "You must choose a username"
+msgstr "Sinun pitää valita ladattava tuote"
+
+#: includes/scripts.php:34
+#, fuzzy
+msgid "Use as Logo"
+msgstr "Logo {#}"
+
+#: includes/scripts.php:35
+#, fuzzy
+msgid "Choose a Logo"
+msgstr ""
+"Lataa tai valitse logo, joka näytetään kuitin yläreunassa. Logo näytetään "
+"vain HTML-sähköposteissa."
+
+#: includes/scripts.php:129
+#, fuzzy
+msgid "Please Wait . . . "
+msgstr "Ole hyvä ja odota..."
+
+#: includes/scripts.php:130
+#, fuzzy
+msgid "Submit Payment"
+msgstr "Muokkaa maksua"
+
+#: includes/shortcodes.php:157
+msgid "You are already registered and have an active subscription."
+msgstr ""
+
+#: includes/shortcodes.php:219
+#: includes/gateways/class-rcp-payment-gateway-stripe-checkout.php:57
+#, php-format
+msgid "Join %s"
+msgstr ""
+
+#: includes/shortcodes.php:220
+#, fuzzy
+msgid "Register - {{amount}}"
+msgstr "Rekisteröi uusi tili"
+
+#: includes/shortcodes.php:240
+#, fuzzy
+msgid "You are already subscribed."
+msgstr "Näytä kaikki % kommenttia"
+
+#: includes/shortcodes.php:392
+#, fuzzy
+msgid "Billing card updated successfully"
+msgstr "Laskutuksen osoite (luottokortin omistajan osoite)."
+
+#: includes/subscription-functions.php:150
+msgid "Days"
+msgstr "Päivää"
+
+#: includes/subscription-functions.php:152
+msgid "Day"
+msgstr "Päivä"
+
+#: includes/subscription-functions.php:156
+msgid "Months"
+msgstr "Kuukautta"
+
+#: includes/subscription-functions.php:158
+msgid "Month"
+msgstr "Kuukausi"
+
+#: includes/subscription-functions.php:162
+msgid "Years"
+msgstr "Vuotta"
+
+#: includes/subscription-functions.php:164
+msgid "Year"
+msgstr "Vuosi"
+
+#: includes/subscription-functions.php:292
+#, fuzzy
+msgid "None, reminders disabled"
+msgstr "Pois käytöstä"
+
+#: includes/subscription-functions.php:293
+#, fuzzy
+msgid "One day before expiration"
+msgstr "Päivä ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:294
+#, fuzzy
+msgid "Two days before expiration"
+msgstr "Kaksi päivää ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:295
+#, fuzzy
+msgid "Three days before expiration"
+msgstr "Kolme päivää ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:296
+#, fuzzy
+msgid "Four days before expiration"
+msgstr "Kolme päivää ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:297
+#, fuzzy
+msgid "Five days before expiration"
+msgstr "Kolme päivää ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:298
+#, fuzzy
+msgid "Six days before expiration"
+msgstr "Kaksi päivää ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:299
+#, fuzzy
+msgid "One week before expiration"
+msgstr "Viikko ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:300
+#, fuzzy
+msgid "Two weeks before expiration"
+msgstr "Kaksi viikkoa ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:301
+#, fuzzy
+msgid "Three weeks before expiration"
+msgstr "Kaksi viikkoa ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:302
+#, fuzzy
+msgid "One month before expiration"
+msgstr "Kuukausi ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:303
+#, fuzzy
+msgid "Two months before expiration"
+msgstr "Kaksi kuukautta ennen jäsenyyden loppumista"
+
+#: includes/subscription-functions.php:304
+#, fuzzy
+msgid "Three months before expiration"
+msgstr "Kolme kuukautta ennen jäsenyyden loppumista"
+
+#: includes/user-page-columns.php:6
+#: includes/admin/discounts/discount-codes.php:29
+#: includes/admin/discounts/discount-codes.php:47
+#: includes/admin/members/members-page.php:136
+#: includes/admin/members/members-page.php:151
+#: includes/admin/payments/payments-page.php:75
+#: includes/admin/payments/payments-page.php:91
+#: includes/admin/subscriptions/subscription-levels.php:27
+#: includes/admin/subscriptions/subscription-levels.php:43
+#: templates/subscription.php:22 templates/subscription.php:60
+msgid "Actions"
+msgstr "Tapahtumat"
+
+#: includes/user-page-columns.php:20
+msgid "Edit Subscription"
+msgstr "Muokkaa jäsenyyttä"
+
+#: includes/user-page-columns.php:22
+#, fuzzy
+msgid "Add Subscription"
+msgstr "Lisää alueita"
+
+#: includes/admin/admin-ajax-actions.php:59
+#, fuzzy
+msgid "No users found"
+msgstr "Käyttäjiä ei löytynyt"
+
+#: includes/admin/admin-notices.php:12
+msgid "You should now configure your Restrict Content Pro settings"
+msgstr ""
+
+#: includes/admin/admin-notices.php:16
+msgid "The Restrict Content Pro database needs to be updated: "
+msgstr ""
+
+#: includes/admin/admin-notices.php:16
+msgid "upgrade now"
+msgstr " Päivitä nyt"
+
+#: includes/admin/admin-notices.php:20
+msgid "The Restrict Content Pro database has been updated"
+msgstr ""
+
+#: includes/admin/admin-notices.php:24
+msgid ""
+"Your license key for Restrict Content Pro has expired. Please renew your "
+"license to re-enable automatic updates."
+msgstr ""
+
+#: includes/admin/admin-notices.php:26
+#, php-format
+msgid ""
+"Please <a href=\"%s\">enter and activate</a> your license key for Restrict "
+"Content Pro to enable automatic updates."
+msgstr ""
+"<a href=\"%s\">Kirjoita ja aktivoi</a> lisenssiavain Restrict Content Pro -"
+"lisäosalle, jotta saat automaattipäivityksiä."
+
+#: includes/admin/admin-notices.php:31
+#, php-format
+msgid ""
+"You are using an outdated version of the Stripe integration for Restrict "
+"Content Pro. Please <a href=\"%s\">deactivate</a> the add-on version to "
+"configure the new version."
+msgstr ""
+"Käytät vanhentunutta versiota Restrict Content Pro -lisäosan Stripe-"
+"liitännäisestä. <a href=\"%s\">Poista liitännäinen käytöstä</a> ja "
+"konfiguroi uusi versio."
+
+#: includes/admin/admin-notices.php:36
+#, php-format
+msgid ""
+"You are using an outdated version of the PayPal Pro / Express integration "
+"for Restrict Content Pro. Please <a href=\"%s\">deactivate</a> the add-on "
+"version to configure the new version."
+msgstr ""
+"Käytät vanhentunutta versiota Restrict Content Pro -lisäosan PayPal Pro / "
+"Express-liitännäisestä. <a href=\"%s\">Poista liitännäinen käytöstä</a> ja "
+"konfiguroi uusi versio."
+
+#: includes/admin/admin-notices.php:43
+#, fuzzy
+msgid "Payment deleted"
+msgstr "Maksu on poistettu."
+
+#: includes/admin/admin-notices.php:48
+msgid "Payment added"
+msgstr "Maksu lisätty"
+
+#: includes/admin/admin-notices.php:53
+#, fuzzy
+msgid "Payment creation failed"
+msgstr ""
+"Payment creation failed while processing a manual (free or test) purchase. "
+"Oston tiedot: %s"
+
+#: includes/admin/admin-notices.php:59
+#, fuzzy
+msgid "Payment updated"
+msgstr "Päivitetty"
+
+#: includes/admin/admin-notices.php:64
+#, fuzzy
+msgid "Payment update failed"
+msgstr "Päivitä maksu"
+
+#: includes/admin/admin-notices.php:69
+#, fuzzy
+msgid "Database upgrade complete"
+msgstr "Valmis"
+
+#: includes/admin/admin-notices.php:74
+#, fuzzy
+msgid "The user's subscription has been added"
+msgstr "Maksumuistiinpano lisättiin onnistuneesti."
+
+#: includes/admin/admin-notices.php:79
+msgid "The user's subscription could not be added"
+msgstr ""
+
+#: includes/admin/admin-notices.php:85
+msgid "Member updated"
+msgstr "Jäsen päivitetty"
+
+#: includes/admin/admin-notices.php:90
+msgid "Member accounts updated"
+msgstr "Jäsentiedot päivitetty"
+
+#: includes/admin/admin-notices.php:95
+msgid "Member's payment profile cancelled successfully"
+msgstr ""
+
+#: includes/admin/admin-notices.php:100
+msgid "Subscription level added"
+msgstr "Jäsentaso lisätty"
+
+#: includes/admin/admin-notices.php:105
+msgid "Subscription level updated"
+msgstr "Jäsentaso päivitetty"
+
+#: includes/admin/admin-notices.php:110
+msgid "Subscription level could not be added"
+msgstr ""
+
+#: includes/admin/admin-notices.php:116
+msgid "Subscription level could not be updated"
+msgstr ""
+
+#: includes/admin/admin-notices.php:122
+msgid "Subscription level fields are required"
+msgstr "Jäsentasokentät ovat pakollisia"
+
+#: includes/admin/admin-notices.php:128
+msgid "Discount code created"
+msgstr "Alennuskoodi luotu"
+
+#: includes/admin/admin-notices.php:133
+msgid "The discount code could not be created due to an error"
+msgstr ""
+
+#: includes/admin/admin-pages.php:12 includes/admin/admin-pages.php:18
+msgid "Restrict Content Pro Settings"
+msgstr "Restrict Content Pro -asetukset"
+
+#: includes/admin/admin-pages.php:12
+msgid "Restrict"
+msgstr ""
+
+#: includes/admin/admin-pages.php:13
+msgid "Members"
+msgstr "Jäsenet"
+
+#: includes/admin/admin-pages.php:14 includes/admin/categories.php:67
+#: includes/admin/subscriptions/subscription-levels.php:12
+msgid "Subscription Levels"
+msgstr "Jäsentasot"
+
+#: includes/admin/admin-pages.php:15
+msgid "Discounts"
+msgstr "Alennuskoodit"
+
+#: includes/admin/admin-pages.php:16 includes/admin/members/edit-member.php:150
+#: includes/admin/payments/payments-page.php:23
+#: includes/admin/settings/settings.php:35
+msgid "Payments"
+msgstr "Maksut"
+
+#: includes/admin/admin-pages.php:17
+msgid "Reports"
+msgstr "Raportit"
+
+#: includes/admin/admin-pages.php:18
+msgid "Settings"
+msgstr "Asetukset"
+
+#: includes/admin/admin-pages.php:19
+msgid "Export Member Data"
+msgstr "Vie käyttäjätiedot"
+
+#: includes/admin/admin-pages.php:19 includes/admin/export.php:8
+msgid "Export"
+msgstr "Vie"
+
+#: includes/admin/admin-pages.php:20 includes/libraries/class-wp-logging.php:69
+msgid "Logs"
+msgstr "Lokit"
+
+#: includes/admin/admin-pages.php:21
+msgid "Tools"
+msgstr "Työkalut"
+
+#: includes/admin/admin-pages.php:22
+msgid "Help"
+msgstr "Apua"
+
+#: includes/admin/categories.php:45 includes/admin/metabox.php:19
+msgid "Paid Only?"
+msgstr "Vain maksaville jäsenille?"
+
+#: includes/admin/categories.php:49
+msgid "Restrict items in this category to paid subscribers only?"
+msgstr ""
+
+#: includes/admin/categories.php:54 includes/admin/metabox.php:37
+#: includes/admin/subscriptions/edit-subscription.php:34
+#: includes/admin/subscriptions/subscription-levels.php:21
+#: includes/admin/subscriptions/subscription-levels.php:37
+#: includes/admin/subscriptions/subscription-levels.php:132
+msgid "Access Level"
+msgstr "Taso"
+
+#: includes/admin/categories.php:62
+msgid "Access level required to view content in this category."
+msgstr ""
+
+#: includes/admin/categories.php:75
+msgid ""
+"Subscription levels allowed to view content in this category. Leave "
+"unchecked for all."
+msgstr ""
+
+#: includes/admin/class-rcp-add-on-updater.php:186
+#, fuzzy, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Lisäosasta %1$s on uusi versio saatavilla. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">Näytä version %3$s tiedot</a>."
+
+#: includes/admin/class-rcp-add-on-updater.php:193
+#, fuzzy, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+"Lisäosasta %1$s on uusi versio saatavilla.. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">Näytä version %3$s tiedot</a> tai <a href=\"%4$s"
+"\">päivitä nyt</a>."
+
+#: includes/admin/export.php:12
+#, fuzzy
+msgid "Members Export"
+msgstr "Jäsenet"
+
+#: includes/admin/export.php:13
+msgid ""
+"Download member data as a CSV file. This is useful for tasks such as "
+"importing batch users into MailChimp, or other systems."
+msgstr ""
+
+#: includes/admin/export.php:17
+msgid "All"
+msgstr "Kaikki"
+
+#: includes/admin/export.php:27
+msgid "Choose the subscription to export members from"
+msgstr ""
+
+#: includes/admin/export.php:35
+#, fuzzy
+msgid "Choose the status to export"
+msgstr "Tila"
+
+#: includes/admin/export.php:37
+msgid "Maximum number of members to export"
+msgstr ""
+
+#: includes/admin/export.php:39
+#, fuzzy
+msgid "The number of members to skip"
+msgstr "EDD Jäsenet"
+
+#: includes/admin/export.php:41
+msgid ""
+"If you need to export a large number of members, export them in batches "
+"using the max and offset options"
+msgstr ""
+
+#: includes/admin/export.php:43
+#, fuzzy
+msgid "Download Member CSV"
+msgstr "Lataa kaikki maksut CSV-muodossa."
+
+#: includes/admin/export.php:47
+#, fuzzy
+msgid "Payments Export"
+msgstr "Maksut"
+
+#: includes/admin/export.php:48
+msgid ""
+"Download payment data as a CSV file. Use this file for your own record "
+"keeping or tracking."
+msgstr ""
+
+#: includes/admin/export.php:52
+msgid "All years"
+msgstr "Kaikki vuodet"
+
+#: includes/admin/export.php:64
+msgid "All months"
+msgstr "Kaikki kuukaudet"
+
+#: includes/admin/export.php:71
+#, fuzzy
+msgid "Download Payments CSV"
+msgstr "Lataa kaikki maksut CSV-muodossa."
+
+#: includes/admin/logs-list-table.php:54
+#, fuzzy
+msgid "View logs for this user"
+msgstr "Lokit"
+
+#: includes/admin/logs-list-table.php:58
+msgid "at"
+msgstr ""
+
+#: includes/admin/logs-list-table.php:90
+#, fuzzy
+msgid "Log Error"
+msgstr "Virhe"
+
+#: includes/admin/logs-list-table.php:91
+#, fuzzy
+msgid "Log Message"
+msgstr "Näytä lokiviesti"
+
+#: includes/admin/logs-list-table.php:92
+#: includes/admin/members/members-page.php:127
+#: includes/admin/members/members-page.php:142
+#: includes/admin/payments/edit-payment.php:18
+#: includes/admin/payments/new-payment.php:12
+#: includes/admin/payments/payments-page.php:66
+#: includes/admin/payments/payments-page.php:82
+msgid "User"
+msgstr "Käyttäjä"
+
+#: includes/admin/logs-list-table.php:108
+#: includes/admin/discounts/discount-codes.php:95
+#: includes/admin/payments/payments-page.php:125
+#: includes/admin/subscriptions/subscription-levels.php:96
+msgid "Delete"
+msgstr "Poista"
+
+#: includes/admin/logs.php:10
+#, fuzzy
+msgid "RCP Error Logs"
+msgstr "Lokit"
+
+#: includes/admin/metabox.php:14
+msgid "Restrict this content"
+msgstr "Rajoita tämän sisällön näyttämistä"
+
+#: includes/admin/metabox.php:22
+msgid "Restrict this entry to active paid users only."
+msgstr "Näytä tämä sisältö vain aktiivisille maksaville jäsenille."
+
+#: includes/admin/metabox.php:25
+msgid "Show Excerpt?"
+msgstr "Näytä ote?"
+
+#: includes/admin/metabox.php:28
+msgid ""
+"Allow non active users to view the excerpt? If left unchecked, the message "
+"defined in settings will be used."
+msgstr ""
+"Salli ei-aktiivisten jäsenien nähdä sisällön ote? Jos jätät tämän "
+"valitsematta, niin asetuksissa kirjoitettu viesti näytetään."
+
+#: includes/admin/metabox.php:31
+msgid "Hide from Feed?"
+msgstr "Piilota RSS-syötteestä?"
+
+#: includes/admin/metabox.php:34
+msgid "Hide the excerpt of this post / page from the Feed?"
+msgstr "Piilota tämän kirjoituksen ote RSS-syötteestä?"
+
+#: includes/admin/metabox.php:40
+msgid ""
+"Choose the access level required see this content. The access level is "
+"determined by the subscription the member is subscribed to."
+msgstr ""
+"Valitse taso, joka vaaditaan tämän sisällön näyttämiseen. Tämä on määritetty "
+"jäsentason yhteydessä."
+
+#: includes/admin/metabox.php:45 includes/admin/members/edit-member.php:41
+#: includes/admin/members/members-page.php:248
+msgid "Subscription Level"
+msgstr "Jäsentaso"
+
+#: includes/admin/metabox.php:48
+msgid "Choose the subscription levels allowed to view this content."
+msgstr "Valitse jäsentasot, jotka saavat nähdä tämän sisällön."
+
+#: includes/admin/metabox.php:52
+msgid "User Level"
+msgstr "Käyttäjätaso "
+
+#: includes/admin/metabox.php:55
+msgid ""
+"Choose the user level that can see this post / page's content. Users of this "
+"level and higher will be the only ones able to view the content."
+msgstr ""
+"Valitse käyttäjätaso, joka saa nähdä tämän sisällön. Käyttäjät tästä tasosta "
+"ja siitä ylöspäin ovat ainoita, jotka näkevät tämän sisällön."
+
+#: includes/admin/metabox.php:93
+#, php-format
+msgid ""
+"Use these options to restrict this entire entry, or the [restrict] ... [/"
+"restrict] short code to restrict partial content. %sView documentation%s."
+msgstr ""
+"Käytä näitä asetuksia rajoittaaksesi tätä sisältöä tai käytä [restrict] ... "
+"[/restrict] lyhytkoodia rajoittaaksesi osaa sisällöstä. %sKatso dokumentaatio"
+"%s."
+
+#: includes/admin/metabox.php:138
+msgid "Note 1"
+msgstr "Huomio 1"
+
+#: includes/admin/metabox.php:138
+msgid ""
+"To hide this content from logged-out users, but allow free and paid, set the "
+"User Level to \"Subscriber\"."
+msgstr ""
+"Piilottaaksesi tämän sisällön uloskirjautuneilta käyttäjiltä, mutta samaan "
+"aikaan salli ilmaiset ja maksulliset jäsenyydet, valitse taso \"Subscriber\"."
+
+#: includes/admin/metabox.php:139
+msgid "Note 2"
+msgstr "Huomio 2"
+
+#: includes/admin/metabox.php:139
+msgid ""
+"Access level, subscription level, and user level can all be combined to "
+"require the user meet all three specifications."
+msgstr ""
+"Taso, jäsentaso ja käyttäjätaso voivat yhdessä määrittää kaikki kolme "
+"tilannetta."
+
+#: includes/admin/screen-options.php:21
+msgid "Members per page"
+msgstr "Jäseniä / sivu"
+
+#: includes/admin/screen-options.php:30
+msgid "Payments per page"
+msgstr "Maksuja / sivu"
+
+#: includes/admin/discounts/discount-codes.php:18
+#: includes/admin/discounts/discount-codes.php:35
+#: includes/admin/discounts/discount-codes.php:114
+#: includes/admin/settings/settings.php:848
+#: includes/admin/subscriptions/edit-subscription.php:16
+#: includes/admin/subscriptions/subscription-levels.php:19
+#: includes/admin/subscriptions/subscription-levels.php:35
+#: includes/admin/subscriptions/subscription-levels.php:114
+msgid "Name"
+msgstr "Nimi"
+
+#: includes/admin/discounts/discount-codes.php:19
+#: includes/admin/discounts/discount-codes.php:36
+#: includes/admin/discounts/discount-codes.php:123
+#: includes/admin/subscriptions/edit-subscription.php:25
+#: includes/admin/subscriptions/subscription-levels.php:20
+#: includes/admin/subscriptions/subscription-levels.php:36
+#: includes/admin/subscriptions/subscription-levels.php:123
+msgid "Description"
+msgstr "Kuvaus"
+
+#: includes/admin/discounts/discount-codes.php:20
+#: includes/admin/discounts/discount-codes.php:37
+#: includes/admin/discounts/discount-codes.php:132
+msgid "Code"
+msgstr "Koodi"
+
+#: includes/admin/discounts/discount-codes.php:23
+#: includes/admin/discounts/discount-codes.php:40
+#: includes/admin/discounts/discount-codes.php:141
+#: includes/admin/payments/payments-page.php:70
+#: includes/admin/payments/payments-page.php:86
+msgid "Type"
+msgstr "Tyyppi"
+
+#: includes/admin/discounts/discount-codes.php:25
+#: includes/admin/discounts/discount-codes.php:42
+msgid "Uses"
+msgstr "Käyttökerrat"
+
+#: includes/admin/discounts/discount-codes.php:26
+#: includes/admin/discounts/discount-codes.php:43
+msgid "Uses Left"
+msgstr "Käyttökertoja jäljellä"
+
+#: includes/admin/discounts/discount-codes.php:67
+#: includes/admin/discounts/discount-codes.php:169
+#: includes/admin/discounts/edit-discount.php:70
+msgid "All Levels"
+msgstr "Kaikki tasot"
+
+#: includes/admin/discounts/discount-codes.php:72
+#: includes/admin/discounts/discount-codes.php:145
+msgid "Percentage"
+msgstr "Prosentuaalinen"
+
+#: includes/admin/discounts/discount-codes.php:72
+msgid "Flat"
+msgstr "Kiinteä"
+
+#: includes/admin/discounts/discount-codes.php:76
+#: includes/admin/settings/settings.php:69
+msgid "active"
+msgstr "aktiivinen"
+
+#: includes/admin/discounts/discount-codes.php:76
+msgid "disabled"
+msgstr "Pois käytöstä"
+
+#: includes/admin/discounts/discount-codes.php:78
+msgid "expired"
+msgstr "vanhentunut"
+
+#: includes/admin/discounts/discount-codes.php:84
+#: includes/admin/subscriptions/subscription-levels.php:58
+msgid "none"
+msgstr "ei mitään"
+
+#: includes/admin/discounts/discount-codes.php:89
+#: includes/admin/members/members-page.php:187
+#: includes/admin/payments/payments-page.php:123
+#: includes/admin/subscriptions/subscription-levels.php:90
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: includes/admin/discounts/discount-codes.php:91
+#: includes/admin/subscriptions/subscription-levels.php:92
+msgid "Deactivate"
+msgstr "Poista käytöstä"
+
+#: includes/admin/discounts/discount-codes.php:93
+#: includes/admin/subscriptions/subscription-levels.php:94
+msgid "Activate"
+msgstr "Aktivoi"
+
+#: includes/admin/discounts/discount-codes.php:103
+msgid "No discount codes added yet."
+msgstr "Alennuskoodeja ei ole vielä lisätty."
+
+#: includes/admin/discounts/discount-codes.php:108
+msgid "Add New Discount"
+msgstr "Lisää uusi alennuskoodi"
+
+#: includes/admin/discounts/discount-codes.php:118
+msgid "The name of this discount"
+msgstr "Alennuskoodin nimi"
+
+#: includes/admin/discounts/discount-codes.php:127
+msgid "The description of this discount code"
+msgstr "Alennuskoodin kuvaus."
+
+#: includes/admin/discounts/discount-codes.php:136
+msgid "Enter a code for this discount, such as 10PERCENT"
+msgstr "Kirjoita alennuskoodi, kuten 10PROSENTTIA"
+
+#: includes/admin/discounts/discount-codes.php:146
+msgid "Flat amount"
+msgstr "Tietty summa"
+
+#: includes/admin/discounts/discount-codes.php:148
+msgid "The kind of discount to apply for this discount."
+msgstr "Alennuskoodin tyyppi."
+
+#: includes/admin/discounts/discount-codes.php:157
+msgid "The amount of this discount code."
+msgstr "Alennuskoodin määrä."
+
+#: includes/admin/discounts/discount-codes.php:177
+#: includes/admin/discounts/edit-discount.php:78
+msgid "The subscription levels this discount code can be used for."
+msgstr "Valitse jäsentaso mihin tätä alennuskoodia voidaan käyttää."
+
+#: includes/admin/discounts/discount-codes.php:182
+#: includes/admin/members/edit-member.php:65
+#: includes/admin/members/members-page.php:264
+msgid "Expiration date"
+msgstr "Päättymispäivä"
+
+#: includes/admin/discounts/discount-codes.php:186
+msgid ""
+"Enter the expiration date for this discount code in the format of yyyy-mm-"
+"dd. For no expiration, leave blank"
+msgstr ""
+"Kirjoita viimeinen käyttöpäivä tälle alennuskoodilla muodossa yyyy-mm-dd. "
+"Jätä tyhjäksi, jos et halua tiettyä viimeistä päivää"
+
+#: includes/admin/discounts/discount-codes.php:191
+#, fuzzy
+msgid "Max Uses"
+msgstr "Maksimikerrat"
+
+#: includes/admin/discounts/discount-codes.php:195
+msgid ""
+"The maximum number of times this discount can be used. Leave blank for "
+"unlimited."
+msgstr ""
+"Kuinka monta kertaa tätä alennuskoodia voidaan maksimissaan käyttää. Jätä "
+"tyhjäksi, jos alennuskoodia voi käyttää rajattomasti."
+
+#: includes/admin/discounts/discount-codes.php:203
+msgid "Add Discount Code"
+msgstr "Lisää alennuskoodi"
+
+#: includes/admin/discounts/edit-discount.php:5
+msgid "Edit Discount Code:"
+msgstr "Muokkaa alennuskoodia:"
+
+#: includes/admin/discounts/edit-discount.php:7
+#: includes/admin/members/edit-member.php:12
+#: includes/admin/members/members-page.php:194
+#: includes/admin/payments/edit-payment.php:10
+#: includes/admin/payments/new-payment.php:4
+#: includes/admin/subscriptions/edit-subscription.php:8
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: includes/admin/discounts/edit-discount.php:15
+msgid " Name"
+msgstr "Nimi"
+
+#: includes/admin/discounts/edit-discount.php:19
+msgid " The name of this discount"
+msgstr "Tämän alennuskoodin nimi"
+
+#: includes/admin/discounts/edit-discount.php:24
+msgid " Description"
+msgstr "Kuvaus"
+
+#: includes/admin/discounts/edit-discount.php:28
+msgid " The description of this discount code"
+msgstr "Tämän alennuskoodin kuvaus"
+
+#: includes/admin/discounts/edit-discount.php:33
+msgid " Code"
+msgstr "Koodi"
+
+#: includes/admin/discounts/edit-discount.php:37
+msgid " Enter a code for this discount, such as 10PERCENT"
+msgstr "Kirjoita alennuskoodi, kuten 10PROSENTTIA"
+
+#: includes/admin/discounts/edit-discount.php:42
+msgid " Type"
+msgstr "Tyyppi"
+
+#: includes/admin/discounts/edit-discount.php:46
+msgid " Percentage"
+msgstr "Prosentuaalinen"
+
+#: includes/admin/discounts/edit-discount.php:47
+msgid " Flat amount"
+msgstr "Kiinteä summa"
+
+#: includes/admin/discounts/edit-discount.php:49
+msgid " The kind of discount to apply for this discount."
+msgstr "Alennuskoodin tyyppi."
+
+#: includes/admin/discounts/edit-discount.php:54
+msgid " Amount"
+msgstr "Määrä"
+
+#: includes/admin/discounts/edit-discount.php:58
+msgid " The amount of this discount code."
+msgstr "Alennuskoodin määrä."
+
+#: includes/admin/discounts/edit-discount.php:83
+msgid " Expiration date"
+msgstr "Päättymispäivä"
+
+#: includes/admin/discounts/edit-discount.php:87
+msgid ""
+" Enter the expiration date for this discount code in the format of yyyy-mm-"
+"dd. Leave blank for no expiration"
+msgstr ""
+"Kirjoita viimeinen käyttöpäivä tälle alennuskoodilla muodossa yyyy-mm-dd. "
+"Jätä tyhjäksi, jos et halua tiettyä viimeistä päivää"
+
+#: includes/admin/discounts/edit-discount.php:92
+msgid " Status"
+msgstr " Tila"
+
+#: includes/admin/discounts/edit-discount.php:96
+msgid " Active"
+msgstr "Aktiivinen"
+
+#: includes/admin/discounts/edit-discount.php:97
+msgid " Disabled"
+msgstr "Pois käytöstä"
+
+#: includes/admin/discounts/edit-discount.php:99
+msgid " The status of this discount code."
+msgstr "Tämän alennuskoodin tila."
+
+#: includes/admin/discounts/edit-discount.php:104
+msgid " Max Uses"
+msgstr "Maksimikerrat"
+
+#: includes/admin/discounts/edit-discount.php:108
+msgid ""
+" The maximum number of times this discount can be used. Leave blank for "
+"unlimited."
+msgstr ""
+"Kuinka monta kertaa tätä alennuskoodia voidaan maksimissaan käyttää. Jätä "
+"tyhjäksi, jos alennuskoodia voi käyttää rajattomasti."
+
+#: includes/admin/discounts/edit-discount.php:117
+msgid " Update Discount"
+msgstr "Päivitä alennuskoodi"
+
+#: includes/admin/help/help-menus-setup-old.php:17
+#: includes/admin/help/help-menus-setup-old.php:33
+#: includes/admin/help/help-menus-setup-old.php:49
+#: includes/admin/help/help-menus-setup-old.php:65
+#: includes/admin/help/help-menus-setup-old.php:72
+#: includes/admin/help/help-menus-setup.php:22
+#: includes/admin/help/help-menus-setup.php:53
+#: includes/admin/help/help-menus-setup.php:84
+#: includes/admin/help/help-menus-setup.php:115
+#: includes/admin/help/help-menus-setup.php:125
+#: includes/admin/settings/settings.php:34
+#: includes/admin/settings/settings.php:56
+#: includes/admin/settings/settings.php:541
+msgid "General"
+msgstr "Yleinen"
+
+#: includes/admin/help/help-menus-setup-old.php:20
+#: includes/admin/help/help-menus-setup-old.php:36
+#: includes/admin/help/help-menus-setup.php:29
+#: includes/admin/help/help-menus-setup.php:60
+#, fuzzy
+msgid "Adding Subscriptions"
+msgstr "Alennuskoodien lisäys"
+
+#: includes/admin/help/help-menus-setup-old.php:23
+#: includes/admin/help/help-menus-setup.php:36
+#, fuzzy
+msgid "Member Details"
+msgstr "Jäsenen tiedot"
+
+#: includes/admin/help/help-menus-setup-old.php:26
+#: includes/admin/help/help-menus-setup.php:43
+#, fuzzy
+msgid "Editing Members"
+msgstr "Paranneltu tilauksien muokkaus"
+
+#: includes/admin/help/help-menus-setup-old.php:39
+#: includes/admin/help/help-menus-setup.php:67
+#, fuzzy
+msgid "Editing Subscriptions"
+msgstr "Paranneltu tilauksien muokkaus"
+
+#: includes/admin/help/help-menus-setup-old.php:42
+#: includes/admin/help/help-menus-setup.php:74
+msgid "Deleting Subscriptions"
+msgstr ""
+
+#: includes/admin/help/help-menus-setup-old.php:52
+#: includes/admin/help/help-menus-setup.php:91
+#, fuzzy
+msgid "Adding Discounts"
+msgstr "Alennuskoodien lisäys"
+
+#: includes/admin/help/help-menus-setup-old.php:55
+#: includes/admin/help/help-menus-setup.php:98
+#, fuzzy
+msgid "Editing Discounts"
+msgstr "Alennukset"
+
+#: includes/admin/help/help-menus-setup-old.php:58
+#: includes/admin/help/help-menus-setup.php:105
+#, fuzzy
+msgid "Using Discounts"
+msgstr "Alennukset"
+
+#: includes/admin/help/help-menus-setup-old.php:75
+#: includes/admin/help/help-menus-setup.php:132
+msgid "Messages"
+msgstr ""
+
+#: includes/admin/help/help-menus-setup-old.php:78
+#: includes/admin/help/help-menus-setup.php:139
+#: includes/gateways/class-rcp-payment-gateways.php:62
+#: includes/gateways/class-rcp-payment-gateways.php:67
+#: includes/gateways/class-rcp-payment-gateways.php:125
+#, fuzzy
+msgid "PayPal"
+msgstr "PayPal"
+
+#: includes/admin/help/help-menus-setup-old.php:81
+#: includes/admin/help/help-menus-setup.php:146
+#, fuzzy
+msgid "Signup Forms"
+msgstr "Rekisteröitymis -ja kirjautumislomake"
+
+#: includes/admin/help/help-menus-setup-old.php:84
+#: includes/admin/help/help-menus-setup.php:153
+#: includes/admin/settings/settings.php:36
+msgid "Emails"
+msgstr "Sähköpostit"
+
+#: includes/admin/help/help-menus-setup-old.php:87
+#: includes/admin/help/help-menus-setup.php:160
+#: includes/admin/settings/settings.php:38
+msgid "Misc"
+msgstr "Sekalaiset"
+
+#: includes/admin/help/help-menus-setup-old.php:90
+#: includes/admin/help/help-menus-setup.php:167
+msgid "Logging"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:10
+#, fuzzy
+msgid "Edit Member:"
+msgstr "Muokkaa jäsentiedotetta"
+
+#: includes/admin/members/edit-member.php:16
+#: includes/admin/members/members-page.php:197
+#, fuzzy
+msgid "Switch to User"
+msgstr "Vaihda pois"
+
+#: includes/admin/members/edit-member.php:36
+#, fuzzy
+msgid "The status of this user's subscription"
+msgstr "Käyttäjä"
+
+#: includes/admin/members/edit-member.php:51
+#: includes/admin/members/members-page.php:259
+msgid "Choose the subscription level for this user"
+msgstr "Valitse jäsentaso tälle käyttäjälle"
+
+#: includes/admin/members/edit-member.php:60
+msgid "The member's subscription key. This cannot be changed."
+msgstr ""
+
+#: includes/admin/members/edit-member.php:71
+#: includes/admin/members/members-page.php:270
+msgid "Never expires?"
+msgstr "Ei vanhene koskaan?"
+
+#: includes/admin/members/edit-member.php:73
+#: includes/admin/members/members-page.php:272
+msgid "Enter the expiration date for this user in the format of yyyy-mm-dd"
+msgstr "Kirjoita päättymispäivä tälle käyttäjälle muodossa yyyy-mm-dd"
+
+#: includes/admin/members/edit-member.php:82
+msgid "This is the customer's payment profile ID in the payment processor"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:87
+#: includes/admin/members/members-page.php:99
+#: includes/admin/members/members-page.php:132
+#: includes/admin/members/members-page.php:147
+msgid "Recurring"
+msgstr "Toistuva"
+
+#: includes/admin/members/edit-member.php:92
+#, fuzzy
+msgid "Is this user's subscription recurring?"
+msgstr "Käyttäjän ID:"
+
+#: includes/admin/members/edit-member.php:98
+msgid "Trialing"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:103
+msgid "Does this user have a trial membership?"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:109
+#, fuzzy
+msgid "Sign Up Method"
+msgstr "Ylös"
+
+#: includes/admin/members/edit-member.php:114
+#, fuzzy
+msgid "User Signup"
+msgstr "Käyttäjä"
+
+#: includes/admin/members/edit-member.php:115
+#, fuzzy
+msgid "Added by admin manually"
+msgstr "Päivämäärä"
+
+#: includes/admin/members/edit-member.php:117
+msgid "Was this a real signup or a membership given to the user"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:122
+#, fuzzy
+msgid "User Notes"
+msgstr "Muistiinpanot"
+
+#: includes/admin/members/edit-member.php:126
+msgid "Use this area to record notes about this user if needed"
+msgstr ""
+
+#: includes/admin/members/edit-member.php:131
+#, fuzzy
+msgid "Discount codes used"
+msgstr "Alennuskoodit"
+
+#: includes/admin/members/edit-member.php:160
+#, fuzzy
+msgid "Update User Subscription"
+msgstr "Päivitä kategoria"
+
+#: includes/admin/members/members-page.php:11
+msgid " Paid Subscribers"
+msgstr "Jäsenet"
+
+#: includes/admin/members/members-page.php:48
+msgid "Status: "
+msgstr "Tila: "
+
+#: includes/admin/members/members-page.php:50
+#, fuzzy
+msgid "View all active subscribers"
+msgstr "Vain aktiivisille jäsenille?"
+
+#: includes/admin/members/members-page.php:55
+#, fuzzy
+msgid "View all pending subscribers"
+msgstr "Näytä kaikki % kommenttia"
+
+#: includes/admin/members/members-page.php:60
+#, fuzzy
+msgid "View all expired subscribers"
+msgstr "Näytä kaikki % kommenttia"
+
+#: includes/admin/members/members-page.php:65
+#, fuzzy
+msgid "View all cancelled subscribers"
+msgstr "Näytä kaikki % kommenttia"
+
+#: includes/admin/members/members-page.php:70
+#, fuzzy
+msgid "View all free members"
+msgstr "Näytä kaikki % kommenttia"
+
+#: includes/admin/members/members-page.php:77
+#, fuzzy
+msgid "Search Members"
+msgstr "Etsi Jäsentiedotteita"
+
+#: includes/admin/members/members-page.php:81
+#, fuzzy
+msgid "Search members"
+msgstr "Etsi Jäsentiedotteita"
+
+#: includes/admin/members/members-page.php:88
+msgid "All Subscriptions"
+msgstr "Kaikki jäsenyydet"
+
+#: includes/admin/members/members-page.php:97
+msgid "Either"
+msgstr "Jompikumpi"
+
+#: includes/admin/members/members-page.php:98
+msgid "Not Recurring"
+msgstr "E toistuva"
+
+#: includes/admin/members/members-page.php:102
+msgid "Newest First"
+msgstr "Uusimmat ensin"
+
+#: includes/admin/members/members-page.php:103
+msgid "Oldest First"
+msgstr "Vanhimmat ensin"
+
+#: includes/admin/members/members-page.php:107
+#: includes/admin/reports/reports-page.php:805
+#, fuzzy
+msgid "Filter"
+msgstr "Suodata"
+
+#: includes/admin/members/members-page.php:112
+#, fuzzy
+msgid "Select bulk action"
+msgstr "Lähetä monta kuitti uudelleen"
+
+#: includes/admin/members/members-page.php:114
+#, fuzzy
+msgid "Bulk Actions"
+msgstr "Tapahtumat"
+
+#: includes/admin/members/members-page.php:115
+#, fuzzy
+msgid "Mark as Active"
+msgstr "Merkitse tämä tuote verottomaksi"
+
+#: includes/admin/members/members-page.php:116
+#, fuzzy
+msgid "Mark as Expired"
+msgstr "Vanhentunut"
+
+#: includes/admin/members/members-page.php:117
+#: includes/admin/members/members-page.php:191
+#, fuzzy
+msgid "Revoke Access"
+msgstr "Peruuta"
+
+#: includes/admin/members/members-page.php:119
+#, fuzzy
+msgid "New Expiration Date"
+msgstr "Viimeinen käyttöpäivä"
+
+#: includes/admin/members/members-page.php:120 templates/register-single.php:67
+#: templates/register.php:92
+#, fuzzy
+msgid "Apply"
+msgstr "Hakeutuminen"
+
+#: includes/admin/members/members-page.php:129
+#: includes/admin/members/members-page.php:144
+#: includes/admin/settings/settings.php:884 templates/register-single.php:33
+#: templates/register.php:32
+msgid "Email"
+msgstr "Sähköposti"
+
+#: includes/admin/members/members-page.php:134
+#: includes/admin/members/members-page.php:149
+#: includes/admin/subscriptions/edit-subscription.php:93
+#: includes/admin/subscriptions/subscription-levels.php:196
+msgid "User Role"
+msgstr "Rooli"
+
+#: includes/admin/members/members-page.php:176
+#, fuzzy
+msgid "View User's Profile"
+msgstr "Profiili"
+
+#: includes/admin/members/members-page.php:181
+msgid "yes"
+msgstr "kyllä"
+
+#: includes/admin/members/members-page.php:181
+msgid "no"
+msgstr "ei"
+
+#: includes/admin/members/members-page.php:189
+#, fuzzy
+msgid "Enable Access"
+msgstr "Ikärajallinen sivu"
+
+#: includes/admin/members/members-page.php:206
+msgid "No subscribers found"
+msgstr "Jäseniä ei löytynyt"
+
+#: includes/admin/members/members-page.php:219
+#: includes/admin/payments/payments-page.php:147
+#, fuzzy
+msgid "&laquo; Previous"
+msgstr "Edellinen:"
+
+#: includes/admin/members/members-page.php:220
+#: includes/admin/payments/payments-page.php:148
+#, fuzzy
+msgid "Next &raquo;"
+msgstr "Kirjaudu ulos &raquo;"
+
+#: includes/admin/members/members-page.php:231
+msgid "Add New Subscription (for existing user)"
+msgstr "Lisää uusi jäsenyys (olemassa olevalle käyttäjälle)"
+
+#: includes/admin/members/members-page.php:237 templates/login.php:12
+#: templates/register-single.php:29 templates/register.php:28
+msgid "Username"
+msgstr "Käyttäjätunnus"
+
+#: includes/admin/members/members-page.php:243
+msgid "Begin typing the user name to add a subscription to."
+msgstr "Aloita kirjoittamaan käyttäjän nimeä."
+
+#: includes/admin/members/members-page.php:252
+msgid "--choose--"
+msgstr "--valitse--"
+
+#: includes/admin/members/members-page.php:279
+msgid "Add User Subscription"
+msgstr "Lisää käyttäjän jäsenyys"
+
+#: includes/admin/payments/edit-payment.php:8
+#, fuzzy
+msgid "Edit Payment"
+msgstr "Muokkaa maksua"
+
+#: includes/admin/payments/edit-payment.php:24
+#, fuzzy
+msgid "The user name this payment belongs to."
+msgstr "Mitä maksutapaa käytettiin."
+
+#: includes/admin/payments/edit-payment.php:32
+#: includes/admin/payments/new-payment.php:26
+msgid "Please enter a payment amount in the format of 1.99"
+msgstr ""
+
+#: includes/admin/payments/edit-payment.php:33
+#: includes/admin/payments/new-payment.php:27
+#, fuzzy
+msgid "The amount of this payment"
+msgstr "Määrä"
+
+#: includes/admin/payments/edit-payment.php:38
+#: includes/admin/payments/new-payment.php:32
+#, fuzzy
+msgid "Payment Date"
+msgstr "Ostopäivien suodatin"
+
+#: includes/admin/payments/edit-payment.php:42
+msgid "The date for this payment in the format of yyyy-mm-dd"
+msgstr ""
+
+#: includes/admin/payments/edit-payment.php:51
+#, fuzzy
+msgid "The transaction ID for this payment, if any"
+msgstr "Tapahtuman ID haku"
+
+#: includes/admin/payments/edit-payment.php:63
+#: includes/admin/payments/new-payment.php:57
+#, fuzzy
+msgid "The status of this payment."
+msgstr "Oston tila on %s"
+
+#: includes/admin/payments/edit-payment.php:71
+#, fuzzy
+msgid "Update Payment"
+msgstr "Päivitä maksu"
+
+#: includes/admin/payments/new-payment.php:2
+#: includes/admin/payments/new-payment.php:64
+#: includes/admin/payments/payments-page.php:25
+msgid "Create Payment"
+msgstr "Luo maksu"
+
+#: includes/admin/payments/new-payment.php:18
+msgid "Begin typing the user name to add a payment record for."
+msgstr ""
+
+#: includes/admin/payments/new-payment.php:36
+msgid "Enter the date for this payment in the format of yyyy-mm-dd"
+msgstr ""
+
+#: includes/admin/payments/new-payment.php:45
+#, fuzzy
+msgid "Enter the transaction ID for this payment, if any"
+msgstr "Voit kirjoittaa tapahtuman ID:n etuliitteellä 'txn:'"
+
+#: includes/admin/payments/payments-page.php:53
+#: includes/admin/payments/payments-page.php:56
+#, fuzzy
+msgid "Search Payments"
+msgstr "Etsi maksuja"
+
+#: includes/admin/payments/payments-page.php:58
+msgid "Total Earnings"
+msgstr "Tulot yhteensä"
+
+#: includes/admin/payments/payments-page.php:60
+#, fuzzy
+msgid "View all payments"
+msgstr "Kaikki maksut"
+
+#: includes/admin/payments/payments-page.php:60
+#, fuzzy
+msgid "Reset User Filter"
+msgstr "Nollaa"
+
+#: includes/admin/payments/payments-page.php:105
+#, fuzzy
+msgid "View payments by this user"
+msgstr "Maksut"
+
+#: includes/admin/payments/payments-page.php:109
+#, fuzzy
+msgid "View Member"
+msgstr "Näytä jäsentiedote"
+
+#: includes/admin/payments/payments-page.php:121
+msgid "Download Invoice"
+msgstr "Lataa kuitti"
+
+#: includes/admin/payments/payments-page.php:134
+#, fuzzy
+msgid "No payments recorded yet"
+msgstr "Lataa kaikki maksut CSV-muodossa."
+
+#: includes/admin/reports/reports-page.php:15
+#: includes/admin/reports/reports-page.php:190
+#, fuzzy
+msgid "Earnings"
+msgstr "Tulot"
+
+#: includes/admin/reports/reports-page.php:16
+#: includes/admin/reports/reports-page.php:427
+msgid "Refunds"
+msgstr "Palautukset"
+
+#: includes/admin/reports/reports-page.php:17
+#: includes/admin/reports/reports-page.php:655
+msgid "Signups"
+msgstr ""
+
+#: includes/admin/reports/reports-page.php:255
+#, fuzzy
+msgid "Earnings Report"
+msgstr "Näytä yksityiskohtainen tuloraportti"
+
+#: includes/admin/reports/reports-page.php:261
+msgid "Total earnings for period shown: "
+msgstr "Kaikki tulot tietyltä jaksolta: "
+
+#: includes/admin/reports/reports-page.php:492
+#, fuzzy
+msgid "Refunds Report"
+msgstr "Yksityiskohtainen raportti"
+
+#: includes/admin/reports/reports-page.php:498
+msgid "Total refunds for period shown: "
+msgstr "Kaikki palautukset tietyltä jaksolta: "
+
+#: includes/admin/reports/reports-page.php:716
+#, fuzzy
+msgid "Signups Report"
+msgstr "Yksityiskohtainen raportti"
+
+#: includes/admin/reports/reports-page.php:722
+msgid "Total signups for period shown: "
+msgstr "Kaikki rekisteröitymiset tietyltä jaksolta: "
+
+#: includes/admin/reports/reports-page.php:739
+msgid "This Week"
+msgstr "Tämä viikko"
+
+#: includes/admin/reports/reports-page.php:740
+msgid "Last Week"
+msgstr "Edellinen viikko"
+
+#: includes/admin/reports/reports-page.php:741
+msgid "This Month"
+msgstr "Tämä kuukausi"
+
+#: includes/admin/reports/reports-page.php:742
+msgid "Last Month"
+msgstr "Edellinen kuukausi"
+
+#: includes/admin/reports/reports-page.php:743
+msgid "This Quarter"
+msgstr "Tämä neljännes"
+
+#: includes/admin/reports/reports-page.php:744
+msgid "Last Quarter"
+msgstr "Edellinen neljännes"
+
+#: includes/admin/reports/reports-page.php:745
+msgid "This Year"
+msgstr "Tämä vuosi"
+
+#: includes/admin/reports/reports-page.php:746
+msgid "Last Year"
+msgstr "Edellinen vuosi"
+
+#: includes/admin/reports/reports-page.php:747
+#, fuzzy
+msgid "Custom"
+msgstr "Kustomoitu"
+
+#: includes/admin/reports/reports-page.php:796
+msgid "All Subscription Levels"
+msgstr "Kaikki jäsentasot"
+
+#: includes/admin/settings/settings.php:37
+msgid "PDF Invoices"
+msgstr "PDF-kuitit"
+
+#: includes/admin/settings/settings.php:41
+#, fuzzy
+msgid "Options saved"
+msgstr "Ostoskori tallennettu"
+
+#: includes/admin/settings/settings.php:61
+#, fuzzy
+msgid "License Key"
+msgstr "Licenssiavain"
+
+#: includes/admin/settings/settings.php:68
+#, fuzzy
+msgid "Deactivate License"
+msgstr "Poista lisenssiavain käytöstä"
+
+#: includes/admin/settings/settings.php:71
+#, fuzzy
+msgid "Activate License"
+msgstr "Aktivoi lisenssiavain"
+
+#: includes/admin/settings/settings.php:73
+#, php-format
+msgid ""
+"Enter license key for Restrict Content Pro. This is required for automatic "
+"updates and <a href=\"%s\">support</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:79
+#, fuzzy
+msgid "Registration Page"
+msgstr "Rekisteröitymis -ja kirjautumislomake"
+
+#: includes/admin/settings/settings.php:93
+#: includes/admin/settings/settings.php:116
+#: includes/admin/settings/settings.php:140
+#: includes/admin/settings/settings.php:164
+#: includes/admin/settings/settings.php:188
+#: includes/admin/settings/settings.php:957
+#: includes/admin/settings/settings.php:988
+#, fuzzy
+msgid "No pages found"
+msgstr "Ei löytynyt"
+
+#: includes/admin/settings/settings.php:97
+msgid "Choose the page that has the [register_form] short code."
+msgstr ""
+
+#: includes/admin/settings/settings.php:102
+#, fuzzy
+msgid "Success Page"
+msgstr "Onnistunut osto sivu"
+
+#: includes/admin/settings/settings.php:120
+msgid ""
+"This is the page users are redirected to after a successful registration."
+msgstr ""
+
+#: includes/admin/settings/settings.php:125
+#, fuzzy
+msgid "Account Page"
+msgstr "Oma tili-sivu"
+
+#: includes/admin/settings/settings.php:144
+msgid ""
+"This page displays the account and membership information for members. "
+"Contains [subscription_details] shortcode."
+msgstr ""
+
+#: includes/admin/settings/settings.php:149
+msgid "Edit Profile Page"
+msgstr "Muokkaa profiilisivua"
+
+#: includes/admin/settings/settings.php:168
+msgid ""
+"This page displays a profile edit form for logged-in members. Contains "
+"[rcp_profile_editor] shortcode."
+msgstr ""
+
+#: includes/admin/settings/settings.php:173
+#, fuzzy
+msgid "Update Billing Card Page"
+msgstr "Laskutuksen osoite (luottokortin omistajan osoite)."
+
+#: includes/admin/settings/settings.php:192
+msgid ""
+"This page displays a profile edit form for logged-in members. Contains "
+"[rcp_update_card] shortcode."
+msgstr ""
+
+#: includes/admin/settings/settings.php:201
+msgid "Always auto renew"
+msgstr "Aina uusi automaattisesti"
+
+#: includes/admin/settings/settings.php:202
+msgid "Never auto renew"
+msgstr "Älä koskaan uusi automaattisesti"
+
+#: includes/admin/settings/settings.php:203
+msgid "Let customer choose whether to auto renew"
+msgstr ""
+
+#: includes/admin/settings/settings.php:205
+msgid ""
+"Select the auto renew behavior you would like subscription levels to have."
+msgstr ""
+
+#: includes/admin/settings/settings.php:210
+msgid "Free Content Message"
+msgstr "Ilmaisen sisällön viesti"
+
+#: includes/admin/settings/settings.php:216
+msgid ""
+"This is the message shown to users that do not have privilege to view free, "
+"user only content."
+msgstr ""
+
+#: includes/admin/settings/settings.php:221
+msgid "Premium Content Message"
+msgstr "Maksullisen sisällön viesti"
+
+#: includes/admin/settings/settings.php:227
+msgid ""
+"This is the message shown to users that do not have privilege to view "
+"premium content."
+msgstr ""
+
+#: includes/admin/settings/settings.php:240
+msgid "Currency"
+msgstr "Valuutta"
+
+#: includes/admin/settings/settings.php:251
+msgid "Choose your currency."
+msgstr "Valitse käyttämäsi valuutta."
+
+#: includes/admin/settings/settings.php:256
+msgid "Currency Position"
+msgstr "Valuutan sijainti"
+
+#: includes/admin/settings/settings.php:260
+msgid "Before - $10"
+msgstr "Ennen - $10"
+
+#: includes/admin/settings/settings.php:261
+msgid "After - 10$"
+msgstr "Jälkeen - 10$"
+
+#: includes/admin/settings/settings.php:263
+msgid "Show the currency sign before or after the price?"
+msgstr "Näytä valuutan merkki ennen tai jälkeen hinnan?"
+
+#: includes/admin/settings/settings.php:270
+msgid "Gateways"
+msgstr "Maksutavat"
+
+#: includes/admin/settings/settings.php:273
+msgid ""
+"Check each of the payment gateways you would like to enable. Configure the "
+"selected gateways below."
+msgstr ""
+
+#: includes/admin/settings/settings.php:277
+msgid "Enabled Gateways"
+msgstr "Käytössä olevat maksutavat"
+
+#: includes/admin/settings/settings.php:299
+msgid "Sandbox Mode"
+msgstr ""
+
+#: includes/admin/settings/settings.php:303
+msgid ""
+"Use Restrict Content Pro in Sandbox mode. This allows you to test the plugin "
+"with test accounts from your payment processor."
+msgstr ""
+"Käytä Restrict Content Pro -lisäosaa testitilassa. Tällöin voit testata "
+"lisäosaa eri maksutapojen testitunnuksilla."
+
+#: includes/admin/settings/settings.php:309
+msgid "Stripe Settings"
+msgstr "Stripe-asetukset"
+
+#: includes/admin/settings/settings.php:314
+msgid "Test Secret Key"
+msgstr "Testi Secret Key"
+
+#: includes/admin/settings/settings.php:318
+msgid ""
+"Enter your test secret key. Your API keys can be obtained from your <a href="
+"\"https://dashboard.stripe.com/account/apikeys\" target=\"_blank\">Stripe "
+"account settings</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:323
+#: includes/admin/settings/settings.php:484
+msgid "Test Publishable Key"
+msgstr "Testi Publishable Key"
+
+#: includes/admin/settings/settings.php:327
+#: includes/admin/settings/settings.php:488
+msgid "Enter your test publishable key."
+msgstr "Kirjoita testi Publishable Key"
+
+#: includes/admin/settings/settings.php:332
+msgid "Live Secret Key"
+msgstr "Live Secret Key"
+
+#: includes/admin/settings/settings.php:336
+msgid "Enter your live secret key."
+msgstr "Kirjoita live Secret Key"
+
+#: includes/admin/settings/settings.php:341
+#: includes/admin/settings/settings.php:514
+msgid "Live Publishable Key"
+msgstr "Live Publishable Key"
+
+#: includes/admin/settings/settings.php:345
+#: includes/admin/settings/settings.php:518
+msgid "Enter your live publishable key."
+msgstr "Kirjoita live publishable key."
+
+#: includes/admin/settings/settings.php:350
+#, fuzzy
+msgid "Note"
+msgstr "muistiinpano"
+
+#: includes/admin/settings/settings.php:350
+msgid ""
+"in order for subscription payments made through Stripe to be tracked, you "
+"must enter the following URL to your <a href=\"https://dashboard.stripe.com/"
+"account/webhooks\" target=\"_blank\">Stripe Webhooks</a> under Account "
+"Settings:"
+msgstr ""
+
+#: includes/admin/settings/settings.php:356
+#, fuzzy
+msgid "PayPal Settings"
+msgstr "PayPal asetukset"
+
+#: includes/admin/settings/settings.php:360
+#, fuzzy
+msgid "PayPal Address"
+msgstr "PayPal"
+
+#: includes/admin/settings/settings.php:364
+#, fuzzy
+msgid "Enter your PayPal email address."
+msgstr ""
+"<strong>PayPal</strong> - PayPal-maksutapa on oletuksena mukana Easy Digital "
+"Downloads -lisäosassa. Jotta voit testata PayPal-maksutapaa kunnolla, niin "
+"sinulla tulee olla Sandbox-tili PayPal:iin ja Testimaksutila tulee olla "
+"päällä. Muista kirjoittaa myös PayPal-tilin sähköpostiosoite."
+
+#: includes/admin/settings/settings.php:368
+#, fuzzy
+msgid "PayPal API Credentials"
+msgstr "PayPal"
+
+#: includes/admin/settings/settings.php:370
+msgid ""
+"The PayPal API credentials are required in order to use PayPal Express, "
+"PayPal Pro, and to support advanced subscription cancellation options in "
+"PayPal Standard. Test API credentials can be obtained at <a href=\"http://"
+"docs.pippinsplugins.com/article/826-setting-up-paypal-sandbox-accounts\" "
+"target=\"_blank\">developer.paypal.com</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:376
+#, fuzzy
+msgid "Test API Username"
+msgstr "API avain"
+
+#: includes/admin/settings/settings.php:380
+#, fuzzy
+msgid "Enter your test API username."
+msgstr "Kirjoita Paytrailin testikauppiastunnus."
+
+#: includes/admin/settings/settings.php:385
+#, fuzzy
+msgid "Test API Password"
+msgstr "Salasana"
+
+#: includes/admin/settings/settings.php:389
+#, fuzzy
+msgid "Enter your test API password."
+msgstr "Kirjoita Paytrailin testikauppiastunnus."
+
+#: includes/admin/settings/settings.php:394
+#, fuzzy
+msgid "Test API Signature"
+msgstr "Testiotsake"
+
+#: includes/admin/settings/settings.php:398
+#, fuzzy
+msgid "Enter your test API signature."
+msgstr "Kirjoita Paytrailin testikauppiastunnus."
+
+#: includes/admin/settings/settings.php:403
+#, fuzzy
+msgid "Live API Username"
+msgstr "Ota luottokortin reaaliaikainen tarkastus pois päältä"
+
+#: includes/admin/settings/settings.php:407
+msgid "Enter your live API username."
+msgstr ""
+
+#: includes/admin/settings/settings.php:412
+#, fuzzy
+msgid "Live API Password"
+msgstr "API avain"
+
+#: includes/admin/settings/settings.php:416
+msgid "Enter your live API password."
+msgstr ""
+
+#: includes/admin/settings/settings.php:421
+#, fuzzy
+msgid "Live API Signature"
+msgstr "API avain"
+
+#: includes/admin/settings/settings.php:425
+msgid "Enter your live API signature."
+msgstr ""
+
+#: includes/admin/settings/settings.php:431
+#, fuzzy
+msgid "PayPal Page Style"
+msgstr "PayPal sivun tyyli"
+
+#: includes/admin/settings/settings.php:435
+msgid ""
+"Enter the PayPal page style name you wish to use, or leave blank for default."
+msgstr ""
+
+#: includes/admin/settings/settings.php:440
+#, fuzzy
+msgid "Disable CURL"
+msgstr "Ajax pois päältä"
+
+#: includes/admin/settings/settings.php:444
+msgid "Only check this option if your host does not allow cURL."
+msgstr ""
+
+#: includes/admin/settings/settings.php:449
+#, fuzzy
+msgid "Disable IPN Verification"
+msgstr "Ota PayPal IPN varmistus pois käytöstä"
+
+#: includes/admin/settings/settings.php:453
+msgid ""
+"Only check this option if your members statuses are not getting changed to "
+"\"active\"."
+msgstr ""
+
+#: includes/admin/settings/settings.php:458
+#, fuzzy
+msgid "2Checkout Settings"
+msgstr "Asetukset"
+
+#: includes/admin/settings/settings.php:464
+#, fuzzy
+msgid "Secret Word"
+msgstr "Salainen avain:"
+
+#: includes/admin/settings/settings.php:468
+msgid ""
+"Enter your secret word. This can be obtained from the <a href=\"https://"
+"sandbox.2checkout.com/sandbox/acct/detail_company_info\" target=\"_blank"
+"\">2Checkout Sandbox</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:474
+#, fuzzy
+msgid "Test Private Key"
+msgstr "Testiotsake"
+
+#: includes/admin/settings/settings.php:478
+msgid ""
+"Enter your test private key. Your test API keys can be obtained from the <a "
+"href=\"https://sandbox.2checkout.com/sandbox/api\" target=\"_blank"
+"\">2Checkout Sandbox</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:494
+#, fuzzy
+msgid "Test Seller ID"
+msgstr "Testikauppiastunnus"
+
+#: includes/admin/settings/settings.php:498
+#: includes/admin/settings/settings.php:528
+msgid ""
+"Enter your live Seller ID. <a href=\"http://help.2checkout.com/articles/FAQ/"
+"Where-is-my-Seller-ID\" target=\"_blank\">Where is my Seller ID?</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:504
+#, fuzzy
+msgid "Live Private Key"
+msgstr "Ota luottokortin reaaliaikainen tarkastus pois päältä"
+
+#: includes/admin/settings/settings.php:508
+msgid ""
+"Enter your live secret key. Your API keys can be obtained from the <a href="
+"\"https://pci.trustwave.com/2checkout\" target=\"_blank\">2Checkout PCI "
+"Program</a>."
+msgstr ""
+
+#: includes/admin/settings/settings.php:524
+#, fuzzy
+msgid "Live Seller ID"
+msgstr "Ota luottokortin reaaliaikainen tarkastus pois päältä"
+
+#: includes/admin/settings/settings.php:545
+#, fuzzy
+msgid "From Name"
+msgstr "Keneltä"
+
+#: includes/admin/settings/settings.php:549
+msgid ""
+"The name that emails come from. This is usually the name of your business."
+msgstr ""
+
+#: includes/admin/settings/settings.php:554
+#, fuzzy
+msgid "From Email"
+msgstr "Keneltä sähköpostiosoite"
+
+#: includes/admin/settings/settings.php:558
+#, fuzzy
+msgid "The email address that emails are sent from."
+msgstr "Asiakkaan sähköpostiosoite, mihin oston kuitti lähetetään"
+
+#: includes/admin/settings/settings.php:563
+#, fuzzy
+msgid "Active Subscription Email"
+msgstr "Aktivoitu"
+
+#: includes/admin/settings/settings.php:567
+#: includes/admin/settings/settings.php:599
+#: includes/admin/settings/settings.php:631
+#: includes/admin/settings/settings.php:702
+#: includes/admin/settings/settings.php:734
+#: includes/admin/settings/settings.php:764
+#, fuzzy
+msgid "Disabled"
+msgstr "Pois käytöstä"
+
+#: includes/admin/settings/settings.php:571
+msgid "Check this to disable the email sent out when a member becomes active."
+msgstr ""
+
+#: includes/admin/settings/settings.php:576
+#: includes/admin/settings/settings.php:640
+#: includes/admin/settings/settings.php:661
+#: includes/admin/settings/settings.php:711
+#: includes/admin/settings/settings.php:743
+#: includes/admin/settings/settings.php:773
+msgid "Subject"
+msgstr "Sähköpostin aihe"
+
+#: includes/admin/settings/settings.php:580
+msgid ""
+"The subject line for the email sent to users when their subscription becomes "
+"active."
+msgstr ""
+
+#: includes/admin/settings/settings.php:585
+#: includes/admin/settings/settings.php:617
+#: includes/admin/settings/settings.php:649
+#: includes/admin/settings/settings.php:670
+#: includes/admin/settings/settings.php:720
+#: includes/admin/settings/settings.php:782
+msgid "Email Body"
+msgstr "Sähköpostin sisältö"
+
+#: includes/admin/settings/settings.php:589
+msgid ""
+"This is the email message that is sent to users when their subscription "
+"becomes active."
+msgstr ""
+
+#: includes/admin/settings/settings.php:594
+#, fuzzy
+msgid "Cancelled Subscription Email"
+msgstr "Aseta peruutetuksi"
+
+#: includes/admin/settings/settings.php:603
+msgid "Check this to disable the email sent out when a member is cancelled."
+msgstr ""
+
+#: includes/admin/settings/settings.php:608
+#, fuzzy
+msgid "Subject line"
+msgstr "Sähköpostin aihe sähköpostimuistutuksessa"
+
+#: includes/admin/settings/settings.php:612
+msgid ""
+"The subject line for the email sent to users when their subscription is "
+"cancelled."
+msgstr ""
+
+#: includes/admin/settings/settings.php:621
+msgid ""
+"This is the email message that is sent to users when their subscription is "
+"cancelled."
+msgstr ""
+
+#: includes/admin/settings/settings.php:626
+#, fuzzy
+msgid "Expired Subscription Email"
+msgstr "Vanhentunut %s."
+
+#: includes/admin/settings/settings.php:635
+msgid "Check this to disable the email sent out when a member expires."
+msgstr ""
+
+#: includes/admin/settings/settings.php:644
+msgid ""
+"The subject line for the email sent to users when their subscription is "
+"expired."
+msgstr ""
+
+#: includes/admin/settings/settings.php:653
+msgid ""
+"This is the email message that is sent to users when their subscription is "
+"expired."
+msgstr ""
+
+#: includes/admin/settings/settings.php:657
+#, fuzzy
+msgid "Expiring Soon Email"
+msgstr "Sähköposti"
+
+#: includes/admin/settings/settings.php:665
+msgid ""
+"The subject line for the email sent to users before their subscription "
+"expires."
+msgstr ""
+
+#: includes/admin/settings/settings.php:674
+msgid ""
+"This is the email message that is sent to users before their subscription "
+"expires to encourage them to renew."
+msgstr ""
+
+#: includes/admin/settings/settings.php:679
+#, fuzzy
+msgid "Reminder Period"
+msgstr "Lähetysaika"
+
+#: includes/admin/settings/settings.php:692
+#, fuzzy
+msgid "When should the renewal reminder be sent?"
+msgstr "Milloin sähköposti lähetetään?"
+
+#: includes/admin/settings/settings.php:697
+#, fuzzy
+msgid "Free Subscription Email"
+msgstr "Ilmainen lataus"
+
+#: includes/admin/settings/settings.php:706
+msgid "Check this to disable the email sent out when a free member registers."
+msgstr ""
+
+#: includes/admin/settings/settings.php:715
+msgid ""
+"The subject line for the email sent to users when they sign up for a free "
+"membership."
+msgstr ""
+
+#: includes/admin/settings/settings.php:724
+msgid ""
+"This is the email message that is sent to users when they sign up for a free "
+"account."
+msgstr ""
+
+#: includes/admin/settings/settings.php:729
+#, fuzzy
+msgid "Trial Subscription Email"
+msgstr "Avatar sähköposti"
+
+#: includes/admin/settings/settings.php:738
+msgid ""
+"Check this to disable the email sent out when a member signs up with a trial."
+msgstr ""
+
+#: includes/admin/settings/settings.php:747
+msgid ""
+"The subject line for the email sent to users when they sign up for a free "
+"trial."
+msgstr ""
+
+#: includes/admin/settings/settings.php:752
+#, fuzzy
+msgid "Trial Email Message"
+msgstr "Sähköpostiviesti"
+
+#: includes/admin/settings/settings.php:756
+msgid ""
+"This is the email message that is sent to users when they sign up for a free "
+"trial."
+msgstr ""
+
+#: includes/admin/settings/settings.php:760
+#, fuzzy
+msgid "Payment Received Email"
+msgstr "Virheellinen sähköpostiosoite"
+
+#: includes/admin/settings/settings.php:768
+msgid "Check this to disable the email sent out when a payment is received."
+msgstr ""
+
+#: includes/admin/settings/settings.php:777
+msgid ""
+"The subject line for the email sent to users upon a successful payment being "
+"received."
+msgstr ""
+
+#: includes/admin/settings/settings.php:786
+msgid ""
+"This is the email message that is sent to users after a payment has been "
+"received from them."
+msgstr ""
+
+#: includes/admin/settings/settings.php:791
+#, fuzzy
+msgid "New User Notifications"
+msgstr "Uuden myynnin ilmoitukset"
+
+#: includes/admin/settings/settings.php:796
+#, fuzzy
+msgid "Disable New User Notifications"
+msgstr "Ota sähköposti-ilmoitukset pois käytöstä"
+
+#: includes/admin/settings/settings.php:800
+msgid ""
+"Check this option if you do NOT want to receive emails when new users signup."
+msgstr ""
+
+#: includes/admin/settings/settings.php:808
+#, fuzzy
+msgid "Available Template Tags"
+msgstr ""
+"Kirjoita sähköposti, joka lähetetään käyttäjälle onnistuneen oston jälkeen. "
+"HTML on sallittua. Käytettävissä olevat komennot: "
+
+#: includes/admin/settings/settings.php:810
+#, fuzzy
+msgid "will be replaced with the name of your site"
+msgstr "Sivusi nimi"
+
+#: includes/admin/settings/settings.php:811
+msgid "will be replaced with the user name of the person receiving the email"
+msgstr ""
+
+#: includes/admin/settings/settings.php:812
+msgid "will be replaced with the email of the person receiving the email"
+msgstr ""
+
+#: includes/admin/settings/settings.php:813
+msgid "will be replaced with the first name of the person receiving the email"
+msgstr ""
+
+#: includes/admin/settings/settings.php:814
+msgid "will be replaced with the last name of the person receiving the email"
+msgstr ""
+
+#: includes/admin/settings/settings.php:815
+msgid ""
+"will be replaced with the display name of the person receiving the email"
+msgstr ""
+
+#: includes/admin/settings/settings.php:816
+#, fuzzy
+msgid "will be replaced with the expiration date of subscription"
+msgstr "Käyttäjän jäsenyyden päättymispäivä"
+
+#: includes/admin/settings/settings.php:817
+#, fuzzy
+msgid "will be replaced with the name of the subscription"
+msgstr "Avainsanan nimi"
+
+#: includes/admin/settings/settings.php:818
+msgid ""
+"will be replaced with the unique, 32 character key created when the user is "
+"registered"
+msgstr ""
+
+#: includes/admin/settings/settings.php:819
+msgid "will be replaced with the amount of the users last payment"
+msgstr ""
+
+#: includes/admin/settings/settings.php:829
+msgid "Invoice Logo"
+msgstr "Kuitin logo"
+
+#: includes/admin/settings/settings.php:833
+#, fuzzy
+msgid "Choose Logo"
+msgstr "Valitse logo"
+
+#: includes/admin/settings/settings.php:834
+#, fuzzy
+msgid "Upload a logo to display on the invoices."
+msgstr "Lataa logo."
+
+#: includes/admin/settings/settings.php:839
+#, fuzzy
+msgid "Company Name"
+msgstr "Yrityksen nimi"
+
+#: includes/admin/settings/settings.php:843
+msgid ""
+"Enter the company name that will be shown on the invoice. This is only "
+"displayed if no logo image is uploaded above."
+msgstr ""
+
+#: includes/admin/settings/settings.php:852
+msgid "Enter the personal name that will be shown on the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:857
+#, fuzzy
+msgid "Address Line 1"
+msgstr "Osoite 1"
+
+#: includes/admin/settings/settings.php:861
+msgid "Enter the first address line that will appear on the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:866
+#, fuzzy
+msgid "Address Line 2"
+msgstr "Osoite 2"
+
+#: includes/admin/settings/settings.php:870
+msgid "Enter the second address line that will appear on the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:875
+#, fuzzy
+msgid "City, State, and Zip"
+msgstr "Osavaltio"
+
+#: includes/admin/settings/settings.php:879
+msgid ""
+"Enter the city, state and zip/postal code that will appear on the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:888
+#, fuzzy
+msgid "Enter the email address that will appear on the invoice."
+msgstr "Asiakkaan sähköpostin avulla"
+
+#: includes/admin/settings/settings.php:893
+#, fuzzy
+msgid "Header Text"
+msgstr "Yläpalkin tekstin väri"
+
+#: includes/admin/settings/settings.php:897
+msgid ""
+"Enter the message you would like to be shown on the header of the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:902
+#, fuzzy
+msgid "Notes"
+msgstr "Muistiinpanot"
+
+#: includes/admin/settings/settings.php:906
+msgid ""
+"Enter additional notes you would like displayed below the invoice totals."
+msgstr ""
+
+#: includes/admin/settings/settings.php:911
+#, fuzzy
+msgid "Footer Text"
+msgstr "Alapalkin teksti"
+
+#: includes/admin/settings/settings.php:915
+msgid ""
+"Enter the message you would like to be shown on the footer of the invoice."
+msgstr ""
+
+#: includes/admin/settings/settings.php:920
+msgid "Characters not displaying correctly?"
+msgstr ""
+
+#: includes/admin/settings/settings.php:924
+msgid ""
+"Check to enable the Free Sans/Free Serif font replacing Open Sans/Helvetica/"
+"Times. Only do this if you have characters which do not display correctly (e."
+"g. Greek characters)"
+msgstr ""
+
+#: includes/admin/settings/settings.php:935
+#, fuzzy
+msgid "Hide Premium Posts"
+msgstr "Piilota viimeisimmät artikkelit etusivulla"
+
+#: includes/admin/settings/settings.php:939
+msgid ""
+"Check this to hide all premium posts from queries when user is not logged "
+"in. Note, this will only hide posts that have the \"Paid Only?\" checkbox "
+"checked."
+msgstr ""
+
+#: includes/admin/settings/settings.php:944
+#, fuzzy
+msgid "Redirect Page"
+msgstr "Uudelleenohjaus"
+
+#: includes/admin/settings/settings.php:961
+msgid ""
+"This is the page non-subscribed users are redirected to when attempting to "
+"access a premium post or page."
+msgstr ""
+
+#: includes/admin/settings/settings.php:966
+#, fuzzy
+msgid "Redirect Default Login URL"
+msgstr "Kustomoitu RSS-osoite (korvaa oletuksen)"
+
+#: includes/admin/settings/settings.php:970
+msgid ""
+"Check this to force the default login URL to redirect to the page specified "
+"below."
+msgstr ""
+
+#: includes/admin/settings/settings.php:975
+#, fuzzy
+msgid "Login Page"
+msgstr "Kirjaudu sisään"
+
+#: includes/admin/settings/settings.php:992
+msgid ""
+"This is the page the default login URL redirects to, if the option above is "
+"checked. This should be the page that contains the [login_form] short code."
+msgstr ""
+
+#: includes/admin/settings/settings.php:997
+#, fuzzy
+msgid "Prevent Account Sharing"
+msgstr "Lisää sosiaalisen median jakolinkit."
+
+#: includes/admin/settings/settings.php:1001
+msgid ""
+"Check this if you'd like to prevent multiple users from logging into the "
+"same account simultaneously."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1006
+#, fuzzy
+msgid "Email IPN reports"
+msgstr "Raportit"
+
+#: includes/admin/settings/settings.php:1010
+msgid ""
+"Check this to send an email each time an IPN request is made with PayPal. "
+"The email will contain a list of all data sent. This is useful for debugging "
+"in the case that something is not working with the PayPal integration."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1015
+#, fuzzy
+msgid "Disable Form CSS"
+msgstr "Ajax pois päältä"
+
+#: includes/admin/settings/settings.php:1019
+msgid "Check this to disable all included form styling."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1024
+#, fuzzy
+msgid "Enable reCaptcha"
+msgstr "Ota \"Siirry sisältöön\" -linkit käyttöön"
+
+#: includes/admin/settings/settings.php:1028
+msgid "Check this to enable reCaptcha on the registration form."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1033
+#, fuzzy
+msgid "reCaptcha Site Key"
+msgstr "Sivuston avainkoodi"
+
+#: includes/admin/settings/settings.php:1037
+msgid "This your own personal reCaptcha Site key. Go to"
+msgstr ""
+
+#: includes/admin/settings/settings.php:1037
+#: includes/admin/settings/settings.php:1046
+#, fuzzy
+msgid "your account"
+msgstr "Tilisi salasana."
+
+#: includes/admin/settings/settings.php:1037
+msgid "then click on your domain (or add a new one) to find your site key."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1042
+#, fuzzy
+msgid "reCaptcha Secret Key"
+msgstr "Salainen avain:"
+
+#: includes/admin/settings/settings.php:1046
+msgid "This your own personal reCaptcha Secret key. Go to"
+msgstr ""
+
+#: includes/admin/settings/settings.php:1046
+msgid "then click on your domain (or add a new one) to find your secret key."
+msgstr ""
+
+#: includes/admin/settings/settings.php:1057
+#, fuzzy
+msgid "Save Options"
+msgstr "Asetukset"
+
+#: includes/admin/settings/settings.php:1147
+#, php-format
+msgid "Your license key could not be activated. Error: %s"
+msgstr ""
+
+#: includes/admin/subscriptions/edit-subscription.php:6
+msgid "Edit Subscription Level:"
+msgstr "Muokkaa jäsentasoa"
+
+#: includes/admin/subscriptions/edit-subscription.php:20
+msgid "The name of this subscription. This is shown on the registration page."
+msgstr ""
+
+#: includes/admin/subscriptions/edit-subscription.php:29
+msgid ""
+"The description of this subscription. This is shown on the registration page."
+msgstr ""
+
+#: includes/admin/subscriptions/edit-subscription.php:44
+msgid "Level of access this subscription gives."
+msgstr ""
+
+#: includes/admin/subscriptions/edit-subscription.php:49
+#: includes/admin/subscriptions/subscription-levels.php:22
+#: includes/admin/subscriptions/subscription-levels.php:38
+#: includes/admin/subscriptions/subscription-levels.php:148
+msgid "Duration"
+msgstr "Kesto"
+
+#: includes/admin/subscriptions/edit-subscription.php:54
+#: includes/admin/subscriptions/subscription-levels.php:153
+msgid "Day(s)"
+msgstr "Päivä (päivät)"
+
+#: includes/admin/subscriptions/edit-subscription.php:55
+#: includes/admin/subscriptions/subscription-levels.php:154
+msgid "Month(s)"
+msgstr "Kuukausi (kuukaudet)"
+
+#: includes/admin/subscriptions/edit-subscription.php:56
+#: includes/admin/subscriptions/subscription-levels.php:155
+msgid "Year(s)"
+msgstr "Vuosi (vuodet)"
+
+#: includes/admin/subscriptions/edit-subscription.php:58
+#: includes/admin/subscriptions/subscription-levels.php:157
+msgid "Length of time for this membership level. Enter 0 for unlimited."
+msgstr "Tämän jäsentason kesto. Kirjoita 0, jos haluat ikuisen keston."
+
+#: includes/admin/subscriptions/edit-subscription.php:63
+#: includes/admin/subscriptions/subscription-levels.php:23
+#: includes/admin/subscriptions/subscription-levels.php:39
+#: includes/admin/subscriptions/subscription-levels.php:162
+msgid "Price"
+msgstr "Hinta"
+
+#: includes/admin/subscriptions/edit-subscription.php:67
+#: includes/admin/subscriptions/subscription-levels.php:170
+msgid "The price of this membership level. Enter 0 for free."
+msgstr "Tämän jäsentason hinta. Kirjoita 0, jos haluat ilmaisen jäsenyyden."
+
+#: includes/admin/subscriptions/edit-subscription.php:76
+#: includes/admin/subscriptions/subscription-levels.php:179
+msgid ""
+"Optional signup fee to charge subscribers for the first billing cycle. Enter "
+"a negative number to give a discount on the first payment."
+msgstr ""
+"Vapaaehtoinen rekisteröitymismaksu ensimmäisen laskutuksen osalta. Kirjoita "
+"negatiivinen luku, jos haluat antaa alennusta ensimmäisen maksun yhteydessä."
+
+#: includes/admin/subscriptions/edit-subscription.php:86
+#: includes/admin/subscriptions/subscription-levels.php:189
+msgid "Inactive"
+msgstr "Ei aktiivinen"
+
+#: includes/admin/subscriptions/edit-subscription.php:88
+#: includes/admin/subscriptions/subscription-levels.php:191
+msgid "Members may only sign up for active subscription levels."
+msgstr "Käyttäjät voivat rekisteröityä vain aktiiviseen jäsentasoon."
+
+#: includes/admin/subscriptions/edit-subscription.php:99
+#: includes/admin/subscriptions/subscription-levels.php:202
+msgid "The user role given to the member after signing up."
+msgstr "Käyttäjän rooli rekisteröitymisen jälkeen."
+
+#: includes/admin/subscriptions/edit-subscription.php:108
+msgid "Update Subscription"
+msgstr "Päivitä jäsenyys"
+
+#: includes/admin/subscriptions/subscription-levels.php:17
+#: includes/admin/subscriptions/subscription-levels.php:33
+msgid "Order"
+msgstr "Järjestys"
+
+#: includes/admin/subscriptions/subscription-levels.php:24
+#: includes/admin/subscriptions/subscription-levels.php:40
+msgid "Subscribers"
+msgstr "Jäsenet"
+
+#: includes/admin/subscriptions/subscription-levels.php:64
+#: templates/register-single.php:101 templates/register.php:70
+msgid "unlimited"
+msgstr "rajoittamaton"
+
+#: includes/admin/subscriptions/subscription-levels.php:103
+msgid "No subscription levels added yet."
+msgstr ""
+
+#: includes/admin/subscriptions/subscription-levels.php:108
+msgid "Add New Level"
+msgstr "Lisää uusi taso"
+
+#: includes/admin/subscriptions/subscription-levels.php:118
+msgid "The name of the membership level."
+msgstr "Uuden jäsentason nimi."
+
+#: includes/admin/subscriptions/subscription-levels.php:127
+msgid "Membership level description. This is shown on the registration form."
+msgstr "Jäsentason kuvaus, joka näytetään rekisteröitymisen yhteydessä."
+
+#: includes/admin/subscriptions/subscription-levels.php:143
+msgid ""
+"Level of access this subscription gives. Leave None for default or you are "
+"unsure what this is."
+msgstr "Jäsentaso. Jätä oletukseksi, jos olet epävarma mitä tämä tarkoittaa."
+
+#: includes/admin/subscriptions/subscription-levels.php:210
+msgid "Add Membership Level"
+msgstr "Lisää uusi jäsentaso"
+
+#: includes/admin/tools/tools-page.php:16
+msgid "Restrict Content Pro Tools"
+msgstr "Restrict Content Pro -työkalut"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:71
+msgid ""
+"Missing 2Checkout token, please try again or contact support if the issue "
+"persists."
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:161
+#, fuzzy
+msgid "Subscription started in 2Checkout"
+msgstr "Aseta peruutetuksi"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:233
+msgid "Subscription cancelled via refund 2Checkout"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:254
+#, fuzzy
+msgid "Subscription renewed in 2Checkout"
+msgstr "Aseta peruutetuksi"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:267
+#, fuzzy
+msgid "Subscription cancelled in 2Checkout"
+msgstr "Aseta peruutetuksi"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:281
+msgid "Subscription restarted in 2Checkout"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:294
+msgid "Payment flagged as fraudulent in 2Checkout"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:384
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:185
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:619
+#, fuzzy
+msgid "The security code you have entered is invalid"
+msgstr "Postinumero on virheellinen luottokortin tiedoissa"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:388
+#, fuzzy
+msgid "The address you have entered is invalid"
+msgstr "Alennuskoodi on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:392
+#, fuzzy
+msgid "The city you have entered is invalid"
+msgstr "Alennuskoodi on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:396
+#, fuzzy
+msgid "The state you have entered is invalid"
+msgstr "Alennuskoodi on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:400
+#, fuzzy
+msgid "The country you have entered is invalid"
+msgstr "Alennuskoodi on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-2checkout.php:404
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:189
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:623
+#, fuzzy
+msgid "The zip / postal code you have entered is invalid"
+msgstr "Postinumero on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:112
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:200
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:268
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:105
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:209
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:283
+#: includes/gateways/stripe/functions.php:246
+#: includes/gateways/stripe/functions.php:396
+#: includes/gateways/stripe/functions.php:586
+#, fuzzy
+msgid "An unidentified error occurred."
+msgstr "Virhe"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:123
+#, fuzzy
+msgid "PayPal token creation failed."
+msgstr "Ostoskoria ei voitu palauttaa."
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:124
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:212
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:280
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:119
+msgid "Error message:"
+msgstr "Virheviesti:"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:139
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:239
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:312
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:150
+msgid "Something has gone wrong, please try again"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:153
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:177
+msgid ""
+"You have not configured PayPal API access. Please configure it in Restrict "
+"&rarr; Settings"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:211
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:279
+msgid "PayPal payment processing failed."
+msgstr "PayPal maksu epäonnistui"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-express.php:416
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:327
+msgid "IPN report"
+msgstr "IPN-raportti"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:118
+msgid "PayPal subscription creation failed."
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:181
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:615
+msgid "The card number you have entered is invalid"
+msgstr "Kortin numero on virheellinen"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:193
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:627
+msgid "The card holder name you have entered is invalid"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:197
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:631
+msgid "The card expiration month you have entered is invalid"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal-pro.php:201
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:635
+msgid "The card expiration year you have entered is invalid"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:288
+msgid "Duplicate Payment"
+msgstr "Tuplamaksu"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:289
+msgid ""
+"A duplicate payment was detected. The new payment was still recorded, so you "
+"may want to check into both payments."
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:308
+msgid "Invalid Currency Code"
+msgstr "Virheellinen valuutta-koodi"
+
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:309
+#, php-format
+msgid ""
+"The currency code in an IPN request did not match the site currency code. "
+"Payment data: %s"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-paypal.php:461
+msgid "Invalid IPN"
+msgstr "Virheellinen IPN"
+
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:64
+msgid ""
+"Missing Stripe token, please try again or contact support if the issue "
+"persists."
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:312
+msgid "An error occurred, please contact the site administrator: "
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateway-stripe.php:335
+#: includes/gateways/stripe/functions.php:169
+#: includes/gateways/stripe/functions.php:186
+#: includes/gateways/stripe/functions.php:203
+#: includes/gateways/stripe/functions.php:219
+#: includes/gateways/stripe/functions.php:235
+#: includes/gateways/stripe/functions.php:319
+#: includes/gateways/stripe/functions.php:336
+#: includes/gateways/stripe/functions.php:353
+#: includes/gateways/stripe/functions.php:369
+#: includes/gateways/stripe/functions.php:385
+#: includes/gateways/stripe/functions.php:526
+#: includes/gateways/stripe/functions.php:543
+#: includes/gateways/stripe/functions.php:559
+#: includes/gateways/stripe/functions.php:575
+#, php-format
+msgid "Error code: %s"
+msgstr "Virhekoodi: %s"
+
+#: includes/gateways/class-rcp-payment-gateways.php:57
+#: includes/gateways/class-rcp-payment-gateways.php:58
+msgid "Manual Payment"
+msgstr ""
+
+#: includes/gateways/class-rcp-payment-gateways.php:63
+msgid "PayPal Standard"
+msgstr "PayPal Standard"
+
+#: includes/gateways/class-rcp-payment-gateways.php:68
+msgid "PayPal Express"
+msgstr "PayPal Express"
+
+#: includes/gateways/class-rcp-payment-gateways.php:72
+#: includes/gateways/class-rcp-payment-gateways.php:77
+#: includes/gateways/class-rcp-payment-gateways.php:82
+#: includes/gateways/class-rcp-payment-gateways.php:87
+msgid "Credit / Debit Card"
+msgstr "Luottokortti (Credit / Debit)"
+
+#: includes/gateways/class-rcp-payment-gateways.php:73
+msgid "PayPal Pro"
+msgstr "PayPal Pro"
+
+#: includes/gateways/class-rcp-payment-gateways.php:78
+msgid "Stripe"
+msgstr "Stripe"
+
+#: includes/gateways/class-rcp-payment-gateways.php:83
+msgid "Stripe Checkout"
+msgstr "Stripe Checkout"
+
+#: includes/gateways/class-rcp-payment-gateways.php:88
+msgid "2Checkout"
+msgstr ""
+
+#: includes/gateways/gateway-functions.php:231
+msgid "Your account does not support updating your billing card"
+msgstr ""
+
+#: includes/gateways/stripe/functions.php:135
+msgid "Missing Stripe token"
+msgstr "Puuttuva Stripe token"
+
+#: includes/gateways/twocheckout/functions.php:17
+msgid "The 2Checkout API username and password must be defined"
+msgstr ""
+
+#: includes/integrations/class-rcp-google-authenticator.php:31
+msgid "Google Authenticator Code"
+msgstr "Google Authenticator -koodi"
+
+#: includes/integrations/class-rcp-woocommerce.php:35
+msgid "Access Control"
+msgstr "Pääsyn hallinta"
+
+#: includes/integrations/class-rcp-woocommerce.php:55
+msgid "Restrict purchasing of this product to:"
+msgstr "Rajoita tämän tuotteen ostamista:"
+
+#: includes/integrations/class-rcp-woocommerce.php:60
+#: includes/integrations/class-rcp-woocommerce.php:89
+msgid "Active subscribers only?"
+msgstr "Vain aktiivisille jäsenille?"
+
+#: includes/integrations/class-rcp-woocommerce.php:77
+#: includes/integrations/class-rcp-woocommerce.php:106
+msgid "Access level required?"
+msgstr "Vaadittu jäsentaso?"
+
+#: includes/integrations/class-rcp-woocommerce.php:84
+msgid "Restrict viewing of this product to:"
+msgstr "Rajoita tämän tuotteen näyttämistä:"
+
+#: includes/integrations/class-rcp-wp-approve-user.php:108
+msgid "Your account is pending verification by a site administrator."
+msgstr ""
+
+#: includes/integrations/class-rcp-wp-approve-user.php:132
+msgid "Unapprove"
+msgstr ""
+
+#: includes/integrations/class-rcp-wp-approve-user.php:141
+msgid "Approve"
+msgstr ""
+
+#: includes/integrations/class-rcp-wp-approve-user.php:161
+#: includes/integrations/class-rcp-wp-approve-user.php:191
+msgid "You do not have permission to edit this user"
+msgstr "Sinulla ei ole oikeuksia tämän käyttäjän muokkaamiseen"
+
+#: includes/integrations/class-rcp-wp-approve-user.php:224
+msgid "Member unapproved"
+msgstr "Jäsen hylätty"
+
+#: includes/integrations/class-rcp-wp-approve-user.php:226
+msgid "Member approved"
+msgstr "Jäsen hyväksytty"
+
+#: templates/card-form-full.php:3 templates/card-form.php:3
+#: templates/card-update-form.php:22
+msgid "Card Number"
+msgstr "Kortin numero"
+
+#: templates/card-form-full.php:7 templates/card-form.php:7
+#: templates/card-update-form.php:26
+msgid "Card CVC"
+msgstr "CVC"
+
+#: templates/card-form-full.php:11
+msgid "Address"
+msgstr "Osoite"
+
+#: templates/card-form-full.php:15
+msgid "City"
+msgstr "Kaupunki"
+
+#: templates/card-form-full.php:19
+msgid "State or Providence"
+msgstr "Osavaltio"
+
+#: templates/card-form-full.php:23
+msgid "Country"
+msgstr "Maa"
+
+#: templates/card-form-full.php:274 templates/card-form.php:11
+#: templates/card-update-form.php:30
+msgid "Card ZIP or Postal Code"
+msgstr "Postinumero"
+
+#: templates/card-form-full.php:278 templates/card-form.php:15
+#: templates/card-update-form.php:34
+msgid "Name on Card"
+msgstr "Kortissa oleva nimi"
+
+#: templates/card-form-full.php:282 templates/card-form.php:19
+#: templates/card-update-form.php:38
+msgid "Expiration (MM/YYYY)"
+msgstr "Päättymispäivä (kk/vvvv)"
+
+#: templates/card-update-form.php:7
+msgid "Your Cards"
+msgstr ""
+
+#: templates/card-update-form.php:11
+msgid "Name:"
+msgstr "Nimi:"
+
+#: templates/card-update-form.php:12
+msgid "Type:"
+msgstr "Tyyppi:"
+
+#: templates/card-update-form.php:13
+msgid "Last 4:"
+msgstr "Viimeiset 4:"
+
+#: templates/card-update-form.php:14
+msgid "Exp:"
+msgstr ""
+
+#: templates/card-update-form.php:58
+msgid "Update Card"
+msgstr "Päivitä kortin numero"
+
+#: templates/change-password.php:7
+msgid "Password changed successfully"
+msgstr "Salasana vaihdettu onnistuneesti"
+
+#: templates/change-password.php:13 templates/profile-editor.php:55
+msgid "New Password"
+msgstr "Uusi salasana"
+
+#: templates/change-password.php:17
+msgid "Password Confirm"
+msgstr "Vahvista salasana"
+
+#: templates/change-password.php:24
+msgid "Change Password"
+msgstr "Vaihda salasana"
+
+#: templates/login.php:16 templates/register-single.php:45
+#: templates/register.php:44
+msgid "Password"
+msgstr "Salasana"
+
+#: templates/login.php:21
+msgid "Remember"
+msgstr "Muista minut"
+
+#: templates/login.php:24
+msgid "Lost your password?"
+msgstr "Salasana unohtunut?"
+
+#: templates/login.php:29
+msgid "Login"
+msgstr "Kirjaudu sisään"
+
+#: templates/login.php:38 templates/lostpassword.php:28
+#: templates/lostpassword_checkemail.php:10
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+#: templates/lostpassword.php:11
+msgid "Username or E-mail:"
+msgstr "Käyttäjätunnus tai sähköposti"
+
+#: templates/lostpassword.php:19
+msgid "Request Password Reset"
+msgstr "Pyyntö salasanan resetointiin"
+
+#: templates/lostpassword_checkemail.php:5
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+
+#: templates/paypal-express-confirm.php:3
+msgid "Please confirm your payment"
+msgstr "Ole hyvä ja varmista maksu"
+
+#: templates/paypal-express-confirm.php:5
+msgid "PayPal Status:"
+msgstr "PayPal tila:"
+
+#: templates/paypal-express-confirm.php:6
+msgid "Email:"
+msgstr "Sähköposti:"
+
+#: templates/paypal-express-confirm.php:13
+msgid "Recurs"
+msgstr ""
+
+#: templates/paypal-express-confirm.php:18
+msgid "Subscription Cost"
+msgstr ""
+
+#: templates/paypal-express-confirm.php:27
+#, php-format
+msgid "Every %d %s(s)"
+msgstr "Kaikki %d %s(s)"
+
+#: templates/paypal-express-confirm.php:49
+msgid "Confirm"
+msgstr "Vahvista"
+
+#: templates/profile-editor.php:16
+msgid "Success"
+msgstr "Onnistui"
+
+#: templates/profile-editor.php:16
+msgid "Your profile has been updated."
+msgstr "Profiilin päivitys onnistui"
+
+#: templates/profile-editor.php:23
+msgid "Change your Name"
+msgstr "Muuta nimi"
+
+#: templates/profile-editor.php:33
+msgid "Display Name"
+msgstr "Näytettävä nimi"
+
+#: templates/profile-editor.php:49
+msgid "Email Address"
+msgstr "Sähköpostiosoite"
+
+#: templates/profile-editor.php:53
+msgid "Change your Password"
+msgstr "Vaihda salasana"
+
+#: templates/profile-editor.php:59
+msgid "Re-enter Password"
+msgstr "Kirjoita salasana uudelleen"
+
+#: templates/profile-editor.php:62
+msgid "Please note after changing your password, you must log back in."
+msgstr ""
+"Huom! Kun vaihdat salasanan, niin joudut kirjautumaan uudelleen sisään."
+
+#: templates/profile-editor.php:67
+msgid "Save Changes"
+msgstr "Tallenna muutokset"
+
+#: templates/register-single.php:7 templates/register.php:5
+msgid "Register New Account"
+msgstr "Rekisteröi uusi tili"
+
+#: templates/register-single.php:11 templates/register.php:9
+msgid "Upgrade Your Subscription"
+msgstr "Päivitä jäsentiedot"
+
+#: templates/register-single.php:49 templates/register.php:48
+msgid "Password Again"
+msgstr "Salasana uudelleen"
+
+#: templates/register-single.php:62 templates/register.php:87
+msgid "Discount Code"
+msgstr "Alennuskoodi"
+
+#: templates/register-single.php:63 templates/register.php:88
+msgid "Valid"
+msgstr "Voimassa"
+
+#: templates/register-single.php:64 templates/register.php:89
+msgid "Invalid"
+msgstr "Virheellinen"
+
+#: templates/register-single.php:87 templates/register.php:110
+msgid "Choose Your Payment Method"
+msgstr "Valitse maksutapa"
+
+#: templates/register-total-details.php:26
+msgid "Discounts and Fees"
+msgstr "Alennuskoodit ja maksut"
+
+#: templates/register-total-details.php:54
+msgid "Total Today"
+msgstr "Yhteensä tänään"
+
+#: templates/register-total-details.php:63
+#, php-format
+msgid "Total Recurring Per %s"
+msgstr "Yhteensä toistuvista maksuista / %s"
+
+#: templates/register-total-details.php:65
+#, php-format
+msgid "Total Recurring Every %s %ss"
+msgstr ""
+
+#: templates/register.php:21
+#, php-format
+msgid ""
+"<a href=\"%s\">Log in</a> if you wish to renew an existing subscription."
+msgstr ""
+
+#: templates/register.php:62
+msgid "Choose your subscription level"
+msgstr "Valitse jäsentaso"
+
+#: templates/register.php:79
+msgid "You have not created any subscription levels yet"
+msgstr "Et ole vielä luonut vielä jäsentasoja"
+
+#: templates/subscription.php:10
+msgid "Your profile has been successfully cancelled."
+msgstr "Profiilisi on onnistuneesti peruutettu."
+
+#: templates/subscription.php:18
+msgid "Renewal Date"
+msgstr "Jäsenyyden uusimisen päivämäärä"
+
+#: templates/subscription.php:34
+msgid "Renew your subscription"
+msgstr "Uusi jäsenyys"
+
+#: templates/subscription.php:38
+msgid "Upgrade or change your subscription"
+msgstr "Päivitä tai peruuta jäsenyys"
+
+#: templates/subscription.php:42
+msgid "Cancel your subscription"
+msgstr "Peruuta jäsenyys"
+
+#: templates/subscription.php:56
+msgid "Invoice #"
+msgstr "Kuitti #"
+
+#: templates/subscription.php:71
+msgid "PDF Receipt"
+msgstr "PDF-kuitti"
+
+#: templates/subscription.php:75
+msgid "You have not made any payments."
+msgstr "Et ole tehnyt yhtään maksua."
+
+#, fuzzy
+#~ msgid "Signup Fee for %s"
+#~ msgstr "Maksu: %s - %s"
+
+#, fuzzy
+#~ msgid "Signup Discount for %s"
+#~ msgstr "Mitkä %s kuuluvat tälle alennuskoodille."
+
+#, fuzzy
+#~ msgid "Swiss Franc"
+#~ msgstr "Sveitsin frangi"
+
+#, fuzzy
+#~ msgid "Russian Rubles"
+#~ msgstr "Venäjän rupla"

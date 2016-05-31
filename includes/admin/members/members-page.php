@@ -216,8 +216,8 @@ function rcp_members_page() {
 							echo paginate_links( array(
 								'base' => $base,
 								'format' => '&p=%#%',
-								'prev_text' => __('&laquo; Previous'),
-								'next_text' => __('Next &raquo;'),
+								'prev_text' => __('&laquo; Previous', 'rcp' ),
+								'next_text' => __('Next &raquo;', 'rcp'),
 								'total' => $total_pages,
 								'current' => $page,
 								'end_size' => 1,

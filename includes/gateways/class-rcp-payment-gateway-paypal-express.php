@@ -218,11 +218,8 @@ class RCP_Payment_Gateway_PayPal_Express extends RCP_Payment_Gateway {
 
 						$member = new RCP_Member( $details['PAYMENTREQUEST_0_CUSTOM'] );
 
-						if( rcp_can_member_cancel( $member->ID ) ) {
+						if( $member->just_upgraded() && rcp_can_member_cancel( $member->ID ) ) {
 							$cancelled = rcp_cancel_member_payment_profile( $member->ID, false);
-							if( $cancelled ) {
-								update_user_meta( $member->ID, '_rcp_just_upgraded', time() );
-							}
 						}
 
 						$member->set_payment_profile_id( $data['PROFILEID'] );
@@ -287,6 +284,18 @@ class RCP_Payment_Gateway_PayPal_Express extends RCP_Payment_Gateway {
 						// Confirm a one-time payment
 						$member = new RCP_Member( $details['CUSTOM'] );
 
+						if( $member->just_upgraded() && rcp_can_member_cancel( $member->ID ) ) {
+
+							$cancelled = rcp_cancel_member_payment_profile( $member->ID, false );
+
+							if( $cancelled ) {
+
+								$member->set_payment_profile_id( '' );
+
+							}
+
+						}
+
 						$member->renew( false );
 
 						$payment_data = array(
@@ -301,7 +310,6 @@ class RCP_Payment_Gateway_PayPal_Express extends RCP_Payment_Gateway {
 
 						$rcp_payments = new RCP_Payments;
 						$rcp_payments->insert( $payment_data );
-
 
 						wp_redirect( esc_url_raw( rcp_get_return_url() ) ); exit;
 
@@ -319,7 +327,7 @@ class RCP_Payment_Gateway_PayPal_Express extends RCP_Payment_Gateway {
 		} elseif ( ! empty( $_GET['token'] ) && ! empty( $_GET['PayerID'] ) ) {
 
 			add_filter( 'the_content', array( $this, 'confirmation_form' ), 9999999 );
-	
+
 		}
 
 	}

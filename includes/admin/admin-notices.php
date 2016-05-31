@@ -82,12 +82,12 @@ function rcp_admin_notices() {
 
 		case 'user_updated' :
 
-			$text = __( 'Member updated' );
+			$text = __( 'Member updated', 'rcp' );
 			break;
 
 		case 'members_updated' :
 
-			$text = __( 'Member accounts updated' );
+			$text = __( 'Member accounts updated', 'rcp' );
 			break;
 
 		case 'member_cancelled' :
@@ -118,10 +118,10 @@ function rcp_admin_notices() {
 			break;
 
 		case 'level_missing_fields' :
-		
+
 			$text = __( 'Subscription level fields are required', 'rcp' );
 			$class = 'error';
-			break;		
+			break;
 
 		case 'discount_added' :
 

@@ -210,7 +210,7 @@ class RCP_WooCommerce {
 	}
 
 	/**
-	 * Restrict the abbility to purchase a product
+	 * Restrict the ability to purchase a product
 	 *
 	 * @access  public
 	 * @since   2.2
@@ -267,6 +267,10 @@ class RCP_WooCommerce {
 			return $ret;
 		}
 
+		if ( current_user_can( 'edit_post', $product_id ) ) {
+			return true;
+		}
+
 		$active_only  = get_post_meta( $product_id, '_rcp_woo_active_to_view', true );
 		$levels       = (array) get_post_meta( $product_id, '_rcp_woo_subscription_levels_to_view', true );
 		$access_level = get_post_meta( $product_id, '_rcp_woo_access_level_to_view', true );
@@ -299,20 +303,24 @@ class RCP_WooCommerce {
 			$ret = false;
 		}
 
+		if ( true === rcp_is_post_taxonomy_restricted( $product_id, 'product_tag' ) ) {
+			$ret = false;
+		}
+
 		return $ret;
 	}
 
 	/**
-	 * Load
+	 * Loads the restricted content template if required.
 	 *
 	 * @access  public
 	 * @since   2.5
 	 */
 	public function hide_template( $template, $slug, $name ) {
 
-		global $product;
+		$product_id = get_the_ID();
 
-		if ( ! is_single() && get_post_type() == 'product' ) {
+		if ( ! is_singular( 'product' ) ) {
 			return $template;
 		}
 
@@ -320,10 +328,54 @@ class RCP_WooCommerce {
 			return $template;
 		}
 
-		if( $this->is_visible( $product->is_visible(), get_the_ID() ) ) {
+		if ( current_user_can( 'edit_post', $product_id ) ) {
 			return $template;
 		}
 
+
+		$active_only    = get_post_meta( $product_id, '_rcp_woo_active_to_view', true );
+		$levels         = (array) get_post_meta( $product_id, '_rcp_woo_subscription_levels_to_view', true );
+		$access_level   = get_post_meta( $product_id, '_rcp_woo_access_level_to_view', true );
+
+		$product_cat    = rcp_is_post_taxonomy_restricted( $product_id, 'product_cat' );
+		$product_tag    = rcp_is_post_taxonomy_restricted( $product_id, 'product_tag' );
+
+		/**
+		 * rcp_is_post_taxonomy_restricted() returns:
+		 * - true when restrictions are found for the current user
+		 * - false when restrictions are not found for the current user
+		 * - -1 when no terms are assigned, for which we don't care.
+		 * We're normalizing the value here. If the value is false,
+		 * the user has already passed the restriction checks.
+		 */
+		$cat_restricted = true === $product_cat ? true : false;
+		$tag_restricted = true === $product_tag ? true : false;
+
+		// Return early if no restrictions
+		if ( ! $active_only && empty( $levels[0] ) && ! $access_level && ! $cat_restricted && ! $tag_restricted ) {
+			return $template;
+		}
+
+		$visible = true;
+
+		// Active subscription setting
+		if ( $active_only && ! rcp_is_active() ) {
+			$visible = false;
+		}
+
+		// Subscription level setting
+		if ( ! in_array( rcp_get_subscription_id(), $levels ) ) {
+			$visible = false;
+		}
+
+		// User level setting
+		if ( $access_level && rcp_user_has_access( get_current_user_id(), $access_level ) ) {
+			$visible = false;
+		}
+
+		if ( $visible ) {
+			return $template;
+		}
 
 		return rcp_get_template_part( 'woocommerce', 'single-no-access', false );
 	}

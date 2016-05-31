@@ -8,10 +8,10 @@
 		<?php foreach( $cards as $card ) : ?>
 			<fieldset class="rcp_current_cards_fieldset">
 				<p>
-					<span class="rcp_card_details_name"><?php _e( 'Name:' ); ?> <?php echo $card['name']; ?></span>
-					<span class="rcp_card_details_type"><?php _e( 'Type:' ); ?> <?php echo $card['type']; ?></span>
-					<span class="rcp_card_details_last4"><?php _e( 'Last 4:' ); ?> <?php echo $card['last4']; ?></span>
-					<span class="rcp_card_details_exp"><?php _e( 'Exp:' ); ?> <?php echo $card['exp_month'] . ' / ' . $card['exp_year']; ?></span>
+					<span class="rcp_card_details_name"><?php _e( 'Name:', 'rcp' ); ?> <?php echo $card['name']; ?></span>
+					<span class="rcp_card_details_type"><?php _e( 'Type:', 'rcp' ); ?> <?php echo $card['type']; ?></span>
+					<span class="rcp_card_details_last4"><?php _e( 'Last 4:', 'rcp' ); ?> <?php echo $card['last4']; ?></span>
+					<span class="rcp_card_details_exp"><?php _e( 'Exp:', 'rcp' ); ?> <?php echo $card['exp_month'] . ' / ' . $card['exp_year']; ?></span>
 				</p>
 			</fieldset>
 		<?php endforeach; ?>

@@ -24,9 +24,9 @@
 			<?php if( ! empty( $_GET['rcp-recurring'] ) ) : ?>
 				<td>
 					<?php
-					echo sprintf( __( 'Every %d %s(s)', $rcp_checkout_details['subscription']['duration'], 'rcp' ),
-						$rcp_checkout_details['subscription']['duration'],
-						$rcp_checkout_details['subscription']['duration_unit']
+					printf( __( 'Every %d %s', 'rcp' ),
+					    esc_html( $rcp_checkout_details['subscription']['duration'] ),
+					    rcp_filter_duration_unit( esc_html( $rcp_checkout_details['subscription']['duration_unit'] ), esc_html( $rcp_checkout_details['subscription']['duration'] ) )
 					);
 					?>
 				</td>

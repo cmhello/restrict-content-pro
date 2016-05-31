@@ -205,7 +205,7 @@ function rcp_email_on_expiration( $status, $user_id ) {
 	}
 
 }
-add_action( 'rcp_set_status', 'rcp_email_on_expiration', 10, 2 );
+add_action( 'rcp_set_status', 'rcp_email_on_expiration', 11, 2 );
 
 /**
  * Triggers the activation notice when an account is marked as active
@@ -224,7 +224,7 @@ function rcp_email_on_activation( $status, $user_id ) {
 	}
 
 }
-add_action( 'rcp_set_status', 'rcp_email_on_activation', 10, 2 );
+add_action( 'rcp_set_status', 'rcp_email_on_activation', 11, 2 );
 
 /**
  * Triggers the cancellation notice when an account is marked as active
@@ -243,7 +243,7 @@ function rcp_email_on_cancellation( $status, $user_id ) {
 	}
 
 }
-add_action( 'rcp_set_status', 'rcp_email_on_cancellation', 10, 2 );
+add_action( 'rcp_set_status', 'rcp_email_on_cancellation', 11, 2 );
 
 /**
  * Triggers a email to the member when a payment is received

@@ -757,7 +757,7 @@ class RCP_Member extends WP_User {
 			$discount = $payment_amount;
 		}
 
-		return apply_filters( 'rcp_member_prorate_credit', number_format( (float) $discount, 2 ), $this->ID, $this );
+		return apply_filters( 'rcp_member_prorate_credit', floatval( $discount ), $this->ID, $this );
 
 	}
 
@@ -786,7 +786,7 @@ class RCP_Member extends WP_User {
 
 		if( ! empty( $upgraded ) ) {
 
-			$limit = strtotime( '-5 minutes' );
+			$limit = strtotime( '-5 minutes', current_time( 'timestamp' ) );
 
 			if( $limit > $upgraded ) {
 

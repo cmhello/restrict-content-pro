@@ -73,7 +73,7 @@ function rcp_process_login_form() {
 	if( is_email( $_POST['rcp_user_login'] ) ) {
 
 		$user = get_user_by( 'email', $_POST['rcp_user_login'] );
-	
+
 	} else {
 
 		// this returns the user ID and other info from the user name
@@ -266,11 +266,11 @@ function rcp_retrieve_password() {
 
 	$wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
 
-	$message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
+	$message = __('Someone requested that the password be reset for the following account:', 'rcp') . "\r\n\r\n";
 	$message .= network_home_url( '/' ) . "\r\n\r\n";
-	$message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
-	$message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
-	$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
+	$message .= sprintf(__('Username: %s', 'rcp'), $user_login) . "\r\n\r\n";
+	$message .= __('If this was a mistake, just ignore this email and nothing will happen.', 'rcp') . "\r\n\r\n";
+	$message .= __('To reset your password, visit the following address:', 'rcp') . "\r\n\r\n";
 	$message .= '<' . esc_url_raw( add_query_arg( array( 'rcp_action' => 'lostpassword_reset', 'key' => $key, 'login' => rawurlencode( $user_login ) ), $_POST['rcp_redirect'] ) ) . ">\r\n";
 
 	if ( is_multisite() ) {
@@ -285,12 +285,12 @@ function rcp_retrieve_password() {
 		$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 	}
 
-	$title   = sprintf( __('[%s] Password Reset'), $blogname );
+	$title   = sprintf( __('[%s] Password Reset', 'rcp'), $blogname );
 	$title   = apply_filters( 'retrieve_password_title', $title );
 	$message = apply_filters( 'retrieve_password_message', $message, $key, $user_login, $user_data );
 
 	if ( $message && ! wp_mail( $user_email, wp_specialchars_decode( $title ), $message ) ) {
-		wp_die( __('The e-mail could not be sent.') . "<br />\n" . __('Possible reason: your host may have disabled the mail() function.') );
+		wp_die( __('The e-mail could not be sent.', 'rcp' ) . "<br />\n" . __('Possible reason: your host may have disabled the mail() function.', 'rcp' ) );
 	}
 
 	return true;

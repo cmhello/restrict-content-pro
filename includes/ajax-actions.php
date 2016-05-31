@@ -15,7 +15,7 @@ function rcp_validate_discount_with_ajax() {
 		rcp_setup_registration( $subscription_id, $_POST['code'] );
 
 		if( rcp_validate_discount( $_POST['code'], $subscription_id ) ) {
-		
+
 			$code_details = rcp_get_discount_details_by_code( sanitize_text_field( $_POST['code'] ) );
 
 			if( ( ! rcp_registration_is_recurring() && rcp_get_registration()->get_recurring_total() == 0.00 ) && rcp_get_registration()->get_total() == 0.00 ) {
@@ -60,7 +60,7 @@ add_action( 'wp_ajax_nopriv_rcp_load_gateway_fields', 'rcp_load_gateway_fields' 
 function rcp_calc_total_ajax() {
 	$return = array(
 		'valid' => false,
-		'total' => __( 'An error occurred, please refresh the page and try again.' ),
+		'total' => __( 'An error occurred, please refresh the page and try again.', 'rcp' ),
 	);
 
 	if ( ! rcp_is_registration() ) {

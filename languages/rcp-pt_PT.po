@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Restrict Content Pro\n"
 "Report-Msgid-Bugs-To: http://restrictcontentpro.com/support/\n"
-"POT-Creation-Date: 2015-12-04 21:41:48+00:00\n"
-"PO-Revision-Date: 2015-04-30 09:37-0600\n"
+"POT-Creation-Date: 2016-04-14 16:04-0500\n"
+"PO-Revision-Date: 2016-04-14 16:05-0500\n"
 "Last-Translator: Pippin Williamson <pippin@pippinsplugins.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SearchPath-0: includes\n"
 
 #: RCP_Plugin_Updater.php:177
@@ -245,8 +245,7 @@ msgstr "Descontos"
 msgid "Discount Codes"
 msgstr "Códigos desconto"
 
-#: includes/admin/admin-pages.php:16
-#: includes/admin/members/edit-member.php:150
+#: includes/admin/admin-pages.php:16 includes/admin/members/edit-member.php:150
 #: includes/admin/payments/payments-page.php:23
 #: includes/admin/settings/settings.php:43
 msgid "Payments"
@@ -269,8 +268,7 @@ msgstr "Exportar dados dos membros"
 msgid "Export"
 msgstr "Exportar"
 
-#: includes/admin/admin-pages.php:20
-#: includes/libraries/class-wp-logging.php:69
+#: includes/admin/admin-pages.php:20 includes/libraries/class-wp-logging.php:69
 msgid "Logs"
 msgstr ""
 
@@ -353,10 +351,10 @@ msgstr "Código"
 #: includes/admin/payments/payments-page.php:67
 #: includes/admin/payments/payments-page.php:83
 #: includes/class-rcp-export-members.php:42
-#: includes/class-rcp-export-payments.php:38
-#: includes/invoice-functions.php:166 includes/member-functions.php:519
-#: includes/user-page-columns.php:4 templates/paypal-express-confirm.php:11
-#: templates/subscription.php:16 templates/subscription.php:49
+#: includes/class-rcp-export-payments.php:38 includes/invoice-functions.php:166
+#: includes/member-functions.php:519 includes/user-page-columns.php:4
+#: templates/paypal-express-confirm.php:11 templates/subscription.php:16
+#: templates/subscription.php:49
 msgid "Subscription"
 msgstr "Subscrição"
 
@@ -367,9 +365,9 @@ msgstr "Subscrição"
 #: includes/admin/payments/new-payment.php:23
 #: includes/admin/payments/payments-page.php:69
 #: includes/admin/payments/payments-page.php:85
-#: includes/class-rcp-export-payments.php:39
-#: includes/invoice-functions.php:167 includes/member-functions.php:524
-#: includes/member-functions.php:526 templates/subscription.php:50
+#: includes/class-rcp-export-payments.php:39 includes/invoice-functions.php:167
+#: includes/member-functions.php:524 includes/member-functions.php:526
+#: templates/subscription.php:50
 msgid "Amount"
 msgstr "Valor"
 
@@ -938,8 +936,8 @@ msgstr "Escolher o nivel de subscrição para este utilizador"
 
 #: includes/admin/members/edit-member.php:56
 #: includes/class-rcp-export-members.php:43
-#: includes/class-rcp-export-payments.php:43
-#: includes/invoice-functions.php:134 includes/member-functions.php:521
+#: includes/class-rcp-export-payments.php:43 includes/invoice-functions.php:134
+#: includes/member-functions.php:521
 msgid "Subscription Key"
 msgstr "Código de subscrição"
 
@@ -2883,10 +2881,9 @@ msgstr ""
 #: includes/gateways/stripe/functions.php:477
 #: includes/gateways/stripe/functions.php:494
 #: includes/gateways/stripe/functions.php:510
-#: includes/gateways/stripe/functions.php:526
-#: includes/member-functions.php:905 includes/member-functions.php:922
-#: includes/member-functions.php:938 includes/member-functions.php:954
-#: includes/member-functions.php:967
+#: includes/gateways/stripe/functions.php:526 includes/member-functions.php:905
+#: includes/member-functions.php:922 includes/member-functions.php:938
+#: includes/member-functions.php:954 includes/member-functions.php:967
 msgid "An error occurred"
 msgstr ""
 

@@ -173,12 +173,12 @@ function rcp_generate_pdf_invoice( $payment_id = 0 ) {
 	$pdf->SetDrawColor( 238, 238, 238 );
 	$pdf->SetX( 61 );
 	$pdf->SetFont( $font, '', 10 );
-	
+
 	$amount = utf8_encode( html_entity_decode( rcp_currency_filter( $payment->amount ), ENT_COMPAT, 'UTF-8' ) );
 
 	if ( function_exists( 'iconv' ) ) {
 		// Ensure characters like euro; are properly converted. See GithuB issue #472 and #1570
-		$amount = iconv('UTF-8', 'windows-1252', $amount );
+		$amount = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $amount );
 	}
 
 	$pdf->Cell( 102, 8, html_entity_decode( $payment->subscription ), 'B', 0, 'L', false );

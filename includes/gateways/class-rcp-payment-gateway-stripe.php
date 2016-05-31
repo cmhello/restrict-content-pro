@@ -64,6 +64,67 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 			wp_die( __( 'Missing Stripe token, please try again or contact support if the issue persists.', 'rcp' ), __( 'Error', 'rcp' ), array( 'response' => 400 ) );
 		}
 
+		$customer_id = $member->get_payment_profile_id();
+
+		if ( $customer_id ) {
+
+			$customer_exists = true;
+
+			try {
+
+				// Update the customer to ensure their card data is up to date
+				$customer = \Stripe\Customer::retrieve( $customer_id );
+
+				if( isset( $customer->deleted ) && $customer->deleted ) {
+
+					// This customer was deleted
+					$customer_exists = false;
+
+				}
+
+			// No customer found
+			} catch ( Exception $e ) {
+
+				$customer_exists = false;
+
+			}
+
+		}
+
+		if( empty( $customer_exists ) ) {
+
+			try {
+
+				$customer_args = array(
+					'card'  => $_POST['stripeToken'],
+					'email' => $this->email
+				);
+
+				$customer = \Stripe\Customer::create( apply_filters( 'rcp_stripe_customer_create_args', $customer_args, $this ) );
+
+				$member->set_payment_profile_id( $customer->id );
+
+			} catch ( Exception $e ) {
+
+				wp_die( __( 'Stripe customer could not be created, please try again or contact support if the issue persists.', 'rcp' ), __( 'Error', 'rcp' ), array( 'response' => 400 ) );
+
+			}
+
+		} else {
+
+			$customer->source = $_POST['stripeToken'];
+
+		}
+
+		$customer->description = 'User ID: ' . $this->user_id . ' - User Email: ' . $this->email . ' Subscription: ' . $this->subscription_name;
+		$customer->metadata    = array(
+			'user_id'      => $this->user_id,
+			'email'        => $this->email,
+			'subscription' => $this->subscription_name
+		);
+
+		$customer->save();
+
 		if ( $this->auto_renew ) {
 
 			// process a subscription sign up
@@ -74,52 +135,11 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 
 			try {
 
-				$customer_id = $member->get_payment_profile_id();
-
-				if ( $customer_id ) {
-
-					$customer_exists = true;
-
-					try {
-
-						// Update the customer to ensure their card data is up to date
-						$customer = \Stripe\Customer::retrieve( $customer_id );
-
-						if( isset( $customer->deleted ) && $customer->deleted ) {
-
-							// This customer was deleted
-							$customer_exists = false;
-
-						}
-
-					// No customer found
-					} catch ( Exception $e ) {
-
-						$customer_exists = false;
-
-					}
-
-				}
-
-				if( ! $customer_exists ) {
-
-					$customer_args = array(
-						'card'  => $_POST['stripeToken'],
-						'email' => $this->email
-					);
-
-					$customer = \Stripe\Customer::create( apply_filters( 'rcp_stripe_customer_create_args', $customer_args, $this ) );
-
-				} else {
-
-					$customer->card = $_POST['stripeToken'];
-
-				}
-
 				// Add fees before the plan is updated and charged
 				if ( ! empty( $this->signup_fee ) ) {
 
 					$customer->account_balance = $customer->account_balance + ( $this->signup_fee * rcp_stripe_get_currency_multiplier() ); // Add additional amount to initial payment (in cents)
+					$customer->save();
 
 				}
 
@@ -138,22 +158,9 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 					}
 				}
 
-				$customer->description = 'User ID: ' . $this->user_id . ' - User Email: ' . $this->email . ' Subscription: ' . $this->subscription_name;
-				$customer->metadata    = array(
-					'user_id'      => $this->user_id,
-					'email'        => $this->email,
-					'subscription' => $this->subscription_name
-				);
-
-				// Save the card and any coupon
-				$customer->save();
-
 				// If the customer has an existing subscription, we need to cancel it
-				if( rcp_can_member_cancel( $member->ID ) ) {
+				if( $member->just_upgraded() && rcp_can_member_cancel( $member->ID ) ) {
 					$cancelled = rcp_cancel_member_payment_profile( $member->ID, false );
-					if( $cancelled ) {
-						update_user_meta( $member->ID, '_rcp_just_upgraded', time() );
-					}
 				}
 
 				$sub_args = array(
@@ -170,7 +177,6 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 				// Set the customer's subscription in Stripe
 				$subscription = $customer->subscriptions->create( array( $sub_args ) );
 
-				$member->set_payment_profile_id( $customer->id );
 				$member->set_merchant_subscription_id( $subscription->id );
 
 				// subscription payments are recorded via webhook
@@ -209,7 +215,7 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 				$error = '<p>' . __( 'An unidentified error occurred.', 'rcp' ) . '</p>';
 				$error .= print_r( $e, true );
 
-				wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => '401' ) );
+				wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => 401 ) );
 
 			}
 
@@ -220,10 +226,10 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 			try {
 
 				$charge = \Stripe\Charge::create( apply_filters( 'rcp_stripe_charge_create_args', array(
-					'amount' 		 => ( $this->amount + $this->signup_fee ) * rcp_stripe_get_currency_multiplier(), // amount in cents
-					'currency' 		 => strtolower( $this->currency ),
-					'card' 			 => $_POST['stripeToken'],
-					'description' 	 => 'User ID: ' . $this->user_id . ' - User Email: ' . $this->email . ' Subscription: ' . $this->subscription_name,
+					'amount'         => ( $this->amount + $this->signup_fee ) * rcp_stripe_get_currency_multiplier(), // amount in cents
+					'currency'       => strtolower( $this->currency ),
+					'customer'       => $customer->id,
+					'description'    => 'User ID: ' . $this->user_id . ' - User Email: ' . $this->email . ' Subscription: ' . $this->subscription_name,
 					'receipt_email'  => $this->email,
 					'metadata'       => array(
 						'email'      => $this->email,
@@ -283,12 +289,17 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 				$error = '<p>' . __( 'An unidentified error occurred.', 'rcp' ) . '</p>';
 				$error .= print_r( $e, true );
 
-				wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => '401' ) );
+				wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => 401 ) );
 
 			}
 		}
 
 		if ( $paid ) {
+
+			// If this is a one-time signup and the customer has an existing subscription, we need to cancel it
+			if( ! $this->auto_renew && $member->just_upgraded() && rcp_can_member_cancel( $member->ID ) ) {
+				$cancelled = rcp_cancel_member_payment_profile( $member->ID, false );
+			}
 
 			// set this user to active
 			$member->set_status( 'active' );
@@ -309,7 +320,7 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 
 		} else {
 
-			wp_die( __( 'An error occurred, please contact the site administrator: ', 'rcp' ) . get_bloginfo( 'admin_email' ), __( 'Error', 'rcp' ), array( 'response' => '401' ) );
+			wp_die( __( 'An error occurred, please contact the site administrator: ', 'rcp' ) . get_bloginfo( 'admin_email' ), __( 'Error', 'rcp' ), array( 'response' => 401 ) );
 
 		}
 
@@ -337,7 +348,7 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 		$error .= "<p>Status: " . $e->getHttpStatus() ."</p>";
 		$error .= "<p>Message: " . $err['message'] . "</p>";
 
-		wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => '401' ) );
+		wp_die( $error, __( 'Error', 'rcp' ), array( 'response' => 401 ) );
 	}
 
 	public function process_webhooks() {
@@ -398,12 +409,9 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 
 					if( $event->type == 'charge.succeeded' || $event->type == 'invoice.payment_succeeded' ) {
 
-						$account = \Stripe\Account::retrieve();
-						$payment_date = date_create( date( 'c', $event->created ), new DateTimeZone( $account->timezone ) );
-
 						// setup payment data
 						$payment_data = array(
-							'date'              => get_date_from_gmt( $payment_date->format( 'c' ) ),
+							'date'              => date_i18n( 'Y-m-d g:i:s', $event->created ),
 							'payment_type' 		=> 'Credit Card',
 							'user_id' 			=> $member->ID,
 							'amount'            => '',

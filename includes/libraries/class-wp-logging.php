@@ -66,7 +66,7 @@ class WP_Logging {
 		/* logs post type */
 
 		$log_args = array(
-			'labels'			=> array( 'name' => __( 'Logs', 'wp-logging' ) ),
+			'labels'			=> array( 'name' => __( 'Logs', 'rcp' ) ),
 			'public'			=> false,
 			'query_var'			=> false,
 			'rewrite'			=> false,

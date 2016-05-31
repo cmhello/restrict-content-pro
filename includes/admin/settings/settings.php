@@ -66,9 +66,9 @@ function rcp_settings_page() {
 								<?php if( $status !== false && $status == 'valid' ) { ?>
 									<?php wp_nonce_field( 'rcp_deactivate_license', 'rcp_deactivate_license' ); ?>
 									<input type="submit" class="button-secondary" name="rcp_license_deactivate" value="<?php _e('Deactivate License', 'rcp'); ?>"/>
-									<span style="color:green;"><?php _e('active'); ?></span>
+									<span style="color:green;"><?php _e('active', 'rcp' ); ?></span>
 								<?php } elseif( ! empty( $rcp_options['license_key'] ) ) { ?>
-									<input type="submit" class="button-secondary" name="rcp_license_activate" value="<?php _e('Activate License', 'rcp'); ?>"/>
+									<input type="submit" class="button-secondary" name="rcp_license_activate" value="<?php _e('Activate License', 'rcp' ); ?>"/>
 								<?php } ?>
 								<p class="description"><?php printf( __( 'Enter license key for Restrict Content Pro. This is required for automatic updates and <a href="%s">support</a>.', 'rcp' ), 'http://restrictcontentpro.com/support' ); ?></p>
 							</td>
@@ -345,6 +345,17 @@ function rcp_settings_page() {
 								<p class="description"><?php _e('Enter your live publishable key.', 'rcp'); ?></p>
 							</td>
 						</tr>
+						<?php if ( 'USD' === rcp_get_currency() ) : ?>
+						<tr>
+							<th>
+								<label for="rcp_settings[stripe_alipay]"><?php _e( 'Enable Alipay Support', 'rcp' ); ?></label>
+							</th>
+							<td>
+								<input type="checkbox" value="1" name="rcp_settings[stripe_alipay]" id="rcp_settings[stripe_alipay]" <?php if( isset( $rcp_options['stripe_alipay'] ) ) checked( '1', $rcp_options['stripe_alipay'] ); ?>/>
+								<span class="description"><?php _e( 'Check to enable Alipay support in Stripe Checkout. Alipay is only available with Stripe Checkout. It does not work with the standard Stripe gateway.', 'rcp' ); ?></span>
+							</td>
+						</tr>
+						<?php endif; ?>
 						<tr>
 							<th colspan=2>
 								<p><strong><?php _e('Note', 'rcp'); ?></strong>: <?php _e('in order for subscription payments made through Stripe to be tracked, you must enter the following URL to your <a href="https://dashboard.stripe.com/account/webhooks" target="_blank">Stripe Webhooks</a> under Account Settings:', 'rcp'); ?></p>
@@ -1030,7 +1041,7 @@ function rcp_settings_page() {
 						</tr>
 						<tr valign="top">
 							<th>
-								<label for="rcp_settings[recaptcha_public_key]"><?php _e( 'reCaptcha Site Key' ); ?></label>
+								<label for="rcp_settings[recaptcha_public_key]"><?php _e( 'reCaptcha Site Key', 'rcp' ); ?></label>
 							</th>
 							<td>
 								<input id="rcp_settings[recaptcha_public_key]" style="width: 300px;" name="rcp_settings[recaptcha_public_key]" type="text" value="<?php if( isset( $rcp_options['recaptcha_public_key'] ) ) echo $rcp_options['recaptcha_public_key']; ?>" />
@@ -1039,7 +1050,7 @@ function rcp_settings_page() {
 						</tr>
 						<tr valign="top">
 							<th>
-								<label for="rcp_settings[recaptcha_private_key]"><?php _e( 'reCaptcha Secret Key' ); ?></label>
+								<label for="rcp_settings[recaptcha_private_key]"><?php _e( 'reCaptcha Secret Key', 'rcp' ); ?></label>
 							</th>
 							<td>
 								<input id="rcp_settings[recaptcha_private_key]" style="width: 300px;" name="rcp_settings[recaptcha_private_key]" type="text" value="<?php if( isset( $rcp_options['recaptcha_private_key'] ) ) echo $rcp_options['recaptcha_private_key']; ?>" />

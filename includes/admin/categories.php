@@ -88,7 +88,7 @@ function rcp_category_edit_meta_fields( $term ) {
  */
 function rcp_save_category_meta( $term_id, $tt_id, $taxonomy ) {
 
-	if ( ! check_admin_referer( 'rcp_edit_category', 'rcp_edit_category' ) ) {
+	if ( empty( $_POST['rcp_edit_category'] ) || ! wp_verify_nonce( $_POST['rcp_edit_category'], 'rcp_edit_category' ) ) {
 		return;
 	}
 
