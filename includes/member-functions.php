@@ -79,7 +79,6 @@ function rcp_get_members( $status = 'active', $subscription = null, $offset = 0,
 function rcp_count_members( $level = '', $status = 'active', $recurring = null, $search = '' ) {
 	global $wpdb;
 
-
 	if( $status == 'free' ) {
 
 		if ( ! empty( $level ) ) :

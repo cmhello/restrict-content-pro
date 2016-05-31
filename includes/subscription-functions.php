@@ -154,6 +154,8 @@ function rcp_get_subscription_member_count( $id, $status = 'active' ) {
 
 	}
 
+	$count = max( $count, 0 );
+
 	return apply_filters( 'rcp_get_subscription_member_count', $count, $id, $status );
 }
 
@@ -204,11 +206,7 @@ function rcp_decrement_subscription_member_count( $id, $status = 'active' ) {
 
 	}
 
-	if( $count < 0 ) {
-
-		$count = 0;
-
-	}
+	$count = max( $count, 0 );
 
 	update_option( $key, (int) $count );
 
