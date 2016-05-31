@@ -9,26 +9,30 @@ function rcp_setup_cron_jobs() {
 	if ( ! wp_next_scheduled( 'rcp_send_expiring_soon_notice' ) ) {
 		wp_schedule_event( current_time( 'timestamp' ), 'daily', 'rcp_send_expiring_soon_notice' );
 	}
+
+	if ( ! wp_next_scheduled( 'rcp_check_member_counts' ) ) {
+		wp_schedule_event( current_time( 'timestamp' ), 'daily', 'rcp_check_member_counts' );
+	}
 }
 add_action('wp', 'rcp_setup_cron_jobs');
 
 // runs each day and checks for expired members. Each member gets an email 1-2 days after their expiration
 function rcp_check_for_expired_users() {
-	
+
 	global $wpdb;
 
 	$current_time = date( 'Y-m-d H:i:s', strtotime( '-1 day' ) );
 
-	$query = "SELECT ID FROM $wpdb->users 
+	$query = "SELECT ID FROM $wpdb->users
 		INNER JOIN $wpdb->usermeta ON ($wpdb->users.ID = $wpdb->usermeta.user_id)
 		INNER JOIN $wpdb->usermeta AS mt1 ON ($wpdb->users.ID = mt1.user_id)
 		INNER JOIN $wpdb->usermeta AS mt2 ON ($wpdb->users.ID = mt2.user_id)
-		WHERE 1=1 AND ( ($wpdb->usermeta.meta_key = 'rcp_expiration' 
+		WHERE 1=1 AND ( ($wpdb->usermeta.meta_key = 'rcp_expiration'
 			AND CAST($wpdb->usermeta.meta_value AS DATETIME) < '$current_time')
-			AND  (mt1.meta_key = 'rcp_expiration' 
+			AND  (mt1.meta_key = 'rcp_expiration'
 				AND CAST(mt1.meta_value AS CHAR) != 'none')
-			AND  (mt2.meta_key = 'rcp_status' 
-				AND CAST(mt2.meta_value AS CHAR) = 'active') ) 
+			AND  (mt2.meta_key = 'rcp_status'
+				AND CAST(mt2.meta_value AS CHAR) = 'active') )
 		ORDER BY user_login ASC LIMIT 9999";
 
 	$query = apply_filters( 'rcp_check_for_expired_users_query_filter', $query );
@@ -103,3 +107,31 @@ function rcp_check_for_soon_to_expire_users() {
 	}
 }
 add_action( 'rcp_send_expiring_soon_notice', 'rcp_check_for_soon_to_expire_users' );
+
+/**
+ * Counts the active members on a subscription level to ensure counts are accurate.
+ *
+ * Runs once per day
+ *
+ * @since 2.6
+ *
+ * @return void
+ */
+function rcp_check_member_counts() {
+
+	$levels_db = new RCP_Levels;
+	$levels    = $levels_db->get_levels();
+
+	if( ! $levels ) {
+		return;
+	}
+
+	foreach( $levels as $level ) {
+
+		$count = rcp_count_members( $level->id, 'active' );
+		$key   = 'rcp_sub_' . $level->id . '_active_member_count';
+
+		update_option( $key, $count );
+	}
+}
+add_action( 'rcp_check_member_counts', 'rcp_check_member_counts' );
