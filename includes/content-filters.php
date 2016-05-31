@@ -181,6 +181,32 @@ function rcp_user_level_checks() {
 }
 add_action( 'loop_start', 'rcp_user_level_checks' );
 
+/**
+ * Remove comments from posts/pages if user does not have access
+ *
+ * @since 2.6
+ * @param $template Path to template file to load
+ *
+ * @return string Path to template file to load
+ */
+function rcp_hide_comments( $template ) {
+
+	$post_id = get_the_ID();
+
+	if( ! empty( $post_id ) ) {
+
+		if( ! rcp_user_can_access( get_current_user_id(), $post_id ) ) {
+
+			$template = rcp_get_template_part( 'comments', 'no-access', false );
+
+		}
+
+	}
+
+	return $template;
+}
+add_filter( 'comments_template', 'rcp_hide_comments', 9999999 );
+
 function rcp_display_message_to_editors( $content ) {
 	global $rcp_options, $post, $user_ID;
 
