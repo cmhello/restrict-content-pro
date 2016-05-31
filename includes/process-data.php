@@ -233,8 +233,6 @@ function rcp_process_data() {
 
 				if( $current_id != $level_id ) {
 
-					rcp_decrement_subscription_member_count( $current_id, $member->get_status() );
-
 					update_user_meta( $user_id, 'rcp_subscription_level', $level_id );
 
 					// Remove the old user role
