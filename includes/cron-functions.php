@@ -126,12 +126,19 @@ function rcp_check_member_counts() {
 		return;
 	}
 
+	$statuses = array( 'active', 'pending', 'cancelled', 'expired' );
+
 	foreach( $levels as $level ) {
 
-		$count = rcp_count_members( $level->id, 'active' );
-		$key   = 'rcp_sub_' . $level->id . '_active_member_count';
+		foreach( $statuses as $status ) {
 
-		update_option( $key, $count );
+			$count = rcp_count_members( $level->id, $status );
+			$key   = 'rcp_sub_' . $level->id . '_' . $status . '_member_count';
+
+			update_option( $key, $count );
+
+		}
+
 	}
 }
 add_action( 'rcp_check_member_counts', 'rcp_check_member_counts' );
