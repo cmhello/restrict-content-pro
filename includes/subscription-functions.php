@@ -210,7 +210,7 @@ function rcp_decrement_subscription_member_count( $id, $status = 'active' ) {
 
 	update_option( $key, (int) $count );
 
-	do_action( 'rcp_crement_subscription_member_count', $id, $count, $status );
+	do_action( 'rcp_decrement_subscription_member_count', $id, $count, $status );
 }
 
 /*
