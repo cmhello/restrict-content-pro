@@ -1273,10 +1273,6 @@ function rcp_member_can_update_billing_card( $user_id = 0 ) {
 
 		$ret = true;
 
-	} elseif ( rcp_is_2checkout_subscriber( $user_id ) && defined( 'TWOCHECKOUT_ADMIN_USER' ) && defined( 'TWOCHECKOUT_ADMIN_PASSWORD' ) ) {
-
-		$ret = true;
-
 	}
 
 	return apply_filters( 'rcp_member_can_update_billing_card', $ret, $user_id );
