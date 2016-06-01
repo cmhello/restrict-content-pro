@@ -512,6 +512,18 @@ function rcp_update_billing_card_shortcode( $atts, $content = null ) {
 
 					break;
 
+				case 'not-updated' :
+
+					if( isset( $_GET['msg'] ) ) {
+						$message = urldecode( $_GET['msg'] );
+					} else {
+						$message = __( 'Billing card could not be updated, please try again.', 'rcp' );
+					}
+
+					echo '<p class="rcp_error"><span>' . $message . '</span></p>';
+
+					break;
+
 			}
 
 		}

@@ -95,6 +95,8 @@ function rcp_get_paypal_api_credentials() {
  */
 function rcp_paypal_update_billing_card( $member_id = 0, $member_obj ) {
 
+	global $rcp_options;
+
 	if( empty( $member_id ) ) {
 		return;
 	}
@@ -103,19 +105,30 @@ function rcp_paypal_update_billing_card( $member_id = 0, $member_obj ) {
 		return;
 	}
 
+
 	if( ! rcp_is_paypal_subscriber( $member_id ) ) {
 		return;
+	}
+
+	if( isset( $rcp_options['sandbox'] ) ) {
+
+		$api_endpoint = 'https://api-3t.sandbox.paypal.com/nvp';
+
+	} else {
+
+		$api_endpoint = 'https://api-3t.paypal.com/nvp';
+
 	}
 
 	$error       = '';
 	$customer_id = $member_obj->get_payment_profile_id();
 	$credentials = rcp_get_paypal_api_credentials();
 
-	$card_number    = isset( $_POST['card_number'] )    && is_numeric( $_POST['card_number'] )    ? $_POST['card_number']    : '';
-	$card_exp_month = isset( $_POST['card_exp_month'] ) && is_numeric( $_POST['card_exp_month'] ) ? $_POST['card_exp_month'] : '';
-	$card_exp_year  = isset( $_POST['card_exp_year'] )  && is_numeric( $_POST['card_exp_year'] )  ? $_POST['card_exp_year']  : '';
-	$card_cvc       = isset( $_POST['card_cvc'] )       && is_numeric( $_POST['card_cvc'] )       ? $_POST['card_cvc']       : '';
-	$card_zip       = isset( $_POST['card_zip'] ) ? sanitize_text_field( $_POST['card_zip'] ) : '' ;
+	$card_number    = isset( $_POST['rcp_card_number'] )    && is_numeric( $_POST['rcp_card_number'] )    ? $_POST['rcp_card_number']    : '';
+	$card_exp_month = isset( $_POST['rcp_card_exp_month'] ) && is_numeric( $_POST['rcp_card_exp_month'] ) ? $_POST['rcp_card_exp_month'] : '';
+	$card_exp_year  = isset( $_POST['rcp_card_exp_year'] )  && is_numeric( $_POST['rcp_card_exp_year'] )  ? $_POST['rcp_card_exp_year']  : '';
+	$card_cvc       = isset( $_POST['rcp_card_cvc'] )       && is_numeric( $_POST['rcp_card_cvc'] )       ? $_POST['rcp_card_cvc']       : '';
+	$card_zip       = isset( $_POST['rcp_card_zip'] ) ? sanitize_text_field( $_POST['rcp_card_zip'] ) : '' ;
 
 	if ( empty( $card_number ) || empty( $card_exp_month ) || empty( $card_exp_year ) || empty( $card_cvc ) || empty( $card_zip ) ) {
 		$error = __( 'Please enter all required fields.', 'rcp' );
@@ -138,7 +151,7 @@ function rcp_paypal_update_billing_card( $member_id = 0, $member_obj ) {
 			'BUTTONSOURCE'        => 'EasyDigitalDownloads_SP',
 		);
 
-		$request = wp_remote_post( $this->api_endpoint, array(
+		$request = wp_remote_post( $api_endpoint, array(
 			'timeout'     => 45,
 			'sslverify'   => false,
 			'body'        => $args,
@@ -172,15 +185,15 @@ function rcp_paypal_update_billing_card( $member_id = 0, $member_obj ) {
 
 		}
 
-		if( ! empty( $error ) ) {
+	}
 
-			wp_redirect( add_query_arg( array( 'card' => 'not-updated', 'msg' => $error ) ) ); exit;
+	if( ! empty( $error ) ) {
 
-		}
+		wp_redirect( add_query_arg( array( 'card' => 'not-updated', 'msg' => urlencode( $error ) ) ) ); exit;
 
 	}
 
-	wp_redirect( add_query_arg( 'card', 'updated' ) ); exit;
+	wp_redirect( add_query_arg( array( 'card' => 'updated', 'msg' => '' ) ) ); exit;
 
 }
 add_action( 'rcp_update_billing_card', 'rcp_paypal_update_billing_card', 10, 2 );
