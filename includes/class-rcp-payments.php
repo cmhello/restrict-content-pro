@@ -207,7 +207,9 @@ class RCP_Payments {
 			'date'         => array(),
 			'fields'       => false,
 			'status'       => '',
-			's'            => ''
+			's'            => '',
+			'order'        => 'DESC',
+			'orderby'      => 'id'
 		);
 
 		$args  = wp_parse_args( $args, $defaults );
@@ -228,7 +230,7 @@ class RCP_Payments {
 				$user_ids = intval( $args['user_id'] );
 
 			if( ! empty( $args['subscription'] ) ) {
-				$where .= "`user_id` IN( {$user_ids} ) ";
+				$where .= "AND `user_id` IN( {$user_ids} ) ";
 			} else {
 				$where .= "WHERE `user_id` IN( {$user_ids} ) ";
 			}
@@ -244,7 +246,7 @@ class RCP_Payments {
 				$statuss = intval( $args['status'] );
 
 			if( ! empty( $args['subscription'] ) || ! empty( $args['user_id'] ) ) {
-				$where .= "`status` IN( {$statuss} ) ";
+				$where .= "AND `status` IN( {$statuss} ) ";
 			} else {
 				$where .= "WHERE `status` IN( {$statuss} ) ";
 			}
@@ -317,7 +319,25 @@ class RCP_Payments {
 
 		}
 
-		$payments = $wpdb->get_results( $wpdb->prepare( "SELECT {$fields} FROM " . $this->db_name . " {$where}ORDER BY id DESC LIMIT %d,%d;", absint( $args['offset'] ), absint( $args['number'] ) ) );
+		if ( 'DESC' === strtoupper( $args['order'] ) ) {
+			$order = 'DESC';
+		} else {
+			$order = 'ASC';
+		}
+
+		$columns = array(
+			'id',
+			'user_id',
+			'subscription',
+			'subscription_key',
+			'transaction_id',
+			'status',
+			'date'
+		);
+
+		$orderby = array_key_exists( $args['orderby'], $columns ) ? $args['orderby'] : 'id';
+
+		$payments = $wpdb->get_results( $wpdb->prepare( "SELECT {$fields} FROM " . $this->db_name . " {$where}ORDER BY {$orderby} {$order} LIMIT %d,%d;", absint( $args['offset'] ), absint( $args['number'] ) ) );
 
 		return $payments;
 
