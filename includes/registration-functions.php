@@ -159,6 +159,8 @@ function rcp_process_registration() {
 
 	}
 
+	$member->set_joined_date( '', $subscription_id );
+
 	// Calculate the expiration date for the member
 	$member_expires = $member->calculate_expiration( $auto_renew );
 

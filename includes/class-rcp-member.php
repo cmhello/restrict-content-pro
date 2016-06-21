@@ -230,6 +230,106 @@ class RCP_Member extends WP_User {
 	}
 
 	/**
+	 * Sets the joined date for a member
+	 *
+	 * @access  public
+	 * @since   2.6
+	*/
+	public function set_joined_date( $date = '', $subscription_id = 0 ) {
+
+		if( empty( $date ) ) {
+			$date = date( 'Y-m-d H:i:s' );
+		}
+
+		if( empty( $subscription_id ) ) {
+			$subscription_id = $this->get_subscription_id();
+		}
+
+		$ret = update_user_meta( $this->ID, 'rcp_joined_date_' . $this->get_subscription_id() );
+
+		do_action( 'rcp_set_joined_date', $this->ID, $date, $this );
+
+		return $ret;
+
+	}
+
+	/**
+	 * Retrieves the joined date for a subscription
+	 *
+	 * @access  public
+	 * @since   2.6
+	 * @return  string Joined date
+	*/
+	public function get_joined_date( $subscription_id = 0 ) {
+
+		if( empty( $subscription_id ) ) {
+			$subscription_id = $this->get_subscription_id();
+		}
+
+		$date = get_user_meta( $this->ID, 'rcp_joined_date_' . $subscription_id, true );
+
+		// Joined dates were not stored until RCP 2.6. For older accounts, look up first payment record.
+		if( empty( $date ) ) {
+
+			$sub_name = rcp_get_subscription_name( $subscription_id );
+			$args     = array( 'user_id' => $this->ID, 'subscription' => $sub_name, 'order' => 'ASC', 'number' => 1 );
+			$payments = new RCP_Payments;
+			$payments = $payments->get_payments( $args );
+
+			if( $payments ) {
+				$payment = reset( $payments );
+				$date    = $payment->date;
+			}
+		}
+
+		return apply_filters( 'rcp_get_joined_date', $date, $this->ID, $subscription_id, $this );
+
+	}
+
+	/**
+	 * Sets the renewed date for a member
+	 *
+	 * @access  public
+	 * @since   2.6
+	*/
+	public function set_renewed_date( $date = '' ) {
+
+		if( get_use_meta( $this->ID, '_rcp_new_subscription', true ) ) {
+			return; // This is a new subscription so do not set anything
+		}
+
+		if( empty( $date ) ) {
+			$date = date( 'Y-m-d H:i:s' );
+		}
+
+		$ret = update_user_meta( $this->ID, 'rcp_renewed_date_' . $this->get_subscription_id() );
+
+		do_action( 'rcp_set_renewed_date', $this->ID, $date, $this );
+
+		return $ret;
+
+	}
+
+	/**
+	 * Retrieves the renewed date for a subscription
+	 *
+	 * @access  public
+	 * @since   2.6
+	 * @return  string Renewed date
+	*/
+	public function get_renewed_date( $subscription_id = 0 ) {
+
+		if( empty( $subscription_id ) ) {
+			$subscription_id = $this->get_subscription_id();
+		}
+
+		$date = get_user_meta( $this->ID, 'rcp_renewed_date_' . $this->get_subscription_id() );
+
+		return apply_filters( 'rcp_get_renewed_date', $date, $this->ID, $subscription_id, $this );
+
+	}
+
+	/**
 	 * Renews a member's membership by updating status and expiration date
 	 *
 	 * Does NOT handle payment processing for the renewal. This should be called after receiving a renewal payment
@@ -259,6 +359,7 @@ class RCP_Member extends WP_User {
 		$this->set_expiration_date( $expiration );
 		$this->set_status( $status );
 		$this->set_recurring( $recurring );
+		$this->set_renewed_date();
 
 		delete_user_meta( $this->ID, '_rcp_expired_email_sent' );
 
