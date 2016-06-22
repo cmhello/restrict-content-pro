@@ -279,6 +279,7 @@ class RCP_Member extends WP_User {
 			if( $payments ) {
 				$payment = reset( $payments );
 				$date    = $payment->date;
+				$this->set_joined_date( $date, $subscription_id );
 			}
 		}
 
