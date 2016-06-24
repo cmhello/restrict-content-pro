@@ -11,31 +11,36 @@
 
 class RCP_Payments {
 
-
 	/**
 	 * Holds the name of our payments database table
 	 *
-	 * @access  private
+	 * @access  public
 	 * @since   1.5
 	*/
+	public $db_name;
 
-	private $db_name;
-
+	/**
+	 * Holds the name of our payment meta database table
+	 *
+	 * @access  public
+	 * @since   2.6
+	*/
+	public $meta_db_name;
 
 	/**
 	 * Holds the version number of our discounts database table
 	 *
-	 * @access  private
+	 * @access  public
 	 * @since   1.5
 	*/
-
-	private $db_version;
+	public $db_version;
 
 
 	function __construct() {
 
-		$this->db_name    = rcp_get_payments_db_name();
-		$this->db_version = '1.4';
+		$this->db_name      = rcp_get_payments_db_name();
+		$this->meta_db_name = rcp_get_payment_meta_db_name();
+		$this->db_version   = '1.5';
 
 	}
 
@@ -47,7 +52,6 @@ class RCP_Payments {
 	 * @param   $payment_data Array All of the payment data, such as amount, date, user ID, etc
 	 * @since   1.5
 	*/
-
 	public function insert( $payment_data = array() ) {
 
 		global $wpdb;
@@ -121,7 +125,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function update( $payment_id = 0, $payment_data = array() ) {
 
 		global $wpdb;
@@ -136,7 +139,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function delete( $payment_id = 0 ) {
 		global $wpdb;
 		do_action( 'rcp_delete_payment', $payment_id );
@@ -151,7 +153,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function get_payment( $payment_id = 0 ) {
 
 		global $wpdb;
@@ -173,7 +174,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.8.2
 	*/
-
 	public function get_payment_by( $field = 'id', $value = '' ) {
 
 		global $wpdb;
@@ -195,7 +195,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function get_payments( $args = array() ) {
 
 		global $wpdb;
@@ -331,7 +330,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function count( $args = array() ) {
 
 		global $wpdb;
@@ -391,7 +389,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function get_earnings( $args = array() ) {
 
 		global $wpdb;
@@ -486,7 +483,6 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   2.5
 	*/
-
 	public function get_refunds( $args = array() ) {
 
 		global $wpdb;
@@ -581,13 +577,83 @@ class RCP_Payments {
 	 * @access  public
 	 * @since   1.5
 	*/
-
 	public function last_payment_of_user( $user_id = 0 ) {
 		global $wpdb;
 		$query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $this->db_name . " WHERE `user_id`='%d' ORDER BY id DESC LIMIT 1;", $user_id ) );
 		if( $query )
 			return $query[0]->amount;
 		return false;
+	}
+
+	/**
+	 * Retrieve payment meta field for a payment.
+	 *
+	 * @param   int    $payment_id    Payment ID.
+	 * @param   string $meta_key      The meta key to retrieve.
+	 * @param   bool   $single        Whether to return a single value.
+	 * @return  mixed                 Will be an array if $single is false. Will be value of meta data field if $single is true.
+	 *
+	 * @access  public
+	 * @since   2.6
+	 */
+	public function get_meta( $payment_id = 0, $meta_key = '', $single = false ) {
+		return get_metadata( 'payment', $payment_id, $meta_key, $single );
+	}
+
+	/**
+	 * Add meta data field to a payment.
+	 *
+	 * @param   int    $payment_id    Payment ID.
+	 * @param   string $meta_key      Metadata name.
+	 * @param   mixed  $meta_value    Metadata value.
+	 * @param   bool   $unique        Optional, default is false. Whether the same key should not be added.
+	 * @return  bool                  False for failure. True for success.
+	 *
+	 * @access  public
+	 * @since   2.6
+	 */
+	public function add_meta( $payment_id = 0, $meta_key = '', $meta_value, $unique = false ) {
+		return add_metadata( 'payment', $payment_id, $meta_key, $meta_value, $unique );
+	}
+
+	/**
+	 * Update payment meta field based on Payment ID.
+	 *
+	 * Use the $prev_value parameter to differentiate between meta fields with the
+	 * same key and Payment ID.
+	 *
+	 * If the meta field for the payment does not exist, it will be added.
+	 *
+	 * @param   int    $payment_id    Payment ID.
+	 * @param   string $meta_key      Metadata key.
+	 * @param   mixed  $meta_value    Metadata value.
+	 * @param   mixed  $prev_value    Optional. Previous value to check before removing.
+	 * @return  bool                  False on failure, true if success.
+	 *
+	 * @access  public
+	 * @since   2.6
+	 */
+	public function update_meta( $payment_id = 0, $meta_key = '', $meta_value, $prev_value = '' ) {
+		return update_metadata( 'payment', $payment_id, $meta_key, $meta_value, $prev_value );
+	}
+
+	/**
+	 * Remove metadata matching criteria from a payment.
+	 *
+	 * You can match based on the key, or key and value. Removing based on key and
+	 * value, will keep from removing duplicate metadata with the same key. It also
+	 * allows removing all metadata matching key, if needed.
+	 *
+	 * @param   int    $payment_id    Payment ID.
+	 * @param   string $meta_key      Metadata name.
+	 * @param   mixed  $meta_value    Optional. Metadata value.
+	 * @return  bool                  False for failure. True for success.
+	 *
+	 * @access  public
+	 * @since   2.6
+	 */
+	public function delete_meta( $payment_id = 0, $meta_key = '', $meta_value = '' ) {
+		return delete_metadata( 'payment', $payment_id, $meta_key, $meta_value );
 	}
 
 }

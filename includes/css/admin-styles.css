@@ -1,54 +1,175 @@
-.wrap h2 .nav-tab { padding: 3px 6px 3px; font-size: 16px; }
-.rcp_key_wrap { position: relative; }
-.rcp_show_key { cursor: pointer; color: #21759B; display: inline-block; max-width: 80px; }
-.rcp_key { display: none; color: #555;  }
-.rcp_show_key:hover span { display: inline; }
-.rcp_options_form input.regular-text { border: 1px solid #DFDFDF; }
-#tab_container .tab_content { position: relative; }
-.dragHandle	{ cursor: move; display: block; height: 20px; width: 20px; background: url('../images/cross-hair.png'); }
-#rcp_email_options { width: 320px; float: left; margin: 0 20px 0 0; }
-.rtl #rcp_email_options { width: 320px; float: right; margin: 0 20px 0 0; }
-#rcp_email_tags { position: absolute; left: 500px; top: 60px; z-index: 0;}
-.rtl #rcp_email_tags { position: absolute; right: 500px; top: 60px; z-index: 0;}
-.wp-list-table th { font-size: 12px; }
-#side-info-column td.rcp_meta_box_desc { display: none!important; }
-#rcp-member-search { text-align: right; margin: 0 0 10px; float: right; }
-#rcp-member-search * { text-align: left; display: inline-block; }
-#rcp-members-page .subsubsub { float: none; }
-#payments-filter { width: 200px; float: right; text-align: right; margin: 0 0 5px; }
-#members-filter { margin: 0 0 10px; }
-#members-filter input.regular-text, #payments-filter input.regular-text { width: 30px; }
-#cp-add-new-member td { position: relative; }
-#rcp_user_search_results { position: absolute; }
-#rcp_user_search_results ul { padding: 10px 10px 4px; margin: 0; background: #f0f0f0; border: 1px solid #DFDFDF; width: 300px; max-height: 200px; overflow-y: scroll; }
-#rcp-order { margin-right: 10px; }
-.rcp_payment_details { border-bottom: 1px solid #f0f0f0; width: 400px; }
-.rcp-help .postbox ul li { list-style: disc outside; margin-left: 20px; }
-.rtl .rcp-help .postbox ul li { list-style: disc outside; margin-right: 20px; }
-.rcp-help .postbox h4 { border-bottom: 1px solid #ccc; margin: 30px 0 0 0; padding: 0 0 10px; }
-.center { text-align: center; }
-img.help-image { max-width: 99%; overflow: hidden; border: 1px solid #ccc; }
+.wrap h2 .nav-tab {
+	padding: 3px 6px 3px;
+	font-size: 16px;
+}
+.rcp_key_wrap {
+	position: relative;
+}
+.rcp_show_key {
+	cursor: pointer;
+	color: #21759B;
+	display: inline-block;
+	max-width: 80px;
+}
+.rcp_key {
+	display: none;
+	color: #555;
+}
+.rcp_show_key:hover span {
+	display: inline;
+}
+.rcp_options_form input.regular-text {
+	border: 1px solid #DFDFDF;
+}
+#tab_container .tab_content {
+	position: relative;
+}
+.dragHandle {
+	cursor: move;
+	display: block;
+	height: 20px;
+	width: 20px;
+	background: url('../images/cross-hair.png');
+}
+#rcp_email_options {
+	width: 320px;
+	float: left;
+	margin: 0 20px 0 0;
+}
+.rtl #rcp_email_options {
+	width: 320px;
+	float: right;
+	margin: 0 20px 0 0;
+}
+#rcp_email_tags {
+	position: absolute;
+	left: 500px;
+	top: 60px;
+	z-index: 0;
+}
+.rtl #rcp_email_tags {
+	position: absolute;
+	right: 500px;
+	top: 60px;
+	z-index: 0;
+}
+.wp-list-table th {
+	font-size: 12px;
+}
+#side-info-column td.rcp_meta_box_desc {
+	display: none !important;
+}
+#rcp-member-search {
+	text-align: right;
+	margin: 0 0 10px;
+	float: right;
+}
+#rcp-member-search * {
+	text-align: left;
+	display: inline-block;
+}
+#rcp-members-page .subsubsub {
+	float: none;
+}
+#payments-filter {
+	width: 200px;
+	float: right;
+	text-align: right;
+	margin: 0 0 5px;
+}
+#members-filter {
+	margin: 0 0 10px;
+}
+#members-filter input.regular-text,
+#payments-filter input.regular-text {
+	width: 30px;
+}
+#cp-add-new-member td {
+	position: relative;
+}
+#rcp_user_search_results {
+	position: absolute;
+}
+#rcp_user_search_results ul {
+	padding: 10px 10px 4px;
+	margin: 0;
+	background: #f0f0f0;
+	border: 1px solid #DFDFDF;
+	width: 300px;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+#rcp-order {
+	margin-right: 10px;
+}
+.rcp_payment_details {
+	border-bottom: 1px solid #f0f0f0;
+	width: 400px;
+}
+.rcp-help .postbox ul li {
+	list-style: disc outside;
+	margin-left: 20px;
+}
+.rtl .rcp-help .postbox ul li {
+	list-style: disc outside;
+	margin-right: 20px;
+}
+.rcp-help .postbox h4 {
+	border-bottom: 1px solid #ccc;
+	margin: 30px 0 0 0;
+	padding: 0 0 10px;
+}
+.center {
+	text-align: center;
+}
+img.help-image {
+	max-width: 99%;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+/* restrict this content metabox */
+#rcp-metabox-field-role, 
+#rcp-metabox-field-levels, 
+#rcp-metabox-field-access-levels {
+	border-left: 3px solid #eee;
+	padding-left: 10px;
+}
+.rcp-subscription-levels {
+    padding-left: 1.75rem;
+    margin-top: .5rem;
+ }
+ 
 /* members page columns */
-.rcp-checkbox-col { width: 20px; }
-.rcp-user-col { width: 100px; }
-.rcp-id-col { width: 50px; }
-.rcp-email-col { width: 180px; }
-.rcp-sub-col { width: 140px; }
-.rcp-status-col { width: 70px; }
-.rcp-recurring-col { width: 90px; }
-.rcp-expiration-col { width: 140px; }
-.rcp-role-col { width: 90px; }
-.rcp-actions-col { }
+
+.rcp-user-col {
+	width: 225px;
+}
+.rcp-sub-col {
+	width: 140px;
+}
+.rcp-status-col {
+	width: 60px;
+}
+.rcp-recurring-col {
+	width: 55px;
+}
+.rcp-expiration-col {
+	width: 110px;
+}
+.rcp-role-col {
+	width: 80px;
+}
 #rcp-bulk-action-options {
 	clear: both;
 	background: #f5f5f5;
 	background-image: -webkit-gradient(linear, left bottom, left top, from(#f5f5f5), to(#fafafa));
 	background-image: -webkit-linear-gradient(bottom, #f5f5f5, #fafafa);
-	background-image:    -moz-linear-gradient(bottom, #f5f5f5, #fafafa);
-	background-image:      -o-linear-gradient(bottom, #f5f5f5, #fafafa);
+	background-image: -moz-linear-gradient(bottom, #f5f5f5, #fafafa);
+	background-image: -o-linear-gradient(bottom, #f5f5f5, #fafafa);
 	background-image: linear-gradient(to top, #f5f5f5, #fafafa);
 	border-color: #dfdfdf;
-	overflow: auto;
+	overflow: hidden;
 	margin: 8px 0;
 	padding: 12px;
 	border-width: 1px;
@@ -57,87 +178,233 @@ img.help-image { max-width: 99%; overflow: hidden; border: 1px solid #ccc; }
 	font-size: 13px;
 	line-height: 2.1em;
 }
-#rcp-bulk-action-options p { color: #777; }
-#rcp-bulk-select-all { margin: 0; }
+#rcp-bulk-action-options p {
+	color: #777;
+}
+#rcp-bulk-select-all {
+	margin: 0;
+}
+
 /* subscription levels page columns */
-.rcp-sub-order-col {}
-.rcp-sub-id-col { width: 40px; }
-.rcp-sub-name-col {}
-.rcp-sub-desc-col {}
-.rcp-sub-level-col {}
-.rcp-sub-duration-col {}
-.rcp-sub-price-col {}
-.rcp-sub-subs-col {}
-.rcp-sub-actions-col {}
-/* discountcodes page columns */
-.rcp-discounts-id-col { width: 30px; }
-.rcp-discounts-name-col {  }
-.rcp-discounts-desc-col { width: 175px; }
-.rcp-discounts-code-col {  }
-.rcp-discounts-amount-col { width: 80px; }
-.rcp-discounts-type-col { width: 90px; }
-.rcp-discounts-status-col { width: 80px; }
-.rcp-discounts-uses-col { width: 40px; }
-.rcp-discounts-uses-left-col { width: 60px; }
-.rcp-discounts-expir-col {  }
-.rcp-discounts-actions-col { }
+.rcp-sub-name-col {
+	width: 225px;
+}
+.rcp-sub-order-col {
+	width: 50px;
+}
+.rcp_delete_subscription {
+	color:red;
+}
+.rcp_delete_subscription:hover {
+	color:red;
+}
+.rcp_delete_subscription:focus {
+	color:red;
+}
+
+/* discount codes page columns */
+.rcp-discounts-name-col {
+	width: 190px;
+}
+.rcp-discounts-desc-col {
+	width: 200px;
+}
+.rcp-discounts-code-col {
+	width: 110px;
+}
+.rcp-discounts-amount-col {
+	width: 45px;
+}
+.rcp-discounts-type-col {
+	width: 90px;
+}
+.rcp-discounts-status-col {
+	width: 80px;
+}
+.rcp-discounts-uses-col {
+	width: 40px;
+}
+.rcp-discounts-uses-left-col {
+	width: 60px;
+}
+
+/* payments list page */
+.rcp-payments-status-col {
+	width: 70px;
+}
+.rcp-payments-amount-col {
+	width: 75px;
+}
+.rcp-payments-subscription-col {
+	width: 120px;
+}
+.rcp-view-invoice {
+	display: inline-block;
+}
 /* error logs */
-#rcp-error-logs .column-log_error { width: 15%; }
-#rcp-error-logs .column-message { width: 65%; }
+
+#rcp-error-logs .column-log_error {
+	width: 15%;
+}
+#rcp-error-logs .column-message {
+	width: 65%;
+}
 /* reports */
+
 #rcp-graphs-date-options,
-#rcp-date-range-options { float: left; }
-#rcp-date-range-options span { float: left; margin-right: 6px; height: 24px; line-height: 24px; }
+#rcp-date-range-options {
+	float: left;
+}
+#rcp-date-range-options span {
+	float: left;
+	margin-right: 6px;
+	height: 24px;
+	line-height: 24px;
+}
 /* tools page */
-#rcp-system-info-textarea { width: 800px; height: 400px; font-family: Menlo, Monaco, monospace; white-space: pre; }
+
+#rcp-system-info-textarea {
+	width: 800px;
+	height: 400px;
+	font-family: Menlo, Monaco, monospace;
+	white-space: pre;
+}
+
 /* tables */
-table.rcp-table { text-align: left; width: 100%; border: none; margin: 0 0 21px; }
+table.rcp-table {
+	text-align: left;
+	width: 100%;
+	border: none;
+	margin: 0 0 21px;
+}
 table.rcp-table th,
-table.rcp-table td { text-align: left; border: 1px solid #eee; color: #666; padding: 0.4em; font-size: 90%; word-break: break-all; }
-table.rcp-table th { background: #fafafa; font-weight: bold; }
+table.rcp-table td {
+	text-align: left;
+	border: 1px solid #eee;
+	color: #666;
+	padding: 0.4em;
+	font-size: 90%;
+	word-break: break-all;
+}
+table.rcp-table th {
+	background: #fafafa;
+	font-weight: bold;
+}
+
+/* Add-ons */
+#rcp-add-ons h2 {
+	margin: 0 0 15px;
+}
+
+#rcp-add-ons .rcp-add-on {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 11px 14px 0;
+	background: #fff;
+	border: 1px solid #ccc;
+	width: 320px;
+	padding: 14px;
+	min-height: 290px;
+	position: relative;
+}
+
+#rcp-add-ons .rcp-add-on h3 {
+	margin: 0 0 8px;
+	font-size: 13px;
+}
+
+#rcp-add-ons .rcp-add-on .button-secondary {
+	position: absolute;
+	bottom: 14px;
+	left: 14px;
+}
+
+#rcp-add-ons .rcp-add-on .wp-post-image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.rcp-add-ons-footer {
+	padding-top: 10px;
+}
 
 /* Optimized for 1280px wide (macbooks) and under */
 @media (max-width: 1280px) {
 	/* members page columns */
-	.rcp-user-col { width: 80px; }
-	.rcp-id-col { width: 50px; }
-	.rcp-email-col { width: 130px; }
-	.rcp-sub-col { width: 120px; }
-	.rcp-status-col { width: 70px; }
-	.rcp-recurring-col { width: 90px; }
-	.rcp-expiration-col { width: 120px; }
-	.rcp-role-col { width: 90px; }
-	.rcp-actions-col { }
+
+	.rcp-user-col {
+		width: 80px;
+	}
+	.rcp-sub-col {
+		width: 120px;
+	}
+	.rcp-role-col {
+		width: 90px;
+	}
+
 	/* subscription levels page columns */
-	.rcp-sub-order-col {}
-	.rcp-sub-id-col { width: 40px; }
-	.rcp-sub-name-col {}
-	.rcp-sub-desc-col { width: 200px; }
-	.rcp-sub-level-col {}
-	.rcp-sub-duration-col {}
-	.rcp-sub-price-col {}
-	.rcp-sub-subs-col {}
-	.rcp-sub-actions-col {}
+	.rcp-sub-id-col {
+		width: 40px;
+	}
+	.rcp-sub-desc-col {
+		width: 200px;
+	}
+
 	/* discountcodes page columns */
-	.rcp-discounts-id-col { width: 30px; }
-	.rcp-discounts-name-col { width: 80px; }
-	.rcp-discounts-desc-col { width: 150px; }
-	.rcp-discounts-code-col { width: 60px; }
-	.rcp-discounts-amount-col { width: 60px; }
-	.rcp-discounts-type-col { width: 60px; }
-	.rcp-discounts-status-col { width: 50px; }
-	.rcp-discounts-uses-col { width: 50px; }
-	.rcp-discounts-uses-left-col { width: 80px; }
-	.rcp-discounts-expir-col {  }
-	.rcp-discounts-actions-col { }
+	.rcp-discounts-id-col {
+		width: 30px;
+	}
+	.rcp-discounts-desc-col {
+		width: 150px;
+	}
+	.rcp-discounts-code-col {
+		width: 60px;
+	}
+	.rcp-discounts-amount-col {
+		width: 60px;
+	}
+	.rcp-discounts-type-col {
+		width: 60px;
+	}
+	.rcp-discounts-status-col {
+		width: 50px;
+	}
+	.rcp-discounts-uses-col {
+		width: 50px;
+	}
+	.rcp-discounts-uses-left-col {
+		width: 80px;
+	}
 }
 
-/* Optimized for 1024x1064 and under */
-@media (max-width: 1000px) {
-
+@media (max-width: 782px) {
+	.rcp-sub-order-col,
+	.dragHandle {
+		display: none !important;
+	}
 }
 
 /* Optimized for Tablets */
 @media (max-width: 800px) {
 
+}
+
+/* Tooltips */
+.rcp-help-tip {
+	cursor: help;
+}
+.ui-tooltip {
+	background: #333 !important;
+	border-radius: 3px !important;
+	box-shadow: 1px 1px 2px 1px rgba(214,214,214,0.5);
+	color: #dedede !important;
+	max-width: 400px;
+	padding: 7px;
+	text-rendering: optimizeLegibility;
+}
+@media (min-width: 783px) {
+	.rcp-payment-amount-user-col {
+		display: none;
+	}
 }

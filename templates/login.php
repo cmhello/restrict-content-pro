@@ -18,8 +18,8 @@
 			</p>
 			<?php do_action( 'rcp_login_form_fields_before_submit' ); ?>
 			<p>
-				<label for="rcp_user_remember"><?php _e( 'Remember', 'rcp' ); ?></label>
 				<input type="checkbox" name="rcp_user_remember" id="rcp_user_remember" value="1"/>
+				<label for="rcp_user_remember"><?php _e( 'Remember me', 'rcp' ); ?></label>
 			</p>
 			<p class="rcp_lost_password"><a href="<?php echo esc_url( add_query_arg( 'rcp_action', 'lostpassword') ); ?>"><?php _e( 'Lost your password?', 'rcp' ); ?></a></p>
 			<p>

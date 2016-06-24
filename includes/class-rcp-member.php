@@ -636,9 +636,54 @@ class RCP_Member extends WP_User {
 
 		if ( ! empty( $subscription_levels ) ) {
 
-			if ( ! in_array( $this->get_subscription_id(), $subscription_levels ) && ! user_can( $this->ID, 'manage_options' ) ) {
+			if( is_string( $subscription_levels ) && $this->get_subscription_id() ) {
 
-				$ret = false;
+				switch( $subscription_levels ) {
+
+					case 'any' :
+
+						$ret = true;
+						break;
+
+					case 'any-paid' :
+
+						$ret = rcp_is_active();
+
+						break;
+				}
+
+			} else {
+
+				if( user_can( $this->ID, 'manage_options' ) ) {
+
+					$ret = true;
+
+				} else if ( in_array( $this->get_subscription_id(), $subscription_levels ) ) {
+
+					$needs_paid = false;
+
+					foreach( $subscription_levels as $level ) {
+
+						$price      = rcp_get_subscription_price( $level );
+						$needs_paid = ! empty( $price );
+
+					}
+
+					if( $needs_paid ) {
+
+						$ret = rcp_is_active();
+
+					} else {
+
+						$ret = true;
+
+					}
+
+				} else {
+
+					$ret = false;
+
+				}
 
 			}
 

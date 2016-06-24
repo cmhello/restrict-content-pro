@@ -68,7 +68,7 @@ if( isset( $_GET['profile'] ) && 'cancelled' == $_GET['profile'] ) : ?>
 				<td><?php echo $payment->subscription; ?></td>
 				<td><?php echo rcp_currency_filter( $payment->amount ); ?></td>
 				<td><?php echo date_i18n( get_option( 'date_format' ), strtotime( $payment->date ) ); ?></td>
-				<td><a href="<?php echo rcp_get_pdf_download_url( $payment->id ); ?>"><?php _e( 'PDF Receipt', 'rcp' ); ?></td>
+				<td><a href="<?php echo rcp_get_pdf_download_url( $payment->id ); ?>"><?php _e( 'View Receipt', 'rcp' ); ?></td>
 			</tr>
 		<?php endforeach; ?>
 	<?php else : ?>

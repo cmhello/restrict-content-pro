@@ -350,7 +350,7 @@ function rcp_get_content_subscription_levels( $post_id = 0 ) {
 		return false;
 	}
 
-	if( ! empty( $levels ) && ! is_array( $levels ) ) {
+	if( 'any' !== $levels && 'any-paid' !== $levels && ! empty( $levels ) && ! is_array( $levels ) ) {
 		$levels = array( $levels );
 	}
 	return apply_filters( 'rcp_get_content_subscription_levels', $levels, $post_id );

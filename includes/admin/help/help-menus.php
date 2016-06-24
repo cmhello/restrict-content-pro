@@ -185,7 +185,7 @@ function rcp_render_settings_tab_content( $id ) {
 		case 'general' :
 			ob_start(); ?>
 			<p>This Settings page lets you configure all of the options available for Restrict Content Pro. You should set each of the options the desired setting and save these options before attempting to use the plugin very much.</p>
-			<p>If you have any trouble with these settings, or anything else with the plugin, you are welcome to request assistance on the <a href="http://pippinsplugins.com/support/forum/restrict-content-pro">support forums</a>.
+			<p>If you have any trouble with these settings, or anything else with the plugin, you are welcome to request assistance through our <a href="http://restrictcontentpro.com/support">support forms</a>.
 			<?php
 			break;
 
@@ -204,7 +204,7 @@ function rcp_render_settings_tab_content( $id ) {
 			<p><strong>PayPal Address</strong> - This is the email address connected to your PayPal account. This is where payments made to your site will be sent.</p>
 			<p><strong>Currency</strong> - Choose the currency for your site's subscription packages. All exchange rate calculations will be done by PayPal when a user signs up.</p>
 			<p><strong>Currency Position</strong> - Choose the location of your currency sign, either before or after the amount.</p>
-			<p><strong>Sandbox Mode</strong> - This option allows you to test the plugin by utilizing PayPal's developer tools. Only those users familiar with PayPal's IPN tester should use this option. Leave this option as <strong>unchecked</strong> in order for your site to function live. Contact <a href="http://pippinsplugins.com/support/forum/restrict-content-pro">support</a> if you need assistance with the IPN tester.</p>
+			<p><strong>Sandbox Mode</strong> - This option allows you to test the plugin by utilizing PayPal's developer tools. Only those users familiar with PayPal's IPN tester should use this option. Leave this option as <strong>unchecked</strong> in order for your site to function live. Contact <a href="http://restrictcontentpro.com/support">support</a> if you need assistance with the IPN tester.</p>
 			<?php
 			break;
 		case 'signup_forms' :

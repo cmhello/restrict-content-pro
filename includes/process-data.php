@@ -462,22 +462,6 @@ function rcp_process_data() {
 	if( ! empty( $_GET ) ) {
 
 		/* member processing */
-		if( isset( $_GET['revoke_access'] ) ) {
-
-			if( ! current_user_can( 'rcp_manage_members' ) ) {
-				wp_die( __( 'You do not have permission to perform this action.', 'rcp' ) );
-			}
-
-			rcp_set_status( urldecode( absint( $_GET['revoke_access'] ) ), 'cancelled' );
-		}
-		if( isset( $_GET['activate_member'] ) ) {
-
-			if( ! current_user_can( 'rcp_manage_members' ) ) {
-				wp_die( __( 'You do not have permission to perform this action.', 'rcp' ) );
-			}
-
-			rcp_set_status( urldecode( absint( $_GET['activate_member'] ) ), 'active' );
-		}
 		if( isset( $_GET['cancel_member'] ) ) {
 
 			if( ! current_user_can( 'rcp_manage_members' ) ) {

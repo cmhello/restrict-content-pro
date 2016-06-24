@@ -15,21 +15,19 @@ class RCP_Discounts {
 	/**
 	 * Holds the name of our discounts database table
 	 *
-	 * @access  private
+	 * @access  public
 	 * @since   1.5
 	*/
-
-	private $db_name;
+	public $db_name;
 
 
 	/**
 	 * Holds the version number of our discounts database table
 	 *
-	 * @access  private
+	 * @access  public
 	 * @since   1.5
 	*/
-
-	private $db_version;
+	public $db_version;
 
 
 	/**

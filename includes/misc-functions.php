@@ -9,15 +9,52 @@
 */
 
 function rcp_is_paid_content( $post_id ) {
-	if ( $post_id == '' || ! is_int( $post_id ) )
+
+	if ( $post_id == '' || ! is_int( $post_id ) ) {
 		$post_id = get_the_ID();
+	}
 
 	$return = false;
 
-	$is_paid = get_post_meta( $post_id, '_is_paid', true );
-	if ( $is_paid ) {
-		// this post is for paid users only
-		$return = true;
+	$subscription_levels = rcp_get_content_subscription_levels( $post_id );
+
+	// Check to see if any level assigned to the post has a price
+	if( $subscription_levels ) {
+
+		if( is_string( $subscription_levels ) ) {
+
+			switch( $subscription_levels ) {
+
+				case 'any' :
+
+					$levels = rcp_get_subscription_levels();
+					foreach( $levels as $level ) {
+
+						$return = ! empty( $level->price );
+
+					}
+
+					break;
+
+				case 'any-paid' :
+
+					$return = true;
+
+					break;
+
+			}
+
+		} else {
+
+			foreach( $subscription_levels as $level ) {
+
+				$price  = rcp_get_subscription_price( $level );
+				$return = ! empty( $price );
+
+			}
+
+		}
+
 	}
 
 	return (bool) apply_filters( 'rcp_is_paid_content', $return, $post_id );

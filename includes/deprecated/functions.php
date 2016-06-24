@@ -194,3 +194,14 @@ function rcp_calc_member_expiration( $expiration_object ) {
 
 	return apply_filters( 'rcp_calc_member_expiration', $member_expires, $expiration_object );
 }
+
+/**
+ * Generate URL to download a PDF invoice
+ *
+ * @since 2.0
+ * @deprecated 2.6
+ * @return string
+*/
+function rcp_get_pdf_download_url( $payment_id = 0 ) {
+	return rcp_get_invoice_url( $payment_id );
+}

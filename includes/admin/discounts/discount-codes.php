@@ -11,43 +11,22 @@ function rcp_discounts_page()
 		else : ?>
 			<h2><?php _e( 'Discount Codes', 'rcp' ); ?></h2>
 
-			<table class="wp-list-table widefat fixed posts">
+			<table class="wp-list-table widefat posts">
 				<thead>
 					<tr>
-						<th class="rcp-discounts-id-col"><?php _e( 'ID', 'rcp' ); ?></th>
-						<th class="rcp-discounts-name-col" ><?php _e( 'Name', 'rcp' ); ?></th>
-						<th class="rcp-discounts-desc-col"><?php _e( 'Description', 'rcp' ); ?></th>
-						<th class="rcp-discounts-code-col" ><?php _e( 'Code', 'rcp' ); ?></th>
-						<th class="rcp-discounts-subscription-col" ><?php _e( 'Subscription', 'rcp' ); ?></th>
-						<th class="rcp-discounts-amount-col"><?php _e( 'Amount', 'rcp' ); ?></th>
-						<th class="rcp-discounts-type-col"><?php _e( 'Type', 'rcp' ); ?></th>
-						<th class="rcp-discounts-status-col"><?php _e( 'Status', 'rcp' ); ?></th>
-						<th class="rcp-discounts-uses-col"><?php _e( 'Uses', 'rcp' ); ?></th>
-						<th class="rcp-discounts-uses-left-col"><?php _e( 'Uses Left', 'rcp' ); ?></th>
-						<th class="rcp-discounts-expir-col" ><?php _e( 'Expiration', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-name-col column-primary" ><?php _e( 'Name', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-desc-col"><?php _e( 'Description', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-code-col" ><?php _e( 'Code', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-subscription-col" ><?php _e( 'Subscription', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-amount-col"><?php _e( 'Amount', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-type-col"><?php _e( 'Type', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-status-col"><?php _e( 'Status', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-uses-col"><?php _e( 'Uses', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-uses-left-col"><?php _e( 'Uses Left', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-expir-col" ><?php _e( 'Expiration', 'rcp' ); ?></th>
 						<?php do_action( 'rcp_discounts_page_table_header' ); ?>
-						<th class="rcp-discounts-actions-col" ><?php _e( 'Actions', 'rcp' ); ?></th>
 					</tr>
 				</thead>
-				<tfoot>
-					<tr>
-						<th><?php _e( 'ID', 'rcp' ); ?></th>
-						<th><?php _e( 'Name', 'rcp' ); ?></th>
-						<th><?php _e( 'Description', 'rcp' ); ?></th>
-						<th><?php _e( 'Code', 'rcp' ); ?></th>
-						<th><?php _e( 'Subscription', 'rcp' ); ?></th>
-						<th><?php _e( 'Amount', 'rcp' ); ?></th>
-						<th><?php _e( 'Type', 'rcp' ); ?></th>
-						<th><?php _e( 'Status', 'rcp' ); ?></th>
-						<th><?php _e( 'Uses', 'rcp' ); ?></th>
-						<th><?php _e( 'Uses Left', 'rcp' ); ?></th>
-						<th><?php _e( 'Expiration', 'rcp' ); ?></th>
-						<?php do_action( 'rcp_discounts_page_table_header' ); ?>
-						<?php if( current_user_can( 'rcp_manage_discounts' ) ) : ?>
-						<th><?php _e( 'Actions', 'rcp' ); ?></th>
-						<?php endif; ?>
-					</tr>
-				</tfoot>
 				<tbody>
 				<?php $codes = rcp_get_discounts(); ?>
 				<?php
@@ -55,10 +34,24 @@ function rcp_discounts_page()
 					$i = 1;
 					foreach( $codes as $key => $code) : ?>
 						<tr class="rcp_row <?php if( rcp_is_odd( $i ) ) { echo 'alternate'; } ?>">
-							<td><?php echo $code->id; ?></td>
-							<td><?php echo stripslashes( $code->name ); ?></td>
-							<td><?php echo stripslashes( $code->description ); ?></td>
-							<td><?php echo $code->code; ?></td>
+							<td class="column-primary has-row-actions" data-colname="<?php _e( 'Name', 'rcp' ); ?>">
+								<strong><a href="<?php echo esc_url( add_query_arg( 'edit_discount', $code->id, $page ) ); ?>"><?php echo stripslashes( $code->name ); ?></a></strong>
+								<div class="row-actions">
+									<?php if( current_user_can( 'rcp_manage_discounts' ) ) : ?>
+										<span class="id"><?php echo __( 'ID:', 'rcp' ) . ' ' . $code->id; ?></span>
+										<a href="<?php echo esc_url( add_query_arg( 'edit_discount', $code->id, $page ) ); ?>"><?php _e( 'Edit', 'rcp' ); ?></a> |
+										<?php if(rcp_get_discount_status($code->id) == 'active') { ?>
+											<a href="<?php echo esc_url( add_query_arg( 'deactivate_discount', $code->id, $page ) ); ?>"><?php _e( 'Deactivate', 'rcp' ); ?></a> |
+										<?php } else { ?>
+											<a href="<?php echo esc_url( add_query_arg( 'activate_discount', $code->id, $page ) ); ?>"><?php _e( 'Activate', 'rcp' ); ?></a> |
+										<?php } ?>
+										<a href="<?php echo esc_url( add_query_arg( 'delete_discount', $code->id, $page ) ); ?>" class="rcp_delete_discount"><?php _e( 'Delete', 'rcp' ); ?></a>
+									<?php endif; ?>
+								</div>
+								<button type="button" class="toggle-row"><span class="screen-reader-text"><?php _e( 'Show more details', 'rcp' ); ?></span></button>
+							</td>
+							<td data-colname="<?php _e( 'Description', 'rcp' ); ?>"><?php echo stripslashes( $code->description ); ?></td>
+							<td data-colname="<?php _e( 'Code', 'rcp' ); ?>"><?php echo $code->code; ?></td>
 							<td>
 								<?php
 								if ( $code->subscription_id > 0 ) {
@@ -68,9 +61,9 @@ function rcp_discounts_page()
 								}
 								?>
 							</td>
-							<td><?php echo rcp_discount_sign_filter( $code->amount, $code->unit ); ?></td>
-							<td><?php echo $code->unit == '%' ? __( 'Percentage', 'rcp' ) : __( 'Flat', 'rcp' ); ?></td>
-							<td>
+							<td data-colname="<?php _e( 'Amount', 'rcp' ); ?>"><?php echo rcp_discount_sign_filter( $code->amount, $code->unit ); ?></td>
+							<td data-colname="<?php _e( 'Type', 'rcp' ); ?>"><?php echo $code->unit == '%' ? __( 'Percentage', 'rcp' ) : __( 'Flat', 'rcp' ); ?></td>
+							<td data-colname="<?php _e( 'Status', 'rcp' ); ?>">
 								<?php
 									if(rcp_is_discount_not_expired( $code->id ) ) {
 										echo rcp_get_discount_status( $code->id ) == 'active' ? __( 'active', 'rcp' ) : __( 'disabled', 'rcp' );
@@ -79,29 +72,33 @@ function rcp_discounts_page()
 									}
 								?>
 							</td>
-							<td><?php if( $code->max_uses > 0 ) { echo rcp_count_discount_code_uses( $code->code ) . '/' . $code->max_uses; } else { echo rcp_count_discount_code_uses( $code->code ); }?></td>
-							<td><?php echo rcp_discount_has_uses_left( $code->id ) ? 'yes' : 'no'; ?></td>
-							<td><?php echo $code->expiration == '' ? __( 'none', 'rcp' ) : date_i18n( 'Y-m-d', strtotime( $code->expiration ) ); ?></td>
+							<td data-colname="<?php _e( 'Uses', 'rcp' ); ?>"><?php if( $code->max_uses > 0 ) { echo rcp_count_discount_code_uses( $code->code ) . '/' . $code->max_uses; } else { echo rcp_count_discount_code_uses( $code->code ); }?></td>
+							<td data-colname="<?php _e( 'Uses Left', 'rcp' ); ?>"><?php echo rcp_discount_has_uses_left( $code->id ) ? 'yes' : 'no'; ?></td>
+							<td data-colname="<?php _e( 'Expiration', 'rcp' ); ?>"><?php echo $code->expiration == '' ? __( 'none', 'rcp' ) : date_i18n( 'Y-m-d', strtotime( $code->expiration ) ); ?></td>
 							<?php do_action('rcp_discounts_page_table_column', $code->id); ?>
-
-							<?php if( current_user_can( 'rcp_manage_discounts' ) ) : ?>
-							<td>
-								<a href="<?php echo esc_url( add_query_arg( 'edit_discount', $code->id, $page ) ); ?>"><?php _e( 'Edit', 'rcp' ); ?></a> |
-								<?php if(rcp_get_discount_status($code->id) == 'active') { ?>
-									<a href="<?php echo esc_url( add_query_arg( 'deactivate_discount', $code->id, $page ) ); ?>"><?php _e( 'Deactivate', 'rcp' ); ?></a> |
-								<?php } else { ?>
-									<a href="<?php echo esc_url( add_query_arg( 'activate_discount', $code->id, $page ) ); ?>"><?php _e( 'Activate', 'rcp' ); ?></a> |
-								<?php } ?>
-								<a href="<?php echo esc_url( add_query_arg( 'delete_discount', $code->id, $page ) ); ?>" class="rcp_delete_discount"><?php _e( 'Delete', 'rcp' ); ?></a>
-							</td>
-							<?php endif; ?>
 						</tr>
 					<?php
 					$i++;
 					endforeach;
 				else : ?>
-				<tr><td colspan="11"><?php _e( 'No discount codes added yet.', 'rcp' ); ?></td>
+					<tr><td colspan="11"><?php _e( 'No discount codes added yet.', 'rcp' ); ?></td></tr>
 				<?php endif; ?>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th scope="col" class="rcp-discounts-name-col column-primary" ><?php _e( 'Name', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-desc-col"><?php _e( 'Description', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-code-col" ><?php _e( 'Code', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-subscription-col" ><?php _e( 'Subscription', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-amount-col"><?php _e( 'Amount', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-type-col"><?php _e( 'Type', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-status-col"><?php _e( 'Status', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-uses-col"><?php _e( 'Uses', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-uses-left-col"><?php _e( 'Uses Left', 'rcp' ); ?></th>
+						<th scope="col" class="rcp-discounts-expir-col" ><?php _e( 'Expiration', 'rcp' ); ?></th>
+						<?php do_action( 'rcp_discounts_page_table_header' ); ?>
+					</tr>
+				</tfoot>
 			</table>
 			<?php do_action( 'rcp_discounts_below_table' ); ?>
 			<?php if( current_user_can( 'rcp_manage_levels' ) ) : ?>

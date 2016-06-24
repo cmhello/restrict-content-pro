@@ -1,8 +1,98 @@
 jQuery(document).ready(function($) {
+
+	// Tooltips
+	$('.rcp-help-tip').tooltip({
+		content: function() {
+			return $(this).prop('title');
+		},
+		position: {
+			my: 'center top',
+			at: 'center bottom+10',
+			collision: 'flipfit'
+		},
+		hide: {
+			duration: 500
+		},
+		show: {
+			duration: 500
+		}
+	});
+
+	var restriction_control        = $('#rcp-restrict-by');
+	var role_control               = $('#rcp-metabox-field-role');
+	var sub_levels_control         = $('#rcp-metabox-field-levels');
+	var sub_levels_select          = $('.rcp-subscription-levels');
+	var sub_levels_radio           = $('input[name=rcp_subscription_level_any_set]');
+	var access_levels_control      = $('#rcp-metabox-field-access-levels');
+	var additional_options_control = $('#rcp-metabox-field-options');
+
+	var Settings_Controls = {
+		prepare_type: function(type) {
+			if ('unrestricted' === type) {
+				role_control.hide();
+				sub_levels_control.hide();
+				access_levels_control.hide();
+				additional_options_control.hide();
+			}
+
+			if ('registered-users' === type) {
+				role_control.show();
+				sub_levels_control.hide();
+				access_levels_control.hide();
+				additional_options_control.show();
+			}
+
+			if ('subscription-level' === type) {
+				role_control.show();
+				sub_levels_control.show();
+				access_levels_control.hide();
+				additional_options_control.show();
+			}
+
+			if ('access-level' === type) {
+				role_control.show();
+				sub_levels_control.hide();
+				access_levels_control.show();
+				additional_options_control.show();
+			}
+		},
+
+		prepare_sub_levels: function(type) {
+			if ('any' === type) {
+				sub_levels_select.hide();
+			}
+
+			if ('any-paid' === type) {
+				sub_levels_select.hide();
+			}
+
+			if ('specific' === type) {
+				sub_levels_radio.show();
+				sub_levels_select.show();
+				access_levels_control.hide();
+				additional_options_control.show();
+			}
+		}
+	}
+
+	var restriction_type = restriction_control.val();
+	Settings_Controls.prepare_type(restriction_type);
+
+	// restrict content metabox
+	restriction_control.on('change', function() {
+		var type = $(this).val();
+		Settings_Controls.prepare_type(type);
+	});
+
+	sub_levels_radio.on('change', function() {
+		var type = $(this).val();
+		Settings_Controls.prepare_sub_levels(type);
+	});
+
 	// settings tabs
 
 	//when the history state changes, gets the url from the hash and display
-	jQuery(window).bind( 'hashchange', function(e) {
+	$(window).bind( 'hashchange', function(e) {
 
 		var url = jQuery.param.fragment();
 
@@ -23,20 +113,13 @@ jQuery(document).ready(function($) {
 
 	// Since the event is only triggered when the hash changes, we need to trigger
 	// the event now, to handle the hash the page may have loaded with.
-	jQuery(window).trigger( 'hashchange' );
+	$(window).trigger( 'hashchange' );
 
 
 	if($('.rcp-datepicker').length > 0 ) {
 		var dateFormat = 'yy-mm-dd';
 		$('.rcp-datepicker').datepicker({dateFormat: dateFormat});
 	}
-	$('.rcp_revoke').click(function() {
-		if(confirm(rcp_vars.revoke_access)) {
-			return true;
-		} else {
-			return false;
-		}
-	});
 	$('.rcp_cancel').click(function() {
 		if(confirm(rcp_vars.cancel_user)) {
 			return true;
@@ -84,10 +167,7 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
-	if($('.rcp-help').length) {
-		// prettify the documentation code samples
-		$("pre.php").snippet("php", {style: 'ide-eclipse'});
-	}
+
 	// auto calculate the subscription expiration when manually adding a user
 	$('#rcp-level').change(function() {
 		var level_id = $('option:selected', this).val();

@@ -34,7 +34,7 @@ function rcp_settings_page() {
 			<a href="#general" class="nav-tab"><?php _e( 'General', 'rcp' ); ?></a>
 			<a href="#payments" class="nav-tab"><?php _e( 'Payments', 'rcp' ); ?></a>
 			<a href="#emails" class="nav-tab"><?php _e( 'Emails', 'rcp' ); ?></a>
-			<a href="#invoices" class="nav-tab"><?php _e( 'PDF Invoices', 'rcp' ); ?></a>
+			<a href="#invoices" class="nav-tab"><?php _e( 'Invoices', 'rcp' ); ?></a>
 			<a href="#misc" class="nav-tab"><?php _e( 'Misc', 'rcp' ); ?></a>
 		</h2>
 		<?php if ( false !== $_REQUEST['updated'] ) : ?>
@@ -67,7 +67,7 @@ function rcp_settings_page() {
 									<?php wp_nonce_field( 'rcp_deactivate_license', 'rcp_deactivate_license' ); ?>
 									<input type="submit" class="button-secondary" name="rcp_license_deactivate" value="<?php _e('Deactivate License', 'rcp'); ?>"/>
 									<span style="color:green;"><?php _e('active', 'rcp' ); ?></span>
-								<?php } elseif( ! empty( $rcp_options['license_key'] ) ) { ?>
+								<?php } elseif( $status !== 'valid' ) { ?>
 									<input type="submit" class="button-secondary" name="rcp_license_activate" value="<?php _e('Activate License', 'rcp' ); ?>"/>
 								<?php } ?>
 								<p class="description"><?php printf( __( 'Enter license key for Restrict Content Pro. This is required for automatic updates and <a href="%s">support</a>.', 'rcp' ), 'http://restrictcontentpro.com/support' ); ?></p>
@@ -94,7 +94,7 @@ function rcp_settings_page() {
 									endif;
 									?>
 								</select>
-								<p class="description"><?php _e( 'Choose the page that has the [register_form] short code.', 'rcp' ); ?></p>
+								<p class="description"><?php printf( __( 'Choose the primary registration page. This must contain the [register_form] short code. Additional registration forms may be added to other pages with [register_form id="x"]. <a href="%s" target="_blank">See documentation</a>.', 'rcp' ), 'http://docs.pippinsplugins.com/article/442-registerform' ); ?></p>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -141,7 +141,7 @@ function rcp_settings_page() {
 									endif;
 									?>
 								</select>
-								<p class="description"><?php _e( 'This page displays the account and membership information for members. Contains [subscription_details] shortcode.', 'rcp' ); ?></p>
+								<p class="description"><?php printf( __( 'This page displays the account and membership information for members. Contains <a href="%s" target="_blank">[subscription_details] short code</a>.', 'rcp' ), 'http://docs.pippinsplugins.com/article/447-subscriptiondetails' ); ?></p>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -165,7 +165,7 @@ function rcp_settings_page() {
 									endif;
 									?>
 								</select>
-								<p class="description"><?php _e( 'This page displays a profile edit form for logged-in members. Contains [rcp_profile_editor] shortcode.', 'rcp' ); ?></p>
+								<p class="description"><?php printf( __( 'This page displays a profile edit form for logged-in members. Contains <a href="%s" target="_blank">[rcp_profile_editor] shortcode.', 'rcp' ), 'http://docs.pippinsplugins.com/article/446-rcpprofileeditor' ); ?></p>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -189,7 +189,7 @@ function rcp_settings_page() {
 									endif;
 									?>
 								</select>
-								<p class="description"><?php _e( 'This page displays a profile edit form for logged-in members. Contains [rcp_update_card] shortcode.', 'rcp' ); ?></p>
+								<p class="description"><?php printf( __( 'This page displays a profile edit form for logged-in members. Contains <a href="%s" target="_blank">[rcp_update_card] short code</a>.', 'rcp' ), 'http://docs.pippinsplugins.com/article/820-rcpupdatecard' ); ?></p>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -700,7 +700,7 @@ function rcp_settings_page() {
 
 										?>
 									</select>
-									<p class="description"><?php _e( 'When should the renewal reminder be sent?', 'rcp' ); ?></p>
+									<p class="description"><?php _e( 'When should the renewal reminder be sent? These are sent to members that do not have automatically recurring subscriptions.', 'rcp' ); ?></p>
 								</td>
 							</tr>
 							<tr valign="top">
@@ -851,7 +851,7 @@ function rcp_settings_page() {
 							</th>
 							<td>
 								<input class="regular-text" id="rcp_settings[invoice_company]" style="width: 300px;" name="rcp_settings[invoice_company]" value="<?php if( isset( $rcp_options['invoice_company'] ) ) { echo $rcp_options['invoice_company']; } ?>"/>
-								<p class="description"><?php _e( 'Enter the company name that will be shown on the invoice. This is only displayed if no logo image is uploaded above.', 'rcp' ); ?></p>
+								<p class="description"><?php _e( 'Enter the company name that will be shown on the invoice.', 'rcp' ); ?></p>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -926,15 +926,6 @@ function rcp_settings_page() {
 								<p class="description"><?php _e( 'Enter the message you would like to be shown on the footer of the invoice.', 'rcp' ); ?></p>
 							</td>
 						</tr>
-						<tr valign="top">
-								<th>
-									<label for="rcp_settings[invoice_enable_char_support]"><?php _e( 'Characters not displaying correctly?', 'rcp' ); ?></label>
-								</th>
-								<td>
-									<input type="checkbox" value="1" name="rcp_settings[invoice_enable_char_support]" id="rcp_settings[invoice_enable_char_support]" <?php if( isset( $rcp_options['invoice_enable_char_support'] ) ) checked('1', $rcp_options['invoice_enable_char_support'] ); ?>/>
-									<span class="description"><?php _e( 'Check to enable the Free Sans/Free Serif font replacing Open Sans/Helvetica/Times. Only do this if you have characters which do not display correctly (e.g. Greek characters)', 'rcp' ); ?></span>
-								</td>
-							</tr>
 					</table>
 					<?php do_action( 'rcp_invoice_settings', $rcp_options ); ?>
 				</div><!--end #invoices-->

@@ -206,7 +206,6 @@ function rcp_load_gateway_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'rcp_load_gateway_scripts', 100 );
 
-
 /**
  * Process an update card form request
  *
@@ -241,3 +240,71 @@ function rcp_process_update_card_form_post() {
 
 }
 add_action( 'init', 'rcp_process_update_card_form_post' );
+
+/**
+ * Retrieve the full HTML link for the transaction ID on the merchant site
+ *
+ * @access public
+ * @param  $payment Payment object
+ * @since  2.6
+ */
+function rcp_get_merchant_transaction_id_link( $payment ) {
+
+	global $rcp_options;
+
+	$url  = '';
+	$link = $payment->transaction_id;
+	$test = isset( $rcp_options['sandbox'] );
+
+	if( ! empty( $payment->transaction_id ) ) {
+
+		$type = strtolower( $payment->payment_type );
+
+		switch( $type ) {
+
+			case 'web_accept' :
+			case 'paypal express one time' :
+			case 'recurring_payment' :
+			case 'recurring_payment_profile_created' :
+
+				// PayPal
+
+				$mode = $test ? 'sandbox.' : '';
+				$url  = 'https://www.' . $mode . 'paypal.com/webscr?cmd=_history-details-from-hub&id=' . $payment->transaction_id;
+
+				break;
+
+			case 'credit card' :
+			case 'credit card one time' :
+
+				if( false !== strpos( $payment->transaction_id, 'ch_' ) ) {
+
+					// Stripe
+
+					$mode = $test ? 'test/' : '';
+					$url  = 'https://dashboard.stripe.com/' . $mode . 'payments/' . $payment->transaction_id;
+
+				} else if( is_numeric( $payment->transaction_id ) ) {
+
+					// 2Checkout
+
+					$mode = $test ? 'sandbox.' : '';
+					$url  = 'https://' . $mode . '2checkout.com/sandbox/sales/detail?sale_id=' . $payment->transaction_id;
+
+				}
+
+				break;
+
+		}
+
+		if( ! empty( $url ) ) {
+
+			$link = '<a href="' . esc_url( $url ) . '" class="rcp-payment-txn-id-link" target="_blank">' . $payment->transaction_id . '</a>';
+
+		}
+
+	}
+
+	return apply_filters( 'rcp_merchant_transaction_id_link', $link, $payment );
+
+}

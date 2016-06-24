@@ -6,7 +6,9 @@
 
 function rcp_settings_menu() {
 
-	global $rcp_members_page, $rcp_subscriptions_page, $rcp_discounts_page, $rcp_payments_page, $rcp_reports_page, $rcp_settings_page, $rcp_export_page, $rcp_logs_page, $rcp_help_page, $rcp_tools_page;
+	global $rcp_members_page, $rcp_subscriptions_page, $rcp_discounts_page, $rcp_payments_page,
+	$rcp_reports_page, $rcp_settings_page, $rcp_export_page, $rcp_logs_page, $rcp_help_page,
+	$rcp_tools_page, $rcp_add_ons_page;
 
 	// add settings page
 	add_menu_page( __( 'Restrict Content Pro Settings', 'rcp' ), __( 'Restrict', 'rcp' ), 'rcp_view_members', 'rcp-members', 'rcp_members_page', 'dashicons-lock' );
@@ -20,6 +22,7 @@ function rcp_settings_menu() {
 	$rcp_logs_page          = add_submenu_page( 'rcp-members', __( 'Logs', 'rcp' ), __( 'Logs', 'rcp' ),'rcp_view_payments', 'rcp-logs', 'rcp_logs_page' );
 	$rcp_tools_page         = add_submenu_page( 'rcp-members', __( 'Tools', 'rcp' ), __( 'Tools', 'rcp' ), 'rcp_view_payments', 'rcp-tools', 'rcp_tools_page' );
 	$rcp_help_page          = add_submenu_page( 'rcp-members', __( 'Help', 'rcp' ), __( 'Help', 'rcp' ), 'rcp_view_help', 'rcp-help', '__return_null' );
+	$rcp_add_ons_page       = add_submenu_page( 'rcp-members', __( 'Add-ons', 'rcp' ), __( 'Add-ons', 'rcp' ), 'rcp_view_members', 'rcp-add-ons', 'rcp_add_ons_admin' );
 
 	if ( get_bloginfo('version') >= 3.3 ) {
 		// load each of the help tabs

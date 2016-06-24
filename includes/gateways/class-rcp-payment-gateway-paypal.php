@@ -267,6 +267,7 @@ class RCP_Payment_Gateway_PayPal extends RCP_Payment_Gateway {
 			$subscription_price = number_format( (float) rcp_get_subscription_price( $subscription_id ), 2 );
 
 			$pending_amount = get_user_meta( $member->ID, 'rcp_pending_subscription_amount', true );
+			$pending_amount = number_format( (float) $pending_amount, 2 );
 
 			// Check for invalid amounts in the IPN data
 			if ( ! empty( $pending_amount ) && ! empty( $amount ) && in_array( $posted['txn_type'], array( 'web_accept', 'subscr_payment' ) ) ) {

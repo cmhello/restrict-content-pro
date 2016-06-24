@@ -579,7 +579,7 @@ class RCP_Payment_Gateway_Stripe extends RCP_Payment_Gateway {
 
 						// get the subscription price
 						if( $('.rcp_level:checked').length ) {
-							var price = $('.rcp_level:checked').closest('li').find('span.rcp_price').attr('rel') * <?php echo rcp_stripe_get_currency_multiplier(); ?>;
+							var price = $('.rcp_level:checked').closest('.rcp_subscription_level').find('span.rcp_price').attr('rel') * <?php echo rcp_stripe_get_currency_multiplier(); ?>;
 						} else {
 							var price = $('.rcp_level').attr('rel') * <?php echo rcp_stripe_get_currency_multiplier(); ?>;
 						}
