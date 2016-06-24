@@ -354,7 +354,7 @@ function rcp_get_expiration_date( $user_id = 0 ) {
 	}
 
 	$member = new RCP_Member( $user_id );
-	return $member->get_expiration_date();
+	return $member->get_expiration_date( false );
 }
 
 /**

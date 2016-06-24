@@ -76,11 +76,15 @@ class RCP_Member extends WP_User {
 	 * @access  public
 	 * @since   2.1
 	*/
-	public function get_expiration_date( $formatted = true ) {
+	public function get_expiration_date( $formatted = true, $pending = true ) {
 
-		$expiration = get_user_meta( $this->ID, 'rcp_pending_expiration_date', true );
+		if( $pending ) {
 
-		if( empty( $expiration ) ) {
+			$expiration = get_user_meta( $this->ID, 'rcp_pending_expiration_date', true );
+
+		}
+
+		if( empty( $expiration ) || ! $pending ) {
 
 			$expiration = get_user_meta( $this->ID, 'rcp_expiration', true );
 
