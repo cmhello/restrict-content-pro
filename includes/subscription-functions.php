@@ -144,13 +144,15 @@ function rcp_get_subscription_access_level( $id ) {
 */
 function rcp_get_subscription_member_count( $id, $status = 'active' ) {
 
-	$key   = 'rcp_sub_' . $id . '_' . $status . '_member_count';
-	$count = get_option( $key );
+	global $rcp_levels_db;
+
+	$key   = $id . '_' . $status . '_member_count';
+	$count = $rcp_levels_db->get_meta( $id, $key, true );
 
 	if( empty( $count ) && 0 !== $count ) {
 
 		$count = rcp_count_members( $id, $status );
-		update_option( $key, $count );
+		$rcp_levels_db->update_meta( $id, $key, $count );
 
 	}
 
@@ -168,7 +170,9 @@ function rcp_get_subscription_member_count( $id, $status = 'active' ) {
 */
 function rcp_increment_subscription_member_count( $id, $status = 'active' ) {
 
-	$key   = 'rcp_sub_' . $id . '_' . $status . '_member_count';
+	global $rcp_levels_db;
+
+	$key   = $id . '_' . $status . '_member_count';
 	$count = rcp_get_subscription_member_count( $id, $status );
 
 	if( empty( $count ) ) {
@@ -179,7 +183,7 @@ function rcp_increment_subscription_member_count( $id, $status = 'active' ) {
 
 	$count++;
 
-	update_option( $key, (int) $count );
+	$rcp_levels_db->update_meta( $id, $key, (int) $count );
 
 	do_action( 'rcp_increment_subscription_member_count', $id, $count, $status );
 }
@@ -193,7 +197,9 @@ function rcp_increment_subscription_member_count( $id, $status = 'active' ) {
 */
 function rcp_decrement_subscription_member_count( $id, $status = 'active' ) {
 
-	$key   = 'rcp_sub_' . $id . '_' . $status . '_member_count';
+	global $rcp_levels_db;
+
+	$key   = $id . '_' . $status . '_member_count';
 	$count = rcp_get_subscription_member_count( $id, $status );
 
 	if( empty( $count ) ) {
@@ -208,7 +214,7 @@ function rcp_decrement_subscription_member_count( $id, $status = 'active' ) {
 
 	$count = max( $count, 0 );
 
-	update_option( $key, (int) $count );
+	$rcp_levels_db->update_meta( $id, $key, (int) $count );
 
 	do_action( 'rcp_decrement_subscription_member_count', $id, $count, $status );
 }
